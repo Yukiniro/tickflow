@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "@/components/header";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -39,7 +40,10 @@ export default function RootLayout({
     <html lang="en">
       <Analytics />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="w-screen h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">{children}</div>
+        <div className="w-screen h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );
