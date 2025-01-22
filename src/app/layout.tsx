@@ -38,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Analytics />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="w-screen h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">{children}</div>
+      </body>
     </html>
   );
 }
