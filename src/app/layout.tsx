@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Header from "@/components/header";
+import Header from "@/components/header/";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,13 +38,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <Analytics />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="w-screen h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">
-          <Header />
-          {children}
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <div className="w-screen h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">
+            <Header />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
