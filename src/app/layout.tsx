@@ -39,7 +39,7 @@ export default function RootLayout({
         >
           <div className="relative min-h-screen">
             <Nav />
-            <main className="pt-14">{children}</main>
+            <main>{children}</main>
           </div>
         </ThemeProvider>
         <Analytics />

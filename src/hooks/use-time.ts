@@ -2,41 +2,42 @@
 
 import { useEffect, useState } from 'react';
 
-export interface Time {
-  hours: number;
-  minutes: number;
-  seconds: number;
-  ampm: string;
-}
-
 export function useTime() {
-  const [time, setTime] = useState<Time>({
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    ampm: 'AM',
-  });
+  const [mounted, setMounted] = useState(false);
+  const [time, setTime] = useState(new Date());
+  const [is24Hour, setIs24Hour] = useState(true);
 
   useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      
-      setTime({
-        hours: hours % 12 || 12,
-        minutes,
-        seconds,
-        ampm: hours >= 12 ? 'PM' : 'AM',
-      });
-    };
+    setMounted(true);
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
 
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
-  return time;
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
+  const seconds = time.getSeconds();
+
+  const formattedHours = is24Hour
+    ? hours
+    : hours === 0
+      ? 12
+      : hours > 12
+        ? hours - 12
+        : hours;
+
+
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+
+  return {
+    hours: formattedHours,
+    minutes,
+    seconds,
+    ampm: is24Hour ? '' : ampm,
+    is24Hour,
+    toggleTimeFormat: () => setIs24Hour(!is24Hour),
+    mounted,
+  };
 } 

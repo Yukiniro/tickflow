@@ -17,7 +17,11 @@ function FlipDigit({ value, label }: { value: number; label: string }) {
 }
 
 export function FlipClock() {
-  const { hours, minutes, seconds, ampm } = useTime();
+  const { hours, minutes, seconds, ampm, mounted } = useTime();
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col items-center justify-center space-y-6">
@@ -28,7 +32,9 @@ export function FlipClock() {
         <div className="text-[16vw] font-bold">:</div>
         <FlipDigit value={seconds} label="秒" />
       </div>
-      <div className="text-[4vw] font-medium text-muted-foreground">{ampm}</div>
+      {ampm && (
+        <div className="text-[4vw] font-medium text-muted-foreground">{ampm}</div>
+      )}
     </div>
   );
 } 

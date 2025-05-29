@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from './theme-toggle';
 import { GithubLink } from './github-link';
+import { TimeFormatToggle } from './time-format-toggle';
+import { useTime } from '@/hooks/use-time';
 
 const routes = [
   {
@@ -27,27 +29,31 @@ const routes = [
 
 export function Nav() {
   const pathname = usePathname();
+  const { is24Hour, toggleTimeFormat, mounted } = useTime();
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
-        <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">TickFlow</span>
+        <div className="mr-8 flex">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-lg font-semibold tracking-tight">TickFlow</span>
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-6 mr-6">
             {routes.map((route) => (
               <Link
                 key={route.path}
                 href={route.path}
                 className={cn(
-                  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+                  'text-sm font-medium transition-colors hover:text-primary',
                   pathname === route.path
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground',
-                  'h-9 px-4 py-2'
+                    ? 'text-primary'
+                    : 'text-muted-foreground'
                 )}
               >
                 {route.name}
@@ -55,6 +61,7 @@ export function Nav() {
             ))}
           </div>
           <div className="flex items-center space-x-2">
+            <TimeFormatToggle is24Hour={is24Hour} onToggle={toggleTimeFormat} />
             <ThemeToggle />
             <GithubLink />
           </div>
