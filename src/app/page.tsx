@@ -1,7 +1,5 @@
-"use client";
-
-import { Clock } from "@/components/clock";
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return <Clock />;
+  redirect('/basic');
 }

@@ -1,52 +1,48 @@
 import type { Metadata } from "next";
-import Header from "@/components/header/";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Nav } from '@/components/nav';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Real-Time Clock - Precise Time Display",
-  description:
-    "A clean and elegant online clock application that displays accurate current time in real-time. Features multiple time formats and a clear, intuitive interface.",
+  title: "TickFlow - 优雅的时钟应用",
+  description: "一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用",
   keywords: "online clock, real-time clock, digital clock, current time, time display, world clock",
   openGraph: {
-    title: "Real-Time Clock - Precise Time Display",
-    description: "A clean and elegant online clock application that displays accurate time in real-time.",
+    title: "TickFlow - 优雅的时钟应用",
+    description: "一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real-Time Clock - Precise Time Display",
-    description: "A clean and elegant online clock application that displays accurate time in real-time.",
+    title: "TickFlow - 优雅的时钟应用",
+    description: "一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <Analytics />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <div className="w-screen h-screen overflow-hidden font-[family-name:var(--font-geist-sans)]">
-            <Header />
-            {children}
+    <html lang="zh-CN" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative min-h-screen">
+            <Nav />
+            <main className="pt-14">{children}</main>
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
