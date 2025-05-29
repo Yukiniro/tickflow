@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from './theme-toggle';
+import { GithubLink } from './github-link';
 
 const routes = [
   {
@@ -51,6 +53,10 @@ export function Nav() {
                 {route.name}
               </Link>
             ))}
+          </div>
+          <div className="flex items-center space-x-2">
+            <ThemeToggle />
+            <GithubLink />
           </div>
         </div>
       </div>

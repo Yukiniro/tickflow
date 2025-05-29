@@ -7,14 +7,14 @@ export function ComicClock() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="font-comic text-9xl font-bold tracking-wider">
+      <div className="font-comic text-[16vw] font-bold tracking-wider">
         {String(hours).padStart(2, '0')}
         <span className="animate-bounce">:</span>
         {String(minutes).padStart(2, '0')}
         <span className="animate-bounce">:</span>
         {String(seconds).padStart(2, '0')}
       </div>
-      <div className="mt-6 text-5xl font-comic font-bold text-primary">{ampm}</div>
+      <div className="mt-6 text-[4vw] font-comic font-bold text-primary">{ampm}</div>
     </div>
   );
 } 
