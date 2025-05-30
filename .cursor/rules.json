@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "rules": {
+    "codeStyle": {
+      "functional": true,
+      "declarative": true,
+      "modular": true,
+      "descriptiveVariables": true,
+      "fileStructure": [
+        "exportedComponent",
+        "subcomponents",
+        "helpers",
+        "staticContent",
+        "types"
+      ],
+      "conciseness": true,
+      "technicalAccuracy": true,
+      "iterationPreferred": true,
+      "variableNaming": {
+        "auxiliaryVerbs": true,
+        "examples": ["isLoading", "hasError", "shouldUpdate"]
+      }
+    },
+    "namingConventions": {
+      "directories": "kebab-case",
+      "components": "PascalCase",
+      "exports": "named",
+      "examples": {
+        "directories": ["components/auth-wizard", "features/user-profile"],
+        "components": ["UserProfile", "AuthWizard"]
+      }
+    },
+    "typescript": {
+      "preferInterfaces": true,
+      "avoidEnums": true,
+      "functionalComponents": true,
+      "useMapsInsteadOfEnums": true,
+      "strictMode": true,
+      "typeSafety": true
+    },
+    "syntax": {
+      "useFunctionKeyword": true,
+      "minimalCurlyBraces": true,
+      "declarativeJSX": true,
+      "conditionalSyntax": {
+        "avoidUnnecessaryBraces": true,
+        "preferTernary": true
+      }
+    },
+    "ui": {
+      "useShadcnUI": true,
+      "useRadixUI": true,
+      "useTailwind": true,
+      "responsiveDesign": true,
+      "mobileFirst": true,
+      "componentLibraries": {
+        "shadcn": true,
+        "radix": true
+      }
+    },
+    "performance": {
+      "minimizeUseClient": true,
+      "useServerComponents": true,
+      "wrapClientComponents": true,
+      "dynamicLoading": true,
+      "imageOptimization": {
+        "useWebP": true,
+        "includeSizeData": true,
+        "lazyLoading": true
+      },
+      "reactOptimizations": {
+        "minimizeUseEffect": true,
+        "minimizeSetState": true,
+        "useSuspense": true
+      }
+    },
+    "conventions": {
+      "useNuqs": true,
+      "optimizeWebVitals": {
+        "LCP": true,
+        "CLS": true,
+        "FID": true
+      },
+      "limitUseClient": {
+        "preferServerComponents": true,
+        "webApiOnly": true,
+        "smallComponents": true,
+        "avoidDataFetching": true,
+        "avoidStateManagement": true
+      }
+    },
+    "nextjs": {
+      "useAppRouter": true,
+      "followDocs": true,
+      "dataFetching": {
+        "followBestPractices": true,
+        "useServerComponents": true
+      },
+      "rendering": {
+        "followBestPractices": true,
+        "optimizeSSR": true
+      },
+      "routing": {
+        "followBestPractices": true,
+        "useAppRouter": true
+      }
+    },
+    "language": {
+      "responseLanguage": "zh-CN",
+      "documentationLanguage": "zh-CN"
+    }
+  }
+} 
