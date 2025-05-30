@@ -15,10 +15,10 @@ const routes = [
     name: "基础时钟",
     path: "/basic",
   },
-  {
-    name: "翻页时钟",
-    path: "/flip",
-  },
+  // {
+  //   name: "翻页时钟",
+  //   path: "/flip",
+  // },
   {
     name: "数字手表",
     path: "/digital",
