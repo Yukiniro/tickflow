@@ -8,6 +8,7 @@ import { GithubLink } from "./github-link";
 import { TimeFormatToggle } from "./time-format-toggle";
 import { SoundToggle } from "./sound-toggle";
 import { useTime } from "@/hooks/use-time";
+import Image from "next/image";
 
 const routes = [
   {
@@ -41,6 +42,7 @@ export function Nav() {
       <div className="container flex h-14 items-center">
         <div className="mr-8 flex">
           <Link href="/" className="flex items-center space-x-2">
+            <Image src="/logo.png" alt="TickFlow Logo" width={24} height={24} className="rounded-sm" />
             <span className="text-lg font-semibold tracking-tight">TickFlow</span>
           </Link>
         </div>
