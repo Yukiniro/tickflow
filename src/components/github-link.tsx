@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Github } from 'lucide-react';
+import { Github } from "lucide-react";
 
 export function GithubLink() {
   return (
@@ -14,4 +14,4 @@ export function GithubLink() {
       <span className="sr-only">GitHub 仓库</span>
     </a>
   );
-} 
+}
