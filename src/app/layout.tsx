@@ -8,13 +8,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tickflow.vercel.app"),
   title: "TickFlow",
   description: "一个优雅的时钟应用",
   keywords: "online clock, real-time clock, digital clock, current time, time display, world clock",
-  icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/logo.png", type: "image/png" }],
-    apple: [{ url: "/logo.png", type: "image/png" }],
-  },
+  // icons: {
+  //   icon: [{ url: "/favicon.ico" }, { url: "/logo.png", type: "image/png" }],
+  //   apple: [{ url: "/logo.png", type: "image/png" }],
+  // },
   openGraph: {
     title: "TickFlow - 优雅的时钟应用",
     description: "一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用",
