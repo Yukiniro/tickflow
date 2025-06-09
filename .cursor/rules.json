@@ -108,6 +108,21 @@
     "language": {
       "responseLanguage": "zh-CN",
       "documentationLanguage": "zh-CN"
+    },
+    "git": {
+      "commitMessageLanguage": "en",
+      "commitMessageFormat": {
+        "type": "conventional",
+        "examples": [
+          "feat: add user authentication",
+          "fix: resolve navigation bug",
+          "docs: update README",
+          "style: format code",
+          "refactor: simplify component logic",
+          "test: add unit tests",
+          "chore: update dependencies"
+        ]
+      }
     }
   }
 } 
