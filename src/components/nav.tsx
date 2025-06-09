@@ -1,40 +1,18 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { GithubLink } from "./github-link";
 import { TimeFormatToggle } from "./time-format-toggle";
 import { SoundToggle } from "./sound-toggle";
 import { LanguageSwitcher } from "./language-switcher";
+import { ClockTypeSelector } from "./clock-type-selector";
 import { useTime } from "@/hooks/use-time";
 import Image from "next/image";
 
-const routes = [
-  {
-    key: "basic",
-    path: "/basic",
-  },
-  {
-    key: "flip",
-    path: "/flip",
-  },
-  {
-    key: "digital",
-    path: "/digital",
-  },
-  {
-    key: "comic",
-    path: "/comic",
-  },
-] as const;
-
 export function Nav() {
-  const pathname = usePathname();
   const { is24Hour, toggleTimeFormat, mounted } = useTime();
-  const t = useTranslations("navigation");
 
   if (!mounted) {
     return null;
@@ -51,18 +29,7 @@ export function Nav() {
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="flex items-center space-x-6 mr-6">
-            {routes.map(route => (
-              <Link
-                key={route.path}
-                href={route.path}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === route.path ? "text-primary" : "text-muted-foreground",
-                )}
-              >
-                {t(route.key)}
-              </Link>
-            ))}
+            <ClockTypeSelector />
           </div>
           <div className="flex items-center space-x-2">
             <LanguageSwitcher />
