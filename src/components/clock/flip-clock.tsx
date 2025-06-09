@@ -41,13 +41,13 @@ function FlipDigit({ value }: FlipDigitProps) {
 
   return (
     <div className="flip-container">
-      <div className="relative w-24 h-32 sm:w-32 sm:h-40 md:w-40 md:h-48 lg:w-48 lg:h-56 xl:w-56 xl:h-64 flip-shadow">
+      <div className="relative w-32 h-44 sm:w-40 sm:h-52 md:w-48 md:h-60 lg:w-56 lg:h-68 xl:w-64 xl:h-76 2xl:w-72 2xl:h-84 bg-transparent">
         {/* 上半部分 */}
         <div className="absolute top-0 left-0 w-full h-1/2 overflow-hidden rounded-t-xl">
           {/* 上半部分静态背景 - 新数字 */}
           <div className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-t-xl border-2 border-b border-gray-300 dark:border-gray-600">
             <div className="absolute w-full flex items-center justify-center" style={{ height: "200%", top: "0%" }}>
-              <div className="text-gray-900 dark:text-white font-mono font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight flip-text dark:flip-text-dark">
+              <div className="text-gray-900 dark:text-white font-mono font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] leading-none tracking-tight flip-text dark:flip-text-dark">
                 {isFlipping ? nextDisplay : currentDisplay}
               </div>
             </div>
@@ -63,7 +63,7 @@ function FlipDigit({ value }: FlipDigitProps) {
               }}
             >
               <div className="absolute w-full flex items-center justify-center" style={{ height: "200%", top: "0%" }}>
-                <div className="text-gray-900 dark:text-white font-mono font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight flip-text dark:flip-text-dark">
+                <div className="text-gray-900 dark:text-white font-mono font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] leading-none tracking-tight flip-text dark:flip-text-dark">
                   {currentDisplay}
                 </div>
               </div>
@@ -76,7 +76,7 @@ function FlipDigit({ value }: FlipDigitProps) {
           {/* 下半部分静态背景 - 当前数字 */}
           <div className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-b-xl border-2 border-t-0 border-gray-300 dark:border-gray-600">
             <div className="absolute w-full flex items-center justify-center" style={{ height: "200%", top: "-100%" }}>
-              <div className="text-gray-900 dark:text-white font-mono font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight flip-text dark:flip-text-dark">
+              <div className="text-gray-900 dark:text-white font-mono font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] leading-none tracking-tight flip-text dark:flip-text-dark">
                 {currentDisplay}
               </div>
             </div>
@@ -96,7 +96,7 @@ function FlipDigit({ value }: FlipDigitProps) {
                 className="absolute w-full flex items-center justify-center"
                 style={{ height: "200%", top: "-100%" }}
               >
-                <div className="text-gray-900 dark:text-white font-mono font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight flip-text dark:flip-text-dark">
+                <div className="text-gray-900 dark:text-white font-mono font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] leading-none tracking-tight flip-text dark:flip-text-dark">
                   {nextDisplay}
                 </div>
               </div>
@@ -127,11 +127,11 @@ export function FlipClock() {
     return (
       <div className="flex flex-col items-center justify-center space-y-8">
         <div className="flex items-center space-x-8">
-          <div className="w-24 h-32 sm:w-32 sm:h-40 md:w-40 md:h-48 lg:w-48 lg:h-56 xl:w-56 xl:h-64 bg-muted rounded-xl animate-pulse"></div>
-          <div className="text-6xl lg:text-7xl font-bold text-muted-foreground">:</div>
-          <div className="w-24 h-32 sm:w-32 sm:h-40 md:w-40 md:h-48 lg:w-48 lg:h-56 xl:w-56 xl:h-64 bg-muted rounded-xl animate-pulse"></div>
-          <div className="text-6xl lg:text-7xl font-bold text-muted-foreground">:</div>
-          <div className="w-24 h-32 sm:w-32 sm:h-40 md:w-40 md:h-48 lg:w-48 lg:h-56 xl:h-64 bg-muted rounded-xl animate-pulse"></div>
+          <div className="w-32 h-44 sm:w-40 sm:h-52 md:w-48 md:h-60 lg:w-56 lg:h-68 xl:w-64 xl:h-76 2xl:w-72 2xl:h-84 bg-muted rounded-xl animate-pulse"></div>
+          <div className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-bold text-muted-foreground">:</div>
+          <div className="w-32 h-44 sm:w-40 sm:h-52 md:w-48 md:h-60 lg:w-56 lg:h-68 xl:w-64 xl:h-76 2xl:w-72 2xl:h-84 bg-muted rounded-xl animate-pulse"></div>
+          <div className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-bold text-muted-foreground">:</div>
+          <div className="w-32 h-44 sm:w-40 sm:h-52 md:w-48 md:h-60 lg:w-56 lg:h-68 xl:w-64 xl:h-76 2xl:w-72 2xl:h-84 bg-muted rounded-xl animate-pulse"></div>
         </div>
       </div>
     );
@@ -140,11 +140,15 @@ export function FlipClock() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 space-y-12 ">
       {/* 主时钟 */}
-      <div className="flex items-center space-x-8 lg:space-x-12">
+      <div className="flex items-center space-x-8 lg:space-x-16 xl:space-x-20">
         <FlipDigit value={hours} />
-        <div className="text-6xl lg:text-7xl xl:text-8xl font-black text-primary/70 flip-separator">:</div>
+        <div className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-black text-primary/70 flip-separator">
+          :
+        </div>
         <FlipDigit value={minutes} />
-        <div className="text-6xl lg:text-7xl xl:text-8xl font-black text-primary/70 flip-separator">:</div>
+        <div className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-black text-primary/70 flip-separator">
+          :
+        </div>
         <FlipDigit value={seconds} />
       </div>
 
@@ -152,7 +156,9 @@ export function FlipClock() {
       {ampm && (
         <div className="px-8 py-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border-2 border-primary/30 rounded-2xl shadow-xl backdrop-blur-sm relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shimmer"></div>
-          <span className="text-2xl lg:text-3xl font-black text-primary tracking-wider relative z-10">{ampm}</span>
+          <span className="text-3xl lg:text-4xl xl:text-5xl font-black text-primary tracking-wider relative z-10">
+            {ampm}
+          </span>
         </div>
       )}
     </div>
