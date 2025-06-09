@@ -1,0 +1,46 @@
+{
+  "common": {
+    "hello": "Hello",
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "basic": "Basic",
+    "comic": "Comic",
+    "digital": "Digital",
+    "flip": "Flip"
+  },
+  "home": {
+    "title": "Welcome to TickFlow",
+    "subtitle": "Manage your tasks efficiently",
+    "getStarted": "Get Started"
+  },
+  "clock": {
+    "basicClock": "Basic Clock",
+    "digitalWatch": "Digital Watch",
+    "comicFont": "Comic Font",
+    "flipClock": "Flip Clock",
+    "currentTime": "Current Time",
+    "timeFormat": "Time Format",
+    "24hour": "24 Hour",
+    "12hour": "12 Hour"
+  }
+} 

@@ -1,15 +1,87 @@
-# tickflow
+# TickFlow
 
-tickflow 是一个基于 Next.js 和 Tailwind CSS 的时钟应用。
+一个优雅的多语言时钟应用，基于 Next.js 和 Tailwind CSS 构建。
 
-## 技术栈
+## 🌍 国际化支持
 
-- Next.js
-- Tailwind CSS
-- TypeScript
-- React
-- Shadcn UI
-- Vercel
+TickFlow 现在支持多语言：
+
+- 🇺🇸 **English** - 英语
+- 🇨🇳 **中文** - 简体中文  
+- 🇯🇵 **日本語** - 日语
+
+### 语言切换
+
+- 点击导航栏右上角的地球图标可以切换语言
+- 应用会记住您的语言偏好
+- URL 会自动包含语言代码（如 `/en/basic`, `/zh/digital`）
+
+### 支持的路由
+
+- `/en/` - 英语首页
+- `/zh/` - 中文首页  
+- `/ja/` - 日语首页
+- 各语言下的时钟页面：`/[locale]/basic`, `/[locale]/digital`, `/[locale]/comic`
+
+## 🚀 开始使用
+
+### 安装依赖
+
+```bash
+pnpm install
+```
+
+### 启动开发服务器
+
+```bash
+pnpm dev
+```
+
+访问 [http://localhost:3000](http://localhost:3000) 查看应用。
+
+## 🛠️ 技术栈
+
+- **Next.js 15** - React 框架
+- **next-intl** - 国际化解决方案
+- **Tailwind CSS** - 样式框架
+- **TypeScript** - 类型安全
+- **Jotai** - 状态管理
+
+## 📁 项目结构
+
+```
+src/
+├── app/
+│   ├── [locale]/          # 国际化路由
+│   │   ├── basic/         # 基础时钟
+│   │   ├── digital/       # 数字手表
+│   │   ├── comic/         # 漫画字体
+│   │   └── layout.tsx     # 语言布局
+│   └── globals.css
+├── components/
+│   ├── clock/             # 时钟组件
+│   ├── ui/                # UI 组件
+│   └── language-switcher.tsx  # 语言切换器
+├── i18n/
+│   ├── locales/           # 语言文件
+│   │   ├── en.json        # 英语翻译
+│   │   ├── zh.json        # 中文翻译
+│   │   └── ja.json        # 日语翻译
+│   ├── routing.ts         # 路由配置
+│   ├── navigation.ts      # 导航配置
+│   └── request.ts         # 请求配置
+└── middleware.ts          # 国际化中间件
+```
+
+## 🌐 添加新语言
+
+1. 在 `src/i18n/routing.ts` 中添加新的语言代码
+2. 在 `src/i18n/locales/` 中创建对应的 JSON 文件
+3. 在 `src/components/language-switcher.tsx` 中添加语言选项
+
+## 📝 许可证
+
+MIT License
 
 ## 核心逻辑
 

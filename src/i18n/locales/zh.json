@@ -1,0 +1,46 @@
+{
+  "common": {
+    "hello": "您好",
+    "welcome": "欢迎",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "create": "创建",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "language": "语言"
+  },
+  "navigation": {
+    "home": "首页",
+    "about": "关于",
+    "contact": "联系",
+    "basic": "基础",
+    "comic": "漫画",
+    "digital": "数字",
+    "flip": "翻转"
+  },
+  "home": {
+    "title": "欢迎使用 TickFlow",
+    "subtitle": "高效管理您的任务",
+    "getStarted": "开始使用"
+  },
+  "clock": {
+    "basicClock": "基础时钟",
+    "digitalWatch": "数字手表",
+    "comicFont": "漫画字体",
+    "flipClock": "翻页时钟",
+    "currentTime": "当前时间",
+    "timeFormat": "时间格式",
+    "24hour": "24小时制",
+    "12hour": "12小时制"
+  }
+} 

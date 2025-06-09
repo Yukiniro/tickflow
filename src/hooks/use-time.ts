@@ -17,7 +17,7 @@ export function useTime() {
   useEffect(() => {
     // 初始化 AudioContext
     audioContextRef.current = new AudioContext();
-    
+
     // 加载音频文件
     fetch("/tick.mp3")
       .then(response => response.arrayBuffer())

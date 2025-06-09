@@ -1,18 +1,20 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { GithubLink } from "./github-link";
 import { TimeFormatToggle } from "./time-format-toggle";
 import { SoundToggle } from "./sound-toggle";
+import { LanguageSwitcher } from "./language-switcher";
 import { useTime } from "@/hooks/use-time";
 import Image from "next/image";
 
 const routes = [
   {
-    name: "基础时钟",
+    key: "basic",
     path: "/basic",
   },
   // {
@@ -20,11 +22,11 @@ const routes = [
   //   path: "/flip",
   // },
   {
-    name: "数字手表",
+    key: "digital",
     path: "/digital",
   },
   {
-    name: "漫画字体",
+    key: "comic",
     path: "/comic",
   },
 ] as const;
@@ -32,6 +34,7 @@ const routes = [
 export function Nav() {
   const pathname = usePathname();
   const { is24Hour, toggleTimeFormat, mounted } = useTime();
+  const t = useTranslations("navigation");
 
   if (!mounted) {
     return null;
@@ -57,11 +60,12 @@ export function Nav() {
                   pathname === route.path ? "text-primary" : "text-muted-foreground",
                 )}
               >
-                {route.name}
+                {t(route.key)}
               </Link>
             ))}
           </div>
           <div className="flex items-center space-x-2">
+            <LanguageSwitcher />
             <TimeFormatToggle is24Hour={is24Hour} onToggle={toggleTimeFormat} />
             <SoundToggle />
             <ThemeToggle />
