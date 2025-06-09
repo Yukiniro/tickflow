@@ -92,12 +92,27 @@ const config: Config = {
 					opacity: '1',
 				},
 			},
+			'flip-top-down': {
+				'0%': { transform: 'perspective(600px) rotateX(0deg)' },
+				'100%': { transform: 'perspective(600px) rotateX(-90deg)' }
+			},
+			'flip-bottom-up': {
+				'0%': { transform: 'perspective(600px) rotateX(90deg)' },
+				'100%': { transform: 'perspective(600px) rotateX(0deg)' }
+			},
+			shimmer: {
+				'0%': { transform: 'translateX(-100%)' },
+				'100%': { transform: 'translateX(100%)' }
+			}
 		},
 		animation: {
 			'accordion-down': 'accordion-down 0.2s ease-out',
 			'accordion-up': 'accordion-up 0.2s ease-out',
 			flip: 'flip 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 			'flip-in': 'flip-in 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s both',
+			'flip-top-down': 'flip-top-down 0.6s ease-in-out',
+			'flip-bottom-up': 'flip-bottom-up 0.6s ease-in-out',
+			shimmer: 'shimmer 2s infinite'
 		},
   				fontFamily: {
 			comic: ['Comic Sans MS', 'cursive'],
