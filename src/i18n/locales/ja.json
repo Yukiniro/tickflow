@@ -41,6 +41,9 @@
     "currentTime": "現在時刻",
     "timeFormat": "時刻形式",
     "24hour": "24時間制",
-    "12hour": "12時間制"
+    "12hour": "12時間制",
+    "hour": "時",
+    "minute": "分",
+    "second": "秒"
   }
 } 

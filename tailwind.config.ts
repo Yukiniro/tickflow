@@ -63,28 +63,52 @@ const config: Config = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		keyframes: {
-  			'accordion-down': {
-  				from: { height: '0' },
-  				to: { height: 'var(--radix-accordion-content-height)' },
-  			},
-  			'accordion-up': {
-  				from: { height: 'var(--radix-accordion-content-height)' },
-  				to: { height: '0' },
-  			},
-  			flip: {
-  				'0%': { transform: 'rotateX(0deg)' },
-  				'100%': { transform: 'rotateX(180deg)' },
-  			},
-  		},
-  		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out',
-  			flip: 'flip 0.6s ease-in-out',
-  		},
-  		fontFamily: {
-  			comic: ['Comic Sans MS', 'cursive'],
-  		},
+  				keyframes: {
+			'accordion-down': {
+				from: { height: '0' },
+				to: { height: 'var(--radix-accordion-content-height)' },
+			},
+			'accordion-up': {
+				from: { height: 'var(--radix-accordion-content-height)' },
+				to: { height: '0' },
+			},
+			flip: {
+				'0%': { 
+					transform: 'perspective(600px) rotateX(0deg)',
+					transformOrigin: 'center bottom',
+				},
+				'100%': { 
+					transform: 'perspective(600px) rotateX(-90deg)',
+					transformOrigin: 'center bottom',
+				},
+			},
+			'flip-in': {
+				'0%': { 
+					transform: 'perspective(400px) rotateX(-180deg)',
+					opacity: '0',
+				},
+				'100%': { 
+					transform: 'perspective(400px) rotateX(0deg)',
+					opacity: '1',
+				},
+			},
+		},
+		animation: {
+			'accordion-down': 'accordion-down 0.2s ease-out',
+			'accordion-up': 'accordion-up 0.2s ease-out',
+			flip: 'flip 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+			'flip-in': 'flip-in 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s both',
+		},
+  				fontFamily: {
+			comic: ['Comic Sans MS', 'cursive'],
+		},
+		perspective: {
+			'1000': '1000px',
+		},
+		rotate: {
+			'x-90': 'rotateX(90deg)',
+			'x-0': 'rotateX(0deg)',
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

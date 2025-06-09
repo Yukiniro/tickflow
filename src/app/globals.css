@@ -70,3 +70,39 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .rotate-x-0 {
+    transform: perspective(600px) rotateX(0deg);
+  }
+  .rotate-x-90 {
+    transform: perspective(600px) rotateX(90deg);
+  }
+  .origin-bottom {
+    transform-origin: center bottom;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+@keyframes flipTopDown {
+  from {
+    transform: perspective(600px) rotateX(0deg);
+  }
+  to {
+    transform: perspective(600px) rotateX(-90deg);
+  }
+}
+
+@keyframes flipBottomUp {
+  from {
+    transform: perspective(600px) rotateX(90deg);
+  }
+  to {
+    transform: perspective(600px) rotateX(0deg);
+  }
+}

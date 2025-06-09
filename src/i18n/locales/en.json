@@ -41,6 +41,9 @@
     "currentTime": "Current Time",
     "timeFormat": "Time Format",
     "24hour": "24 Hour",
-    "12hour": "12 Hour"
+    "12hour": "12 Hour",
+    "hour": "Hour",
+    "minute": "Minute",
+    "second": "Second"
   }
 } 

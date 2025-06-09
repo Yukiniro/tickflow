@@ -17,10 +17,10 @@ const routes = [
     key: "basic",
     path: "/basic",
   },
-  // {
-  //   name: "翻页时钟",
-  //   path: "/flip",
-  // },
+  {
+    key: "flip",
+    path: "/flip",
+  },
   {
     key: "digital",
     path: "/digital",
