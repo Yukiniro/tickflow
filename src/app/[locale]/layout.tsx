@@ -5,6 +5,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
+import { StructuredData } from "@/components/structured-data";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
@@ -15,7 +16,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tickflow.vercel.app"),
+  metadataBase: new URL("https://tickflow.toimagen.com"),
   title: "TickFlow",
   description: "一个优雅的时钟应用",
   keywords: "online clock, real-time clock, digital clock, current time, time display, world clock",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     title: "TickFlow - 优雅的时钟应用",
     description: "一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用",
     type: "website",
-    url: "https://tickflow.vercel.app",
+    url: "https://tickflow.toimagen.com",
     siteName: "TickFlow",
     locale: "zh_CN",
     images: [
@@ -44,11 +45,11 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   alternates: {
-    canonical: "https://tickflow.vercel.app",
+    canonical: "https://tickflow.toimagen.com",
     languages: {
-      "zh-CN": "https://tickflow.vercel.app/zh",
-      "en-US": "https://tickflow.vercel.app/en",
-      "ja-JP": "https://tickflow.vercel.app/ja",
+      "zh-CN": "https://tickflow.toimagen.com/zh",
+      "en-US": "https://tickflow.toimagen.com/en",
+      "ja-JP": "https://tickflow.toimagen.com/ja",
     },
   },
   robots: {
@@ -85,6 +86,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <StructuredData locale={locale} />
+      </head>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
