@@ -97,6 +97,7 @@ body {
       #cbd5e1 100%);
     box-shadow: 
       0 10px 30px rgba(0, 0, 0, 0.1),
+      0 20px 50px rgba(0, 0, 0, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.8),
       inset 0 -1px 0 rgba(0, 0, 0, 0.1),
       0 0 50px rgba(0, 0, 0, 0.05);
@@ -110,6 +111,7 @@ body {
       #475569 100%);
     box-shadow: 
       0 10px 30px rgba(0, 0, 0, 0.3),
+      0 20px 50px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1),
       inset 0 -1px 0 rgba(0, 0, 0, 0.3),
       0 0 50px rgba(0, 0, 0, 0.2);
@@ -140,7 +142,7 @@ body {
   .flip-container {
     transform-style: preserve-3d;
     perspective: 1200px;
-    perspective-origin: center center;
+    perspective-origin: center 50%;
   }
   
   .flip-shadow {
@@ -158,6 +160,30 @@ body {
   
   .flip-container.flipping .flip-shadow {
     opacity: 1;
+  }
+  
+  /* 智能裁剪策略 - 保持3D效果同时正确显示内容 */
+  .flip-top-clip {
+    /* 平时显示完整上半部分 */
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.1s ease-out;
+  }
+  
+  .flip-bottom-clip {
+    /* 平时显示完整下半部分 */
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.1s ease-out;
+  }
+  
+  /* 翻转时智能裁剪 - 根据旋转角度动态调整 */
+  .flipping .flip-top-clip {
+    /* 上半部分翻转时逐渐裁剪下边缘，防止显示到下半部分区域 */
+    clip-path: inset(0 0 2px 0);
+  }
+  
+  .flipping .flip-bottom-clip {
+    /* 下半部分翻转时逐渐裁剪上边缘，防止显示到上半部分区域 */
+    clip-path: inset(2px 0 0 0);
   }
 }
 
