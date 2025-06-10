@@ -19,12 +19,12 @@ function FlipDigit({ value }: FlipDigitProps) {
       setNextValue(value);
       setIsFlipping(true);
 
-      // 翻转动画完成后更新当前值
+      // 翻转动画完成后更新当前值 - 延长到800ms以匹配更流畅的动画
       const timer = setTimeout(() => {
         setCurrentValue(value);
         setIsFlipping(false);
         prevValueRef.current = value;
-      }, 600);
+      }, 800);
 
       return () => clearTimeout(timer);
     }
@@ -43,9 +43,9 @@ function FlipDigit({ value }: FlipDigitProps) {
     <div className="flip-container">
       <div className="relative w-32 h-44 sm:w-40 sm:h-52 md:w-48 md:h-60 lg:w-56 lg:h-68 xl:w-64 xl:h-76 2xl:w-72 2xl:h-84 bg-transparent">
         {/* 上半部分 */}
-        <div className="absolute top-0 left-0 w-full h-1/2 overflow-hidden rounded-t-xl">
+        <div className="absolute top-0 left-0 w-full h-1/2 overflow-hidden rounded-t-xl preserve-3d">
           {/* 上半部分静态背景 - 新数字 */}
-          <div className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-t-xl border-2 border-b border-gray-300 dark:border-gray-600">
+          <div className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-t-xl border-b">
             <div className="absolute w-full flex items-center justify-center" style={{ height: "200%", top: "0%" }}>
               <div className="text-gray-900 dark:text-white font-mono font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] leading-none tracking-tight flip-text dark:flip-text-dark">
                 {isFlipping ? nextDisplay : currentDisplay}
@@ -56,10 +56,10 @@ function FlipDigit({ value }: FlipDigitProps) {
           {/* 当前数字上半部分 - 围绕底部翻转消失 */}
           {isFlipping && (
             <div
-              className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-t-xl border-2 border-b border-gray-300 dark:border-gray-600 origin-bottom"
+              className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-t-xl border-b origin-bottom backface-hidden"
               style={{
                 transformStyle: "preserve-3d",
-                animation: "flipTopDown 0.3s ease-out forwards",
+                animation: "flipTopDown 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
               }}
             >
               <div className="absolute w-full flex items-center justify-center" style={{ height: "200%", top: "0%" }}>
@@ -72,9 +72,9 @@ function FlipDigit({ value }: FlipDigitProps) {
         </div>
 
         {/* 下半部分 */}
-        <div className="absolute bottom-0 left-0 w-full h-1/2 overflow-hidden rounded-b-xl">
+        <div className="absolute bottom-0 left-0 w-full h-1/2 overflow-hidden rounded-b-xl preserve-3d">
           {/* 下半部分静态背景 - 当前数字 */}
-          <div className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-b-xl border-2 border-t-0 border-gray-300 dark:border-gray-600">
+          <div className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-b-xl border-t-0">
             <div className="absolute w-full flex items-center justify-center" style={{ height: "200%", top: "-100%" }}>
               <div className="text-gray-900 dark:text-white font-mono font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] leading-none tracking-tight flip-text dark:flip-text-dark">
                 {currentDisplay}
@@ -85,11 +85,11 @@ function FlipDigit({ value }: FlipDigitProps) {
           {/* 新数字下半部分 - 从上方围绕顶部翻转进入 */}
           {isFlipping && (
             <div
-              className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-b-xl border-2 border-t-0 border-gray-300 dark:border-gray-600 origin-top"
+              className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-b-xl border-t-0 origin-top backface-hidden"
               style={{
                 transformStyle: "preserve-3d",
-                animation: "flipBottomUp 0.3s ease-out 0.3s forwards",
-                transform: "perspective(600px) rotateX(90deg)",
+                animation: "flipBottomUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards",
+                transform: "rotateX(90deg)",
               }}
             >
               <div
@@ -106,14 +106,6 @@ function FlipDigit({ value }: FlipDigitProps) {
 
         {/* 中间分割线 */}
         <div className="absolute top-1/2 left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-gray-400 dark:via-gray-500 to-transparent transform -translate-y-0.5 z-30 rounded-full"></div>
-
-        {/* 翻转时的阴影和光效 */}
-        {isFlipping && (
-          <>
-            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-br from-black/40 to-black/10 rounded-t-xl z-20 transition-opacity duration-300"></div>
-            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-tr from-black/40 to-black/10 rounded-b-xl z-20 transition-opacity duration-300 delay-300"></div>
-          </>
-        )}
       </div>
     </div>
   );
@@ -121,7 +113,6 @@ function FlipDigit({ value }: FlipDigitProps) {
 
 export function FlipClock() {
   const { hours, minutes, seconds, ampm, mounted } = useTime();
-  const t = useTranslations("clock");
 
   if (!mounted) {
     return (
