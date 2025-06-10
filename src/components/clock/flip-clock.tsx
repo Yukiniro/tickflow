@@ -1,7 +1,6 @@
 "use client";
 
 import { useTime } from "@/hooks/use-time";
-import { useTranslations } from "next-intl";
 import { useState, useEffect, useRef } from "react";
 
 interface FlipDigitProps {
@@ -19,12 +18,12 @@ function FlipDigit({ value }: FlipDigitProps) {
       setNextValue(value);
       setIsFlipping(true);
 
-      // 翻转动画完成后更新当前值 - 延长到800ms以匹配更流畅的动画
+      // 翻转动画完成后更新当前值 - 优化到600ms以匹配更流畅的动画
       const timer = setTimeout(() => {
         setCurrentValue(value);
         setIsFlipping(false);
         prevValueRef.current = value;
-      }, 800);
+      }, 600);
 
       return () => clearTimeout(timer);
     }
@@ -40,8 +39,10 @@ function FlipDigit({ value }: FlipDigitProps) {
   const nextDisplay = String(nextValue).padStart(2, "0");
 
   return (
-    <div className="flip-container">
+    <div className={`flip-container ${isFlipping ? "flipping" : ""}`}>
       <div className="relative w-32 h-44 sm:w-40 sm:h-52 md:w-48 md:h-60 lg:w-56 lg:h-68 xl:w-64 xl:h-76 2xl:w-72 2xl:h-84 bg-transparent">
+        {/* 翻转阴影效果 */}
+        <div className="flip-shadow"></div>
         {/* 上半部分 */}
         <div className="absolute top-0 left-0 w-full h-1/2 overflow-hidden rounded-t-xl preserve-3d">
           {/* 上半部分静态背景 - 新数字 */}
@@ -59,7 +60,7 @@ function FlipDigit({ value }: FlipDigitProps) {
               className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-t-xl border-b origin-bottom backface-hidden"
               style={{
                 transformStyle: "preserve-3d",
-                animation: "flipTopDown 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
+                animation: "flipTopDown 0.3s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards",
               }}
             >
               <div className="absolute w-full flex items-center justify-center" style={{ height: "200%", top: "0%" }}>
@@ -88,7 +89,7 @@ function FlipDigit({ value }: FlipDigitProps) {
               className="absolute inset-0 flip-digit dark:flip-digit-dark rounded-b-xl border-t-0 origin-top backface-hidden"
               style={{
                 transformStyle: "preserve-3d",
-                animation: "flipBottomUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards",
+                animation: "flipBottomUp 0.3s cubic-bezier(0.0, 0.0, 0.25, 1.0) 0.3s forwards",
                 transform: "rotateX(90deg)",
               }}
             >
