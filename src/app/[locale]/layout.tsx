@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
 import { StructuredData } from "@/components/structured-data";
+import { SEOOptimizations } from "@/components/seo-optimizations";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
@@ -17,12 +18,17 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tickflow.toimagen.com"),
-  title: "TickFlow",
-  description: "一个优雅的时钟应用",
-  keywords: "online clock, real-time clock, digital clock, current time, time display, world clock",
+  title: {
+    default: "TickFlow - 优雅的时钟应用",
+    template: "%s | TickFlow",
+  },
+  description:
+    "TickFlow 是一个功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种时钟样式。支持实时显示、优雅动画、响应式设计，为您带来极致的时间体验。",
+  keywords:
+    "在线时钟,实时时钟,数字时钟,翻转时钟,模拟时钟,时间显示,世界时钟,时钟应用,TickFlow,online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app",
   openGraph: {
     title: "TickFlow - 优雅的时钟应用",
-    description: "一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用",
+    description: "功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种样式，支持实时显示和优雅动画效果",
     type: "website",
     url: "https://tickflow.toimagen.com",
     siteName: "TickFlow",
@@ -32,14 +38,14 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 810,
         height: 810,
-        alt: "TickFlow Logo",
+        alt: "TickFlow - 优雅的时钟应用",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "TickFlow - 优雅的时钟应用",
-    description: "一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用",
+    description: "功能丰富的在线时钟应用，支持翻转时钟、数字时钟等多种样式",
     creator: "@tickflow",
     site: "@tickflow",
     images: ["/logo.png"],
@@ -87,6 +93,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <SEOOptimizations />
         <StructuredData locale={locale} />
       </head>
       <body className={inter.className}>

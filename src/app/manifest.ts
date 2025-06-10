@@ -4,11 +4,13 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'TickFlow - 优雅的时钟应用',
     short_name: 'TickFlow',
-    description: '一个基于 Next.js 和 Tailwind CSS 的优雅时钟应用',
+    description: '功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种样式',
     start_url: '/',
     display: 'standalone',
+    orientation: 'portrait',
     background_color: '#ffffff',
-    theme_color: '#000000',
+    theme_color: '#3b82f6',
+    categories: ['utilities', 'productivity'],
     icons: [
       {
         src: '/favicon-16x16.png',
@@ -22,8 +24,21 @@ export default function manifest(): MetadataRoute.Manifest {
       },
       {
         src: '/logo.png',
+        sizes: '192x192',
+        type: 'image/png',
+        purpose: 'any',
+      },
+      {
+        src: '/logo.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'any',
+      },
+      {
+        src: '/logo.png',
         sizes: '810x810',
         type: 'image/png',
+        purpose: 'maskable',
       },
     ],
   }
