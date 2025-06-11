@@ -1,16 +1,13 @@
 export function SEOOptimizations() {
   return (
     <>
-      {/* 预加载关键资源 */}
-      <link rel="preload" href="/logo.png" as="image" type="image/png" />
+      {/* 字体优化 - Inter字体已通过Next.js Google Fonts优化 */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
       {/* DNS预解析 */}
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
-      {/* 预连接 */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
       {/* Viewport优化 */}
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -30,9 +27,6 @@ export function SEOOptimizations() {
       {/* 安全性标头 */}
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-
-      {/* 性能提示 */}
-      <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     </>
   );
 }
