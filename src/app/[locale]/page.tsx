@@ -26,7 +26,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
-  const common = await getTranslations("common");
 
   return (
     <>

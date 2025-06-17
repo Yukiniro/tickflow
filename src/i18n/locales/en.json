@@ -1,28 +1,6 @@
 {
-  "common": {
-    "hello": "Hello",
-    "welcome": "Welcome",
-    "loading": "Loading...",
-    "error": "Error",
-    "success": "Success",
-    "cancel": "Cancel",
-    "confirm": "Confirm",
-    "save": "Save",
-    "delete": "Delete",
-    "edit": "Edit",
-    "create": "Create",
-    "back": "Back",
-    "next": "Next",
-    "previous": "Previous",
-    "search": "Search",
-    "filter": "Filter",
-    "sort": "Sort",
-    "language": "Language"
-  },
   "navigation": {
     "home": "Home",
-    "about": "About",
-    "contact": "Contact",
     "basic": "Basic",
     "comic": "Comic",
     "digital": "Digital",
@@ -56,29 +34,10 @@
         "title": "About",
         "description": "TickFlow is an open-source online clock application dedicated to providing an elegant time display experience."
       },
-      "quickLinks": "Quick Links",
-      "features": "Features",
-      "support": "Support",
-      "faq": "FAQ",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Use",
       "contact": "Contact Us",
       "email": "Email: yukiniro@hotmail.com",
       "github": "GitHub: https://github.com/Yukiniro/tickflow",
       "copyright": "All rights reserved."
     }
-  },
-  "clock": {
-    "basicClock": "Basic Clock",
-    "digitalWatch": "Digital Watch",
-    "comicFont": "Comic Font",
-    "flipClock": "Flip Clock",
-    "currentTime": "Current Time",
-    "timeFormat": "Time Format",
-    "24hour": "24 Hour",
-    "12hour": "12 Hour",
-    "hour": "Hour",
-    "minute": "Minute",
-    "second": "Second"
   }
 } 
