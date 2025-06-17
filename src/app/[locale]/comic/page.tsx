@@ -1,11 +1,15 @@
-'use client';
+"use client";
 
-import { ComicClock } from '@/components/clock/comic-clock';
+import { ComicClock } from "@/components/clock/comic-clock";
+import { BackgroundImage } from "@/components/background-image";
 
 export default function ComicClockPage() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-background">
-      <ComicClock />
-    </div>
+    <>
+      <BackgroundImage />
+      <div className="flex min-h-screen flex-col items-center justify-center">
+        <ComicClock />
+      </div>
+    </>
   );
-} 
+}

@@ -1,7 +1,9 @@
-import { BackgroundImage } from "@/components/background-image";
-import { FlipClock } from "@/components/clock/flip-clock";
+"use client";
 
-export default async function FlipClockPage() {
+import { FlipClock } from "./flip-clock";
+import { BackgroundImage } from "@/components/background-image";
+
+export function FlipClockClient() {
   return (
     <>
       <BackgroundImage />

@@ -1,0 +1,125 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import {
+  currentPhotoAtom,
+  categoryAtom,
+  enabledAtom,
+  opacityAtom,
+  blurAtom,
+  loadingAtom,
+  sourceTypeAtom,
+  selectedCollectionAtom,
+  setCurrentPhotoAtom,
+  setLoadingAtom,
+  setErrorAtom,
+} from "@/store/background";
+import { getRandomBackgroundPhoto, getRandomCollectionPhoto } from "@/lib/pexels";
+import Image from "next/image";
+
+export function BackgroundImage() {
+  const currentPhoto = useAtomValue(currentPhotoAtom);
+  const category = useAtomValue(categoryAtom);
+  const enabled = useAtomValue(enabledAtom);
+  const opacity = useAtomValue(opacityAtom);
+  const blur = useAtomValue(blurAtom);
+  const loading = useAtomValue(loadingAtom);
+  const sourceType = useAtomValue(sourceTypeAtom);
+  const selectedCollection = useAtomValue(selectedCollectionAtom);
+
+  const setCurrentPhoto = useSetAtom(setCurrentPhotoAtom);
+  const setLoading = useSetAtom(setLoadingAtom);
+  const setError = useSetAtom(setErrorAtom);
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // 加载背景图片
+  const loadBackgroundPhoto = async () => {
+    if (!enabled) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      let photo;
+      if (sourceType === "collection" && selectedCollection) {
+        photo = await getRandomCollectionPhoto(selectedCollection);
+      } else {
+        photo = await getRandomBackgroundPhoto(category);
+      }
+
+      if (photo) {
+        setCurrentPhoto(photo);
+      } else {
+        setError("Failed to load background image");
+      }
+    } catch (error) {
+      console.error("Error loading background photo:", error);
+      setError("Failed to load background image");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 当启用状态、类别或选中的collection改变时重新加载图片
+  useEffect(() => {
+    if (mounted && enabled) {
+      loadBackgroundPhoto();
+    }
+  }, [mounted, enabled, category, sourceType, selectedCollection]);
+
+  // 如果未挂载、未启用或没有图片，不显示背景
+  if (!mounted || !enabled || !currentPhoto) {
+    return null;
+  }
+
+  return (
+    <>
+      {/* 背景图片 */}
+      <div
+        className="fixed inset-0 z-[-1] transition-opacity duration-1000"
+        style={{
+          opacity,
+        }}
+      >
+        <Image
+          src={currentPhoto.src.large}
+          alt={currentPhoto.alt || "Background"}
+          fill
+          className="object-cover"
+          style={{
+            filter: blur > 0 ? `blur(${blur}px)` : "none",
+          }}
+          priority
+          quality={85}
+        />
+      </div>
+
+      {/* 摄影师信息 */}
+      {currentPhoto.photographer && (
+        <div className="fixed bottom-4 right-4 z-10 opacity-60 hover:opacity-100 transition-opacity">
+          <a
+            href={currentPhoto.photographer_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-white bg-black/50 px-2 py-1 rounded backdrop-blur-sm"
+          >
+            Photo by {currentPhoto.photographer} on Pexels
+          </a>
+        </div>
+      )}
+
+      {/* 加载指示器 */}
+      {loading && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+          <div className="bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-sm">Loading background...</div>
+        </div>
+      )}
+    </>
+  );
+}

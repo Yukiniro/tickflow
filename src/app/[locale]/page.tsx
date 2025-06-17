@@ -34,6 +34,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         showLanguageSwitcher={false}
         showTimeFormatToggle={false}
         showSoundToggle={false}
+        showBackgroundToggle={true}
         showThemeToggle={true}
         showGithubLink={true}
       />

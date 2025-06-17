@@ -5,6 +5,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
+import { BackgroundImage } from "@/components/background-image";
 import { StructuredData } from "@/components/structured-data";
 import { SEOOptimizations } from "@/components/seo-optimizations";
 import { routing } from "@/i18n/routing";
@@ -71,40 +72,37 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  // 确保传入的 locale 是有效的
   const { locale } = await params;
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  // 设置请求区域设置以启用静态渲染
   setRequestLocale(locale);
 
-  // 获取当前语言的消息
   const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <SEOOptimizations />
         <StructuredData locale={locale} />
+        <SEOOptimizations />
       </head>
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <div className="relative min-h-screen">
-              <Nav />
-              <main className="container flex min-h-screen flex-col items-center justify-center">{children}</main>
-            </div>
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <NextIntlClientProvider messages={messages}>
+            <BackgroundImage />
+            <Nav />
+            <main>{children}</main>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
