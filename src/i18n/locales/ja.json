@@ -29,9 +29,41 @@
     "flip": "フリップ"
   },
   "home": {
-    "title": "TickFlowへようこそ",
-    "subtitle": "効率的にタスクを管理",
-    "getStarted": "始める"
+    "title": "TickFlow - エレガントなオンライン時計",
+    "subtitle": "シンプルで美しいウェブ時計アプリケーションで、時間表示を楽しみましょう。",
+    "features": {
+      "title": "主な機能",
+      "analog": {
+        "title": "アナログ時計",
+        "description": "複数のダイヤルスタイルとスムーズな針のアニメーションを備えたクラシックなアナログ時計表示。"
+      },
+      "digital": {
+        "title": "デジタル時計",
+        "description": "12/24時間表示の切り替えが可能な、クリアなデジタル時間表示。"
+      },
+      "timezone": {
+        "title": "複数タイムゾーン",
+        "description": "世界中の主要なタイムゾーンをサポートし、異なる地域の時間を簡単に確認できます。"
+      }
+    },
+    "cta": {
+      "title": "始める",
+      "description": "エレガントな時間表示を今すぐ体験しましょう。",
+      "button": "始める"
+    },
+    "footer": {
+      "about": "TickFlowは、エレガントな時間表示体験を提供するオープンソースのオンライン時計アプリケーションです。",
+      "quickLinks": "クイックリンク",
+      "features": "機能",
+      "support": "サポート",
+      "faq": "よくある質問",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "contact": "お問い合わせ",
+      "email": "メール：yukiniro@hotmail.com",
+      "github": "GitHub：https://github.com/Yukiniro/tickflow",
+      "copyright": "All rights reserved."
+    }
   },
   "clock": {
     "basicClock": "ベーシッククロック",

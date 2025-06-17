@@ -29,9 +29,41 @@
     "flip": "翻转"
   },
   "home": {
-    "title": "欢迎使用 TickFlow",
-    "subtitle": "高效管理您的任务",
-    "getStarted": "开始使用"
+    "title": "TickFlow - 优雅的在线时钟",
+    "subtitle": "一个简洁、美观的网页时钟应用，让时间显示成为一种享受。",
+    "features": {
+      "title": "主要功能",
+      "analog": {
+        "title": "模拟时钟",
+        "description": "经典的模拟时钟显示，支持多种表盘样式和指针动画。"
+      },
+      "digital": {
+        "title": "数字时钟",
+        "description": "清晰的数字时间显示，支持12/24小时制切换。"
+      },
+      "timezone": {
+        "title": "多时区",
+        "description": "支持全球主要时区，轻松查看不同地区的时间。"
+      }
+    },
+    "cta": {
+      "title": "开始使用",
+      "description": "立即体验优雅的时间显示。",
+      "button": "开始使用"
+    },
+    "footer": {
+      "about": "TickFlow 是一个开源的在线时钟应用，致力于为用户提供优雅的时间显示体验。",
+      "quickLinks": "快速链接",
+      "features": "功能特性",
+      "support": "支持",
+      "faq": "常见问题",
+      "privacy": "隐私政策",
+      "terms": "使用条款",
+      "contact": "联系我们",
+      "email": "邮箱：yukiniro@hotmail.com",
+      "github": "GitHub：https://github.com/Yukiniro/tickflow",
+      "copyright": "保留所有权利。"
+    }
   },
   "clock": {
     "basicClock": "基础时钟",

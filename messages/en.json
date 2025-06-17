@@ -1,0 +1,32 @@
+{
+  "Home": {
+    "hero": {
+      "title": "TickFlow - Elegant Online Clock",
+      "subtitle": "A clean and beautiful web clock application that helps you better manage time and improve productivity.",
+      "cta": {
+        "primary": "Get Started",
+        "secondary": "Learn More"
+      }
+    },
+    "features": {
+      "title": "Why Choose TickFlow",
+      "1": {
+        "title": "Elegant Design",
+        "description": "Carefully crafted interface, simple yet sophisticated, making time display a pleasure."
+      },
+      "2": {
+        "title": "Multi-timezone Support",
+        "description": "Support for multiple time zones worldwide, easily switch between different regional times."
+      },
+      "3": {
+        "title": "Customization",
+        "description": "Customize clock styles, colors, and layouts to create your own unique clock interface."
+      }
+    },
+    "cta": {
+      "title": "Start Using TickFlow",
+      "description": "Experience elegant time management now, making every moment meaningful.",
+      "button": "Use for Free"
+    }
+  }
+} 

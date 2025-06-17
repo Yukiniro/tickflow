@@ -29,9 +29,44 @@
     "flip": "Flip"
   },
   "home": {
-    "title": "Welcome to TickFlow",
-    "subtitle": "Manage your tasks efficiently",
-    "getStarted": "Get Started"
+    "title": "TickFlow - Elegant Online Clock",
+    "subtitle": "A clean and beautiful web clock application that makes time display a pleasure.",
+    "features": {
+      "title": "Key Features",
+      "analog": {
+        "title": "Analog Clock",
+        "description": "Classic analog clock display with multiple dial styles and smooth hand animations."
+      },
+      "digital": {
+        "title": "Digital Clock",
+        "description": "Clear digital time display with 12/24 hour format switching."
+      },
+      "timezone": {
+        "title": "Multiple Timezones",
+        "description": "Support for major time zones worldwide, easily view time in different regions."
+      }
+    },
+    "cta": {
+      "title": "Get Started",
+      "description": "Experience elegant time display now.",
+      "button": "Get Started"
+    },
+    "footer": {
+      "about": {
+        "title": "About",
+        "description": "TickFlow is an open-source online clock application dedicated to providing an elegant time display experience."
+      },
+      "quickLinks": "Quick Links",
+      "features": "Features",
+      "support": "Support",
+      "faq": "FAQ",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "contact": "Contact Us",
+      "email": "Email: yukiniro@hotmail.com",
+      "github": "GitHub: https://github.com/Yukiniro/tickflow",
+      "copyright": "All rights reserved."
+    }
   },
   "clock": {
     "basicClock": "Basic Clock",
