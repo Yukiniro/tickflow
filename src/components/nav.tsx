@@ -61,12 +61,8 @@ export function Nav({
               hasLeftControls ? "justify-between" : "justify-end"
             } space-x-2 md:justify-end`}
           >
-            {hasLeftControls && showClockTypeSelector && (
-              <div className="flex items-center space-x-6 mr-6">
-                <ClockTypeSelector />
-              </div>
-            )}
             <div className="flex items-center space-x-2">
+              {hasLeftControls && showClockTypeSelector && <ClockTypeSelector />}
               {showBackgroundToggle && <BackgroundToggle />}
               {showLanguageSwitcher && <LanguageSwitcher />}
               {showTimeFormatToggle && <TimeFormatToggle is24Hour={is24Hour} onToggle={toggleTimeFormat} />}
