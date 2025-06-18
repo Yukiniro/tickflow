@@ -56,6 +56,16 @@
     "refreshing": "更新中...",
     "opacity": "透明度",
     "blur": "ぼかし",
-    "loading": "読み込み中..."
+    "loading": "読み込み中...",
+    "categories": {
+      "nature": "自然",
+      "landscape": "風景",
+      "city": "都市",
+      "abstract": "抽象",
+      "minimal": "ミニマル",
+      "ocean": "海",
+      "mountain": "山",
+      "forest": "森"
+    }
   }
 } 

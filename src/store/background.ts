@@ -1,47 +1,19 @@
 import { atom } from 'jotai';
-import { PexelsPhoto, PexelsCollection } from '@/lib/pexels';
-
-// 自定义存储工具函数
-const createStorageAtom = <T>(key: string, defaultValue: T) => {
-  const baseAtom = atom(defaultValue);
-  
-  return atom(
-    (get) => {
-      if (typeof window === 'undefined') return get(baseAtom);
-      
-      try {
-        const stored = localStorage.getItem(key);
-        return stored ? JSON.parse(stored) : get(baseAtom);
-      } catch {
-        return get(baseAtom);
-      }
-    },
-    (get, set, newValue: T) => {
-      set(baseAtom, newValue);
-      
-      if (typeof window !== 'undefined') {
-        try {
-          localStorage.setItem(key, JSON.stringify(newValue));
-        } catch (error) {
-          console.warn('Failed to save to localStorage:', error);
-        }
-      }
-    }
-  );
-};
+import { PexelsPhoto, PexelsCollection, type BackgroundCategory } from '@/lib/pexels';
+import { atomWithStorage } from 'jotai/utils'
 
 // 基础状态 atoms
 export const currentPhotoAtom = atom<PexelsPhoto | null>(null);
-export const categoryAtom = createStorageAtom('background-category', 'nature');
-export const enabledAtom = createStorageAtom('background-enabled', false);
-export const opacityAtom = createStorageAtom('background-opacity', 0.3);
-export const blurAtom = createStorageAtom('background-blur', 0);
+export const categoryAtom = atomWithStorage<BackgroundCategory>('background-category', 'nature');
+export const enabledAtom = atomWithStorage('background-enabled', false);
+export const opacityAtom = atomWithStorage('background-opacity', 0.95);
+export const blurAtom = atomWithStorage('background-blur', 2);
 export const loadingAtom = atom(false);
 export const errorAtom = atom<string | null>(null);
 
 // Collections 相关状态
-export const sourceTypeAtom = createStorageAtom<'category' | 'collection'>('background-source-type', 'category');
-export const selectedCollectionAtom = createStorageAtom<string | null>('background-collection-id', null);
+export const sourceTypeAtom = atomWithStorage<'category' | 'collection'>('background-source-type', 'category');
+export const selectedCollectionAtom = atomWithStorage<string | null>('background-collection-id', null);
 export const collectionsAtom = atom<PexelsCollection[]>([]);
 export const collectionsLoadingAtom = atom(false);
 
@@ -72,7 +44,7 @@ export const setCurrentPhotoAtom = atom(
 
 export const setCategoryAtom = atom(
   null,
-  (_get, set, category: string) => {
+  (_get, set, category: BackgroundCategory) => {
     set(categoryAtom, category);
   }
 );

@@ -56,6 +56,16 @@
     "refreshing": "正在更换...",
     "opacity": "透明度",
     "blur": "模糊度",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "categories": {
+      "nature": "自然",
+      "landscape": "风景",
+      "city": "城市",
+      "abstract": "抽象",
+      "minimal": "简约",
+      "ocean": "海洋",
+      "mountain": "山脉",
+      "forest": "森林"
+    }
   }
 } 

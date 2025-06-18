@@ -16,7 +16,7 @@ import {
   setLoadingAtom,
   setErrorAtom,
 } from "@/store/background";
-import { BACKGROUND_CATEGORIES, getRandomBackgroundPhoto } from "@/lib/pexels";
+import { BACKGROUND_CATEGORIES, getRandomBackgroundPhoto, type BackgroundCategory } from "@/lib/pexels";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -71,11 +71,11 @@ export function BackgroundToggle() {
   };
 
   // 改变背景类别
-  const handleCategoryChange = (newCategory: string) => {
+  const handleCategoryChange = (newCategory: BackgroundCategory) => {
     setCategory(newCategory);
   };
 
-  const currentCategoryLabel = BACKGROUND_CATEGORIES.find(cat => cat.key === category)?.label || "自然";
+  const currentCategoryLabel = t(`categories.${category}`);
 
   return (
     <DropdownMenu>
@@ -101,13 +101,13 @@ export function BackgroundToggle() {
             <DropdownMenuLabel>
               {t("category")}: {currentCategoryLabel}
             </DropdownMenuLabel>
-            {BACKGROUND_CATEGORIES.map(cat => (
+            {BACKGROUND_CATEGORIES.map(categoryKey => (
               <DropdownMenuItem
-                key={cat.key}
-                onClick={() => handleCategoryChange(cat.key)}
-                className={category === cat.key ? "bg-accent" : ""}
+                key={categoryKey}
+                onClick={() => handleCategoryChange(categoryKey)}
+                className={category === categoryKey ? "bg-accent" : ""}
               >
-                {cat.label}
+                {t(`categories.${categoryKey}`)}
               </DropdownMenuItem>
             ))}
 
@@ -131,7 +131,7 @@ export function BackgroundToggle() {
                 onValueChange={values => setOpacity(values[0])}
                 max={1}
                 min={0}
-                step={0.1}
+                step={0.01}
                 className="w-full"
               />
             </div>

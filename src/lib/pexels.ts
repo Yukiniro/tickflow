@@ -194,12 +194,22 @@ export async function getRandomCollectionPhoto(collectionId: string): Promise<Pe
 
 // 预定义的背景类别
 export const BACKGROUND_CATEGORIES = [
-  { key: 'nature', label: '自然', labelEn: 'Nature', labelJa: '自然' },
-  { key: 'landscape', label: '风景', labelEn: 'Landscape', labelJa: '風景' },
-  { key: 'city', label: '城市', labelEn: 'City', labelJa: '都市' },
-  { key: 'abstract', label: '抽象', labelEn: 'Abstract', labelJa: '抽象' },
-  { key: 'minimal', label: '简约', labelEn: 'Minimal', labelJa: 'ミニマル' },
-  { key: 'ocean', label: '海洋', labelEn: 'Ocean', labelJa: '海' },
-  { key: 'mountain', label: '山脉', labelEn: 'Mountain', labelJa: '山' },
-  { key: 'forest', label: '森林', labelEn: 'Forest', labelJa: '森' },
-] as const; 
+  'nature',
+  'landscape', 
+  'city',
+  'abstract',
+  'minimal',
+  'ocean',
+  'mountain',
+  'forest',
+] as const;
+
+export type BackgroundCategory = typeof BACKGROUND_CATEGORIES[number];
+
+// 获取本地化的背景类别标签的辅助函数
+export function getLocalizedCategoryLabel(
+  category: BackgroundCategory,
+  t: (key: string) => string
+): string {
+  return t(`background.categories.${category}`);
+} 

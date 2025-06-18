@@ -56,6 +56,16 @@
     "refreshing": "Refreshing...",
     "opacity": "Opacity",
     "blur": "Blur",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "categories": {
+      "nature": "Nature",
+      "landscape": "Landscape",
+      "city": "City",
+      "abstract": "Abstract",
+      "minimal": "Minimal",
+      "ocean": "Ocean",
+      "mountain": "Mountain",
+      "forest": "Forest"
+    }
   }
 } 
