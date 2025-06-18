@@ -7,7 +7,8 @@ export function generateStaticParams() {
   return ["en", "zh", "ja"].map(locale => ({ locale }));
 }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations("home");
 
   return {
