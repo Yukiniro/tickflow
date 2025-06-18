@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import { useTranslations } from "next-intl";
 import {
   currentPhotoAtom,
   categoryAtom,
@@ -19,6 +20,7 @@ import { getRandomBackgroundPhoto, getRandomCollectionPhoto } from "@/lib/pexels
 import Image from "next/image";
 
 export function BackgroundImage() {
+  const t = useTranslations("background");
   const currentPhoto = useAtomValue(currentPhotoAtom);
   const category = useAtomValue(categoryAtom);
   const enabled = useAtomValue(enabledAtom);
@@ -82,9 +84,10 @@ export function BackgroundImage() {
     <>
       {/* 背景图片 */}
       <div
-        className="fixed inset-0 z-[-1] transition-opacity duration-1000"
+        className="fixed inset-0 z-[-1] transition-all duration-1000"
         style={{
           opacity,
+          filter: blur > 0 ? `blur(${blur}px)` : "none",
         }}
       >
         <Image
@@ -92,9 +95,6 @@ export function BackgroundImage() {
           alt={currentPhoto.alt || "Background"}
           fill
           className="object-cover"
-          style={{
-            filter: blur > 0 ? `blur(${blur}px)` : "none",
-          }}
           priority
           quality={85}
         />
@@ -117,7 +117,7 @@ export function BackgroundImage() {
       {/* 加载指示器 */}
       {loading && (
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
-          <div className="bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-sm">Loading background...</div>
+          <div className="bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-sm">{t("loading")}</div>
         </div>
       )}
     </>

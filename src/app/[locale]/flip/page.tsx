@@ -5,7 +5,7 @@ export default async function FlipClockPage() {
   return (
     <>
       <BackgroundImage />
-      <div className="flex min-h-screen flex-col items-center justify-center bg-background">
+      <div className="flex min-h-screen flex-col items-center justify-center">
         <FlipClock />
       </div>
     </>

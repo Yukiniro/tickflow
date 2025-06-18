@@ -39,5 +39,23 @@
       "github": "GitHub：https://github.com/Yukiniro/tickflow",
       "copyright": "保留所有权利。"
     }
+  },
+  "background": {
+    "title": "背景",
+    "settings": "背景设置",
+    "enable": "启用背景图片",
+    "source": "图片来源",
+    "selectSource": "选择图片来源",
+    "byCategory": "按类别",
+    "byCollection": "精选合集",
+    "category": "类别",
+    "collection": "合集",
+    "noSelection": "未选择",
+    "photosCount": "张图片",
+    "refresh": "更换背景",
+    "refreshing": "正在更换...",
+    "opacity": "透明度",
+    "blur": "模糊度",
+    "loading": "加载中..."
   }
 } 

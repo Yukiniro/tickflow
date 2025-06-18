@@ -39,5 +39,23 @@
       "github": "GitHub: https://github.com/Yukiniro/tickflow",
       "copyright": "All rights reserved."
     }
+  },
+  "background": {
+    "title": "Background",
+    "settings": "Background Settings",
+    "enable": "Enable Background Image",
+    "source": "Image Source",
+    "selectSource": "Select Image Source",
+    "byCategory": "By Category",
+    "byCollection": "Featured Collections",
+    "category": "Category",
+    "collection": "Collection",
+    "noSelection": "Not Selected",
+    "photosCount": "photos",
+    "refresh": "Refresh Background",
+    "refreshing": "Refreshing...",
+    "opacity": "Opacity",
+    "blur": "Blur",
+    "loading": "Loading..."
   }
 } 

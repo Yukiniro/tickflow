@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
+import { useTranslations } from "next-intl";
 import {
   enabledAtom,
   categoryAtom,
@@ -46,6 +47,7 @@ import { Slider } from "@/components/ui/slider";
 import { Image as ImageIcon, Settings, RefreshCw, Grid, Tag } from "lucide-react";
 
 export function BackgroundToggle() {
+  const t = useTranslations("background");
   const enabled = useAtomValue(enabledAtom);
   const category = useAtomValue(categoryAtom);
   const opacity = useAtomValue(opacityAtom);
@@ -70,10 +72,15 @@ export function BackgroundToggle() {
 
   const [mounted, setMounted] = useState(false);
 
+  // 设置挂载状态
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // 加载 Collections
   useEffect(() => {
     const loadCollections = async () => {
-      if (collections.length > 0) return; // 已经加载过了
+      if (!mounted || collections.length > 0) return; // 已经加载过了
 
       setCollectionsLoading(true);
       try {
@@ -87,7 +94,7 @@ export function BackgroundToggle() {
     };
 
     loadCollections();
-  }, [collections.length, setCollections, setCollectionsLoading]);
+  }, [mounted, collections.length, setCollections, setCollectionsLoading]);
 
   // 切换背景启用状态
   const handleToggle = () => {
@@ -140,14 +147,14 @@ export function BackgroundToggle() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="gap-2">
           <ImageIcon className="h-4 w-4" />
-          <span className="hidden sm:inline">背景</span>
+          <span className="hidden sm:inline">{t("title")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-80">
-        <DropdownMenuLabel>背景设置</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("settings")}</DropdownMenuLabel>
 
         <DropdownMenuItem onClick={handleToggle} className="justify-between">
-          <span>启用背景图片</span>
+          <span>{t("enable")}</span>
           <div className={`w-4 h-4 rounded-full ${enabled ? "bg-green-500" : "bg-gray-300"}`} />
         </DropdownMenuItem>
 
@@ -161,16 +168,16 @@ export function BackgroundToggle() {
                 <Tag className="h-4 w-4" />
                 <span>
                   {sourceType === "category"
-                    ? `类别: ${currentCategoryLabel}`
-                    : `合集: ${currentCollection?.title || "未选择"}`}
+                    ? `${t("category")}: ${currentCategoryLabel}`
+                    : `${t("collection")}: ${currentCollection?.title || t("noSelection")}`}
                 </span>
               </DropdownMenuSubTrigger>
               <DropdownMenuSubContent>
-                <DropdownMenuLabel>选择图片来源</DropdownMenuLabel>
+                <DropdownMenuLabel>{t("selectSource")}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
 
                 {/* 类别选择 */}
-                <DropdownMenuLabel>按类别</DropdownMenuLabel>
+                <DropdownMenuLabel>{t("byCategory")}</DropdownMenuLabel>
                 {BACKGROUND_CATEGORIES.map(cat => (
                   <DropdownMenuItem
                     key={cat.key}
@@ -187,7 +194,7 @@ export function BackgroundToggle() {
                 <DropdownMenuLabel>
                   <div className="flex items-center gap-2">
                     <Grid className="h-4 w-4" />
-                    <span>精选合集</span>
+                    <span>{t("byCollection")}</span>
                     {collectionsLoading && <RefreshCw className="h-3 w-3 animate-spin" />}
                   </div>
                 </DropdownMenuLabel>
@@ -199,7 +206,9 @@ export function BackgroundToggle() {
                   >
                     <div className="flex flex-col items-start">
                       <span className="text-sm font-medium">{collection.title}</span>
-                      <span className="text-xs text-muted-foreground">{collection.photos_count} 张图片</span>
+                      <span className="text-xs text-muted-foreground">
+                        {collection.photos_count} {t("photosCount")}
+                      </span>
                     </div>
                   </DropdownMenuItem>
                 ))}
@@ -211,17 +220,19 @@ export function BackgroundToggle() {
             {/* 刷新背景 */}
             <DropdownMenuItem onClick={handleRefresh} disabled={loading} className="gap-2">
               <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
-              更换背景
+              {loading ? t("refreshing") : t("refresh")}
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
             {/* 透明度控制 */}
             <div className="px-2 py-2">
-              <div className="text-sm font-medium mb-2">透明度: {Math.round(opacity * 100)}%</div>
+              <div className="text-sm font-medium mb-2">
+                {t("opacity")}: {Math.round(opacity * 100)}%
+              </div>
               <Slider
                 value={[opacity]}
-                onValueChange={value => setOpacity(value[0])}
+                onValueChange={values => setOpacity(values[0])}
                 max={1}
                 min={0}
                 step={0.1}
@@ -231,10 +242,12 @@ export function BackgroundToggle() {
 
             {/* 模糊度控制 */}
             <div className="px-2 py-2">
-              <div className="text-sm font-medium mb-2">模糊度: {blur}px</div>
+              <div className="text-sm font-medium mb-2">
+                {t("blur")}: {blur}px
+              </div>
               <Slider
                 value={[blur]}
-                onValueChange={value => setBlur(value[0])}
+                onValueChange={values => setBlur(values[0])}
                 max={20}
                 min={0}
                 step={1}
