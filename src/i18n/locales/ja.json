@@ -67,5 +67,18 @@
       "mountain": "山",
       "forest": "森"
     }
+  },
+  "metadata": {
+    "title": "TickFlow - エレガントな時計アプリケーション",
+    "description": "TickFlowは、フリップクロック、デジタルクロック、アナログクロックなど、様々な時計スタイルを提供する機能豊富なオンライン時計アプリケーションです。リアルタイム表示、エレガントなアニメーション、レスポンシブデザインで、究極の時間体験をお届けします。",
+    "keywords": "オンライン時計,リアルタイム時計,デジタル時計,フリップクロック,アナログ時計,時間表示,世界時計,時計アプリ,TickFlow,online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app",
+    "openGraph": {
+      "title": "TickFlow - エレガントな時計アプリケーション",
+      "description": "フリップクロック、デジタルクロック、アナログクロックなど様々なスタイルを提供する機能豊富なオンライン時計アプリケーション"
+    },
+    "twitter": {
+      "title": "TickFlow - エレガントな時計アプリケーション",
+      "description": "フリップクロック、デジタルクロックなど様々なスタイルを持つ機能豊富なオンライン時計アプリケーション"
+    }
   }
 } 

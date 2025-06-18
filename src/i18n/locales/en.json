@@ -67,5 +67,18 @@
       "mountain": "Mountain",
       "forest": "Forest"
     }
+  },
+  "metadata": {
+    "title": "TickFlow - Elegant Clock Application",
+    "description": "TickFlow is a feature-rich online clock application offering various clock styles including flip clock, digital clock, analog clock, and more. With real-time display, elegant animations, and responsive design, it brings you the ultimate time experience.",
+    "keywords": "online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app,TickFlow,在线时钟,实时时钟,数字时钟,翻转时钟,模拟时钟,时间显示,世界时钟,时钟应用",
+    "openGraph": {
+      "title": "TickFlow - Elegant Clock Application",
+      "description": "Feature-rich online clock application offering flip clock, digital clock, analog clock and more styles with real-time display and elegant animations"
+    },
+    "twitter": {
+      "title": "TickFlow - Elegant Clock Application",
+      "description": "Feature-rich online clock application with flip clock, digital clock and various styles"
+    }
   }
 } 

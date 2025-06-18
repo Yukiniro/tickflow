@@ -17,60 +17,75 @@ export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://tickflow.toimagen.com"),
-  title: {
-    default: "TickFlow - 优雅的时钟应用",
-    template: "%s | TickFlow",
-  },
-  description:
-    "TickFlow 是一个功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种时钟样式。支持实时显示、优雅动画、响应式设计，为您带来极致的时间体验。",
-  keywords:
-    "在线时钟,实时时钟,数字时钟,翻转时钟,模拟时钟,时间显示,世界时钟,时钟应用,TickFlow,online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app",
-  openGraph: {
-    title: "TickFlow - 优雅的时钟应用",
-    description: "功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种样式，支持实时显示和优雅动画效果",
-    type: "website",
-    url: "https://tickflow.toimagen.com",
-    siteName: "TickFlow",
-    locale: "zh_CN",
-    images: [
-      {
-        url: "/logo.png",
-        width: 810,
-        height: 810,
-        alt: "TickFlow - 优雅的时钟应用",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TickFlow - 优雅的时钟应用",
-    description: "功能丰富的在线时钟应用，支持翻转时钟、数字时钟等多种样式",
-    creator: "@tickflow",
-    site: "@tickflow",
-    images: ["/logo.png"],
-  },
-  alternates: {
-    canonical: "https://tickflow.toimagen.com",
-    languages: {
-      "zh-CN": "https://tickflow.toimagen.com/zh",
-      "en-US": "https://tickflow.toimagen.com/en",
-      "ja-JP": "https://tickflow.toimagen.com/ja",
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+
+  // 获取本地化消息
+  const messages = await getMessages({ locale });
+  const t = messages.metadata as any;
+
+  // 根据locale设置对应的语言代码
+  const localeMap: Record<string, string> = {
+    zh: "zh_CN",
+    en: "en_US",
+    ja: "ja_JP",
+  };
+
+  const ogLocale = localeMap[locale] || "zh_CN";
+
+  return {
+    metadataBase: new URL("https://tickflow.toimagen.com"),
+    title: {
+      default: t.title,
+      template: `%s | TickFlow`,
     },
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    description: t.description,
+    keywords: t.keywords,
+    openGraph: {
+      title: t.openGraph.title,
+      description: t.openGraph.description,
+      type: "website",
+      url: `https://tickflow.toimagen.com/${locale}`,
+      siteName: "TickFlow",
+      locale: ogLocale,
+      images: [
+        {
+          url: "/logo.png",
+          width: 810,
+          height: 810,
+          alt: t.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.twitter.title,
+      description: t.twitter.description,
+      creator: "@tickflow",
+      site: "@tickflow",
+      images: ["/logo.png"],
+    },
+    alternates: {
+      canonical: `https://tickflow.toimagen.com/${locale}`,
+      languages: {
+        "zh-CN": "https://tickflow.toimagen.com/zh",
+        "en-US": "https://tickflow.toimagen.com/en",
+        "ja-JP": "https://tickflow.toimagen.com/ja",
+      },
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-};
+  };
+}
 
 export default async function RootLayout({
   children,
