@@ -44,29 +44,11 @@
     "title": "Background",
     "settings": "Background Settings",
     "enable": "Enable Background Image",
-    "source": "Image Source",
-    "selectSource": "Select Image Source",
-    "byCategory": "By Category",
-    "byCollection": "Featured Collections",
-    "category": "Category",
-    "collection": "Collection",
-    "noSelection": "No Selection",
-    "photosCount": "photos",
     "refresh": "Refresh Background",
     "refreshing": "Refreshing...",
     "opacity": "Opacity",
     "blur": "Blur",
-    "loading": "Loading...",
-    "categories": {
-      "nature": "Nature",
-      "landscape": "Landscape",
-      "city": "City",
-      "abstract": "Abstract",
-      "minimal": "Minimal",
-      "ocean": "Ocean",
-      "mountain": "Mountain",
-      "forest": "Forest"
-    }
+    "loading": "Loading..."
   },
   "share": {
     "title": "Share",

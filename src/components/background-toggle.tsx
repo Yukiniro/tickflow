@@ -4,19 +4,17 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import {
   enabledAtom,
-  categoryAtom,
   opacityAtom,
   blurAtom,
   loadingAtom,
   setEnabledAtom,
-  setCategoryAtom,
   setOpacityAtom,
   setBlurAtom,
   setCurrentPhotoAtom,
   setLoadingAtom,
   setErrorAtom,
 } from "@/store/background";
-import { BACKGROUND_CATEGORIES, getRandomBackgroundPhoto, type BackgroundCategory } from "@/lib/pexels";
+import { getRandomBackgroundPhoto } from "@/lib/pexels";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -32,13 +30,11 @@ import { Image as ImageIcon, RefreshCw } from "lucide-react";
 export function BackgroundToggle() {
   const t = useTranslations("background");
   const enabled = useAtomValue(enabledAtom);
-  const category = useAtomValue(categoryAtom);
   const opacity = useAtomValue(opacityAtom);
   const blur = useAtomValue(blurAtom);
   const loading = useAtomValue(loadingAtom);
 
   const setEnabled = useSetAtom(setEnabledAtom);
-  const setCategory = useSetAtom(setCategoryAtom);
   const setOpacity = useSetAtom(setOpacityAtom);
   const setBlur = useSetAtom(setBlurAtom);
   const setCurrentPhoto = useSetAtom(setCurrentPhotoAtom);
@@ -58,7 +54,7 @@ export function BackgroundToggle() {
     setError(null);
 
     try {
-      const photo = await getRandomBackgroundPhoto(category);
+      const photo = await getRandomBackgroundPhoto();
       if (photo) {
         setCurrentPhoto(photo);
       }
@@ -69,13 +65,6 @@ export function BackgroundToggle() {
       setLoading(false);
     }
   };
-
-  // 改变背景类别
-  const handleCategoryChange = (newCategory: BackgroundCategory) => {
-    setCategory(newCategory);
-  };
-
-  const currentCategoryLabel = t(`categories.${category}`);
 
   return (
     <DropdownMenu modal={false}>
@@ -95,22 +84,6 @@ export function BackgroundToggle() {
 
         {enabled && (
           <>
-            <DropdownMenuSeparator />
-
-            {/* 类别选择 */}
-            <DropdownMenuLabel>
-              {t("category")}: {currentCategoryLabel}
-            </DropdownMenuLabel>
-            {BACKGROUND_CATEGORIES.map(categoryKey => (
-              <DropdownMenuItem
-                key={categoryKey}
-                onClick={() => handleCategoryChange(categoryKey)}
-                className={category === categoryKey ? "bg-accent" : ""}
-              >
-                {t(`categories.${categoryKey}`)}
-              </DropdownMenuItem>
-            ))}
-
             <DropdownMenuSeparator />
 
             {/* 刷新背景 */}

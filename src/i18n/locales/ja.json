@@ -44,29 +44,11 @@
     "title": "背景",
     "settings": "背景設定",
     "enable": "背景画像を有効にする",
-    "source": "画像ソース",
-    "selectSource": "画像ソースを選択",
-    "byCategory": "カテゴリ別",
-    "byCollection": "おすすめコレクション",
-    "category": "カテゴリ",
-    "collection": "コレクション",
-    "noSelection": "選択なし",
-    "photosCount": "枚の写真",
     "refresh": "背景を更新",
     "refreshing": "更新中...",
     "opacity": "透明度",
     "blur": "ぼかし",
-    "loading": "読み込み中...",
-    "categories": {
-      "nature": "自然",
-      "landscape": "風景",
-      "city": "都市",
-      "abstract": "抽象",
-      "minimal": "ミニマル",
-      "ocean": "海",
-      "mountain": "山",
-      "forest": "森"
-    }
+    "loading": "読み込み中..."
   },
   "share": {
     "title": "共有",

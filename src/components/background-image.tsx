@@ -1,34 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import {
   currentPhotoAtom,
-  categoryAtom,
   enabledAtom,
   opacityAtom,
   blurAtom,
   loadingAtom,
-  sourceTypeAtom,
-  selectedCollectionAtom,
   setCurrentPhotoAtom,
   setLoadingAtom,
   setErrorAtom,
 } from "@/store/background";
-import { getRandomBackgroundPhoto, getRandomCollectionPhoto } from "@/lib/pexels";
+import { getRandomBackgroundPhoto } from "@/lib/pexels";
 import Image from "next/image";
 
 export function BackgroundImage() {
   const t = useTranslations("background");
   const currentPhoto = useAtomValue(currentPhotoAtom);
-  const category = useAtomValue(categoryAtom);
   const enabled = useAtomValue(enabledAtom);
   const opacity = useAtomValue(opacityAtom);
   const blur = useAtomValue(blurAtom);
   const loading = useAtomValue(loadingAtom);
-  const sourceType = useAtomValue(sourceTypeAtom);
-  const selectedCollection = useAtomValue(selectedCollectionAtom);
 
   const setCurrentPhoto = useSetAtom(setCurrentPhotoAtom);
   const setLoading = useSetAtom(setLoadingAtom);
@@ -48,13 +42,7 @@ export function BackgroundImage() {
     setError(null);
 
     try {
-      let photo;
-      if (sourceType === "collection" && selectedCollection) {
-        photo = await getRandomCollectionPhoto(selectedCollection);
-      } else {
-        photo = await getRandomBackgroundPhoto(category);
-      }
-
+      const photo = await getRandomBackgroundPhoto();
       if (photo) {
         setCurrentPhoto(photo);
       } else {
@@ -68,12 +56,12 @@ export function BackgroundImage() {
     }
   };
 
-  // 当启用状态、类别或选中的collection改变时重新加载图片
+  // 当启用状态改变时重新加载图片
   useEffect(() => {
     if (mounted && enabled) {
       loadBackgroundPhoto();
     }
-  }, [mounted, enabled, category, sourceType, selectedCollection]);
+  }, [mounted, enabled]);
 
   // 如果未挂载、未启用或没有图片，不显示背景
   if (!mounted || !enabled || !currentPhoto) {
@@ -91,7 +79,7 @@ export function BackgroundImage() {
         }}
       >
         <Image
-          src={currentPhoto.src.large}
+          src={currentPhoto.src.large2x}
           alt={currentPhoto.alt || "Background"}
           fill
           className="object-cover"

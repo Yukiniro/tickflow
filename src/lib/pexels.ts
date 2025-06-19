@@ -158,10 +158,12 @@ export async function getCollectionPhotos(
   }
 }
 
-// 获取随机背景图片
-export async function getRandomBackgroundPhoto(category: string = 'nature'): Promise<PexelsPhoto | null> {
+// 获取随机背景图片（使用精选图片）
+export async function getRandomBackgroundPhoto(): Promise<PexelsPhoto | null> {
   try {
-    const response = await searchPhotos(category, 1, 1);
+    // 随机选择页码（1-10页）以获得更多样化的图片
+    const randomPage = Math.floor(Math.random() * 10) + 1;
+    const response = await getCuratedPhotos(randomPage, 1);
     
     if (response.photos && response.photos.length > 0) {
       return response.photos[0];

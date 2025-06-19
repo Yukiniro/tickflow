@@ -44,29 +44,11 @@
     "title": "背景",
     "settings": "背景设置",
     "enable": "启用背景图片",
-    "source": "图片来源",
-    "selectSource": "选择图片来源",
-    "byCategory": "按类别",
-    "byCollection": "精选合集",
-    "category": "类别",
-    "collection": "合集",
-    "noSelection": "未选择",
-    "photosCount": "张图片",
     "refresh": "更换背景",
     "refreshing": "正在更换...",
     "opacity": "透明度",
     "blur": "模糊度",
-    "loading": "加载中...",
-    "categories": {
-      "nature": "自然",
-      "landscape": "风景",
-      "city": "城市",
-      "abstract": "抽象",
-      "minimal": "简约",
-      "ocean": "海洋",
-      "mountain": "山脉",
-      "forest": "森林"
-    }
+    "loading": "加载中..."
   },
   "share": {
     "title": "分享",
