@@ -13,15 +13,15 @@
       "title": "Key Features",
       "analog": {
         "title": "Analog Clock",
-        "description": "Classic analog clock display with multiple dial styles and smooth hand animations."
+        "description": "Classic analog clock display with multiple dial styles and hand animations."
       },
       "digital": {
         "title": "Digital Clock",
         "description": "Clear digital time display with 12/24 hour format switching."
       },
       "timezone": {
-        "title": "Multiple Timezones",
-        "description": "Support for major time zones worldwide, easily view time in different regions."
+        "title": "Multi-timezone",
+        "description": "Support for major global timezones, easily view times in different regions."
       }
     },
     "cta": {
@@ -32,9 +32,9 @@
     "footer": {
       "about": {
         "title": "About",
-        "description": "TickFlow is an open-source online clock application dedicated to providing an elegant time display experience."
+        "description": "TickFlow is an open-source online clock application dedicated to providing users with an elegant time display experience."
       },
-      "contact": "Contact Us",
+      "contact": "Contact",
       "email": "Email: yukiniro@hotmail.com",
       "github": "GitHub: https://github.com/Yukiniro/tickflow",
       "copyright": "All rights reserved."
@@ -50,7 +50,7 @@
     "byCollection": "Featured Collections",
     "category": "Category",
     "collection": "Collection",
-    "noSelection": "Not Selected",
+    "noSelection": "No Selection",
     "photosCount": "photos",
     "refresh": "Refresh Background",
     "refreshing": "Refreshing...",
@@ -68,17 +68,28 @@
       "forest": "Forest"
     }
   },
+  "share": {
+    "title": "Share",
+    "tooltip": "Share this page",
+    "copyTooltip": "Copy page link",
+    "copyLink": "Copy Link",
+    "copied": "Copied",
+    "twitter": "Share on Twitter",
+    "twitterTooltip": "Share this page on Twitter",
+    "twitterAria": "Share on Twitter",
+    "text": "Check out this elegant online clock app!"
+  },
   "metadata": {
-    "title": "TickFlow - Elegant Clock Application",
-    "description": "TickFlow is a feature-rich online clock application offering various clock styles including flip clock, digital clock, analog clock, and more. With real-time display, elegant animations, and responsive design, it brings you the ultimate time experience.",
+    "title": "TickFlow - Elegant Clock App",
+    "description": "TickFlow is a feature-rich online clock application that provides flip clock, digital clock, analog clock and other clock styles. Supports real-time display, elegant animations, responsive design, bringing you the ultimate time experience.",
     "keywords": "online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app,TickFlow,在线时钟,实时时钟,数字时钟,翻转时钟,模拟时钟,时间显示,世界时钟,时钟应用",
     "openGraph": {
-      "title": "TickFlow - Elegant Clock Application",
-      "description": "Feature-rich online clock application offering flip clock, digital clock, analog clock and more styles with real-time display and elegant animations"
+      "title": "TickFlow - Elegant Clock App",
+      "description": "Feature-rich online clock application with flip clock, digital clock, analog clock and other styles, supporting real-time display and elegant animation effects"
     },
     "twitter": {
-      "title": "TickFlow - Elegant Clock Application",
-      "description": "Feature-rich online clock application with flip clock, digital clock and various styles"
+      "title": "TickFlow - Elegant Clock App",
+      "description": "Feature-rich online clock application supporting flip clock, digital clock and other styles"
     }
   }
 } 

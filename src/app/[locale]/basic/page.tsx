@@ -7,7 +7,7 @@ export default function BasicClockPage() {
   return (
     <>
       <BackgroundImage />
-      <div className="flex w-screen h-screen flex-col items-center justify-center">
+      <div className="flex w-screen h-screen flex-col items-center justify-center pt-14">
         <BasicClock />
       </div>
     </>

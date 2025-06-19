@@ -7,6 +7,7 @@ import { SoundToggle } from "./sound-toggle";
 import { LanguageSwitcher } from "./language-switcher";
 import { ClockTypeSelector } from "./clock-type-selector";
 import { BackgroundToggle } from "./background-toggle";
+import { ShareButton } from "./share-button";
 import { useTime } from "@/hooks/use-time";
 import Image from "next/image";
 
@@ -17,6 +18,7 @@ interface NavProps {
   showSoundToggle?: boolean;
   showThemeToggle?: boolean;
   showBackgroundToggle?: boolean;
+  showShareButton?: boolean;
 }
 
 export function Nav({
@@ -26,6 +28,7 @@ export function Nav({
   showSoundToggle = false,
   showThemeToggle = false,
   showBackgroundToggle = false,
+  showShareButton = false,
 }: NavProps = {}) {
   const { is24Hour, toggleTimeFormat, mounted } = useTime();
 
@@ -39,7 +42,8 @@ export function Nav({
     showTimeFormatToggle ||
     showSoundToggle ||
     showThemeToggle ||
-    showBackgroundToggle;
+    showBackgroundToggle ||
+    showShareButton;
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -63,6 +67,7 @@ export function Nav({
               {showLanguageSwitcher && <LanguageSwitcher />}
               {showTimeFormatToggle && <TimeFormatToggle is24Hour={is24Hour} onToggle={toggleTimeFormat} />}
               {showSoundToggle && <SoundToggle />}
+              {showShareButton && <ShareButton />}
               {showThemeToggle && <ThemeToggle />}
             </div>
           </div>

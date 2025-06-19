@@ -8,36 +8,36 @@
   },
   "home": {
     "title": "TickFlow - エレガントなオンライン時計",
-    "subtitle": "シンプルで美しいウェブ時計アプリケーションで、時間表示を楽しみましょう。",
+    "subtitle": "時間表示を楽しみにする、クリーンで美しいウェブ時計アプリケーション。",
     "features": {
       "title": "主な機能",
       "analog": {
         "title": "アナログ時計",
-        "description": "複数のダイヤルスタイルとスムーズな針のアニメーションを備えたクラシックなアナログ時計表示。"
+        "description": "複数のダイヤルスタイルと針のアニメーションをサポートするクラシックなアナログ時計表示。"
       },
       "digital": {
         "title": "デジタル時計",
-        "description": "12/24時間表示の切り替えが可能な、クリアなデジタル時間表示。"
+        "description": "12/24時間形式の切り替えをサポートするクリアなデジタル時間表示。"
       },
       "timezone": {
-        "title": "複数タイムゾーン",
-        "description": "世界中の主要なタイムゾーンをサポートし、異なる地域の時間を簡単に確認できます。"
+        "title": "マルチタイムゾーン",
+        "description": "世界の主要タイムゾーンをサポートし、異なる地域の時間を簡単に確認できます。"
       }
     },
     "cta": {
       "title": "始める",
-      "description": "エレガントな時間表示を今すぐ体験しましょう。",
+      "description": "今すぐエレガントな時間表示を体験してください。",
       "button": "始める"
     },
     "footer": {
       "about": {
         "title": "について",
-        "description": "TickFlowは、エレガントな時間表示体験を提供するオープンソースのオンライン時計アプリケーションです。"
+        "description": "TickFlowは、ユーザーにエレガントな時間表示体験を提供することに専念するオープンソースのオンライン時計アプリケーションです。"
       },
       "contact": "お問い合わせ",
       "email": "メール：yukiniro@hotmail.com",
       "github": "GitHub：https://github.com/Yukiniro/tickflow",
-      "copyright": "All rights reserved."
+      "copyright": "全著作権所有。"
     }
   },
   "background": {
@@ -47,10 +47,10 @@
     "source": "画像ソース",
     "selectSource": "画像ソースを選択",
     "byCategory": "カテゴリ別",
-    "byCollection": "注目のコレクション",
+    "byCollection": "おすすめコレクション",
     "category": "カテゴリ",
     "collection": "コレクション",
-    "noSelection": "未選択",
+    "noSelection": "選択なし",
     "photosCount": "枚の写真",
     "refresh": "背景を更新",
     "refreshing": "更新中...",
@@ -68,17 +68,24 @@
       "forest": "森"
     }
   },
+  "share": {
+    "title": "共有",
+    "twitter": "Twitterで共有",
+    "twitterTooltip": "このページをTwitterで共有",
+    "twitterAria": "Twitterで共有",
+    "text": "このエレガントなオンライン時計アプリをチェックしてください！"
+  },
   "metadata": {
-    "title": "TickFlow - エレガントな時計アプリケーション",
-    "description": "TickFlowは、フリップクロック、デジタルクロック、アナログクロックなど、様々な時計スタイルを提供する機能豊富なオンライン時計アプリケーションです。リアルタイム表示、エレガントなアニメーション、レスポンシブデザインで、究極の時間体験をお届けします。",
-    "keywords": "オンライン時計,リアルタイム時計,デジタル時計,フリップクロック,アナログ時計,時間表示,世界時計,時計アプリ,TickFlow,online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app",
+    "title": "TickFlow - エレガントな時計アプリ",
+    "description": "TickFlowは、フリップ時計、デジタル時計、アナログ時計などの時計スタイルを提供する機能豊富なオンライン時計アプリケーションです。リアルタイム表示、エレガントなアニメーション、レスポンシブデザインをサポートし、究極の時間体験をお届けします。",
+    "keywords": "オンライン時計,リアルタイム時計,デジタル時計,フリップ時計,アナログ時計,時間表示,世界時計,時計アプリ,TickFlow,online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app",
     "openGraph": {
-      "title": "TickFlow - エレガントな時計アプリケーション",
-      "description": "フリップクロック、デジタルクロック、アナログクロックなど様々なスタイルを提供する機能豊富なオンライン時計アプリケーション"
+      "title": "TickFlow - エレガントな時計アプリ",
+      "description": "フリップ時計、デジタル時計、アナログ時計などのスタイルを提供し、リアルタイム表示とエレガントなアニメーション効果をサポートする機能豊富なオンライン時計アプリケーション"
     },
     "twitter": {
-      "title": "TickFlow - エレガントな時計アプリケーション",
-      "description": "フリップクロック、デジタルクロックなど様々なスタイルを持つ機能豊富なオンライン時計アプリケーション"
+      "title": "TickFlow - エレガントな時計アプリ",
+      "description": "フリップ時計、デジタル時計などのスタイルをサポートする機能豊富なオンライン時計アプリケーション"
     }
   }
 } 

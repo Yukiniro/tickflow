@@ -121,6 +121,7 @@ export default async function RootLayout({
               showSoundToggle={true}
               showThemeToggle={true}
               showBackgroundToggle={true}
+              showShareButton={true}
             />
             <main>{children}</main>
           </NextIntlClientProvider>

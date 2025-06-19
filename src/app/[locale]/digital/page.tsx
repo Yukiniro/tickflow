@@ -7,7 +7,7 @@ export default function DigitalWatchPage() {
   return (
     <>
       <BackgroundImage />
-      <div className="flex min-h-screen flex-col items-center justify-center">
+      <div className="flex min-h-screen flex-col items-center justify-center pt-14">
         <DigitalWatch />
       </div>
     </>

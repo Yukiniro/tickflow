@@ -68,6 +68,17 @@
       "forest": "森林"
     }
   },
+  "share": {
+    "title": "分享",
+    "tooltip": "分享这个页面",
+    "copyTooltip": "复制页面链接",
+    "copyLink": "复制链接",
+    "copied": "已复制",
+    "twitter": "分享到 Twitter",
+    "twitterTooltip": "在 Twitter 上分享此页面",
+    "twitterAria": "分享到 Twitter",
+    "text": "来看看这个优雅的在线时钟应用！"
+  },
   "metadata": {
     "title": "TickFlow - 优雅的时钟应用",
     "description": "TickFlow 是一个功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种时钟样式。支持实时显示、优雅动画、响应式设计，为您带来极致的时间体验。",
