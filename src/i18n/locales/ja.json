@@ -69,5 +69,13 @@
       "title": "TickFlow - エレガントな時計アプリ",
       "description": "フリップ時計、デジタル時計などのスタイルをサポートする機能豊富なオンライン時計アプリケーション"
     }
+  },
+  "fullscreen": {
+    "enter": "全画面",
+    "exit": "全画面終了",
+    "enterTooltip": "時計を全画面でプレビュー",
+    "exitTooltip": "全画面プレビューを終了",
+    "enterAria": "全画面モードに入る",
+    "exitAria": "全画面モードを終了"
   }
 } 

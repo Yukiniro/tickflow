@@ -2,14 +2,15 @@
 
 import { BasicClock } from "@/components/clock/basic-clock";
 import { BackgroundImage } from "@/components/background-image";
+import { FullscreenContainer } from "@/components/fullscreen-container";
 
 export default function BasicClockPage() {
   return (
     <>
-      <BackgroundImage />
-      <div className="flex w-screen h-screen flex-col items-center justify-center pt-14">
+      <FullscreenContainer className="pt-14">
+        <BackgroundImage />
         <BasicClock />
-      </div>
+      </FullscreenContainer>
     </>
   );
 }

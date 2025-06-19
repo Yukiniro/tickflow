@@ -73,5 +73,13 @@
       "title": "TickFlow - 优雅的时钟应用",
       "description": "功能丰富的在线时钟应用，支持翻转时钟、数字时钟等多种样式"
     }
+  },
+  "fullscreen": {
+    "enter": "全屏",
+    "exit": "退出全屏",
+    "enterTooltip": "全屏预览时钟",
+    "exitTooltip": "退出全屏预览",
+    "enterAria": "进入全屏模式",
+    "exitAria": "退出全屏模式"
   }
 } 

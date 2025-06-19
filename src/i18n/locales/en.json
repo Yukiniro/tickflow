@@ -73,5 +73,13 @@
       "title": "TickFlow - Elegant Clock App",
       "description": "Feature-rich online clock application supporting flip clock, digital clock and other styles"
     }
+  },
+  "fullscreen": {
+    "enter": "Fullscreen",
+    "exit": "Exit Fullscreen",
+    "enterTooltip": "Preview clock in fullscreen",
+    "exitTooltip": "Exit fullscreen preview",
+    "enterAria": "Enter fullscreen mode",
+    "exitAria": "Exit fullscreen mode"
   }
 } 

@@ -2,14 +2,15 @@
 
 import { ComicClock } from "@/components/clock/comic-clock";
 import { BackgroundImage } from "@/components/background-image";
+import { FullscreenContainer } from "@/components/fullscreen-container";
 
 export default function ComicClockPage() {
   return (
     <>
-      <BackgroundImage />
-      <div className="flex min-h-screen flex-col items-center justify-center">
+      <FullscreenContainer className="pt-14">
+        <BackgroundImage />
         <ComicClock />
-      </div>
+      </FullscreenContainer>
     </>
   );
 }

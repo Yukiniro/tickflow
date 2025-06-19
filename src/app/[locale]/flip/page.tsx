@@ -1,13 +1,14 @@
 import { BackgroundImage } from "@/components/background-image";
 import { FlipClock } from "@/components/clock/flip-clock";
+import { FullscreenContainer } from "@/components/fullscreen-container";
 
 export default async function FlipClockPage() {
   return (
     <>
-      <BackgroundImage />
-      <div className="flex min-h-screen flex-col items-center justify-center">
+      <FullscreenContainer className="pt-14">
+        <BackgroundImage />
         <FlipClock />
-      </div>
+      </FullscreenContainer>
     </>
   );
 }

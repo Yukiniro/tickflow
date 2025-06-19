@@ -5,7 +5,6 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
-import { BackgroundImage } from "@/components/background-image";
 import { StructuredData } from "@/components/structured-data";
 import { SEOOptimizations } from "@/components/seo-optimizations";
 import { routing } from "@/i18n/routing";
@@ -113,7 +112,6 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextIntlClientProvider messages={messages}>
-            <BackgroundImage />
             <Nav
               showClockTypeSelector={true}
               showLanguageSwitcher={true}
@@ -122,6 +120,7 @@ export default async function RootLayout({
               showThemeToggle={true}
               showBackgroundToggle={true}
               showShareButton={true}
+              showFullscreenToggle={true}
             />
             <main>{children}</main>
           </NextIntlClientProvider>
