@@ -120,7 +120,6 @@ export default async function RootLayout({
               showTimeFormatToggle={true}
               showSoundToggle={true}
               showThemeToggle={true}
-              showGithubLink={true}
               showBackgroundToggle={true}
             />
             <main>{children}</main>

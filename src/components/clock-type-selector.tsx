@@ -49,7 +49,7 @@ export function ClockTypeSelector() {
           <span className="hidden sm:inline">{currentClockType ? t(currentClockType.key) : t("basic")}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start">
+      <DropdownMenuContent>
         {clockTypes.map(type => (
           <DropdownMenuItem
             key={type.path}

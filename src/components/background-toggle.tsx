@@ -78,14 +78,14 @@ export function BackgroundToggle() {
   const currentCategoryLabel = t(`categories.${category}`);
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="gap-2">
           <ImageIcon className="h-4 w-4" />
           <span className="hidden sm:inline">{t("title")}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-80">
+      <DropdownMenuContent className="w-80">
         <DropdownMenuLabel>{t("settings")}</DropdownMenuLabel>
 
         <DropdownMenuItem onClick={handleToggle} className="justify-between">
