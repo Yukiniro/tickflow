@@ -114,7 +114,15 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextIntlClientProvider messages={messages}>
             <BackgroundImage />
-            <Nav />
+            <Nav
+              showClockTypeSelector={true}
+              showLanguageSwitcher={true}
+              showTimeFormatToggle={true}
+              showSoundToggle={true}
+              showThemeToggle={true}
+              showGithubLink={true}
+              showBackgroundToggle={true}
+            />
             <main>{children}</main>
           </NextIntlClientProvider>
         </ThemeProvider>

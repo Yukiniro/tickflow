@@ -30,15 +30,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <Nav
-        showClockTypeSelector={false}
-        showLanguageSwitcher={false}
-        showTimeFormatToggle={false}
-        showSoundToggle={false}
-        showBackgroundToggle={true}
-        showThemeToggle={true}
-        showGithubLink={true}
-      />
+      <Nav showLanguageSwitcher={true} showThemeToggle={true} />
       <div className="min-h-screen flex flex-col pt-14 bg-background">
         {/* Hero Section */}
         <section className="py-20 px-4 bg-gradient-to-b from-background via-background/80 to-muted/30 dark:from-background dark:via-background/90 dark:to-muted/20">
