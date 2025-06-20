@@ -48,7 +48,8 @@
     "refreshing": "正在更换...",
     "opacity": "透明度",
     "blur": "模糊度",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "error": "加载失败"
   },
   "share": {
     "title": "分享",

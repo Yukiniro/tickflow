@@ -5,7 +5,7 @@ import { FullscreenContainer } from "@/components/fullscreen-container";
 export default async function FlipClockPage() {
   return (
     <>
-      <FullscreenContainer className="pt-14">
+      <FullscreenContainer>
         <BackgroundImage />
         <FlipClock />
       </FullscreenContainer>

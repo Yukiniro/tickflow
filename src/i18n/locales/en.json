@@ -48,7 +48,8 @@
     "refreshing": "Refreshing...",
     "opacity": "Opacity",
     "blur": "Blur",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "error": "Load Failed"
   },
   "share": {
     "title": "Share",
