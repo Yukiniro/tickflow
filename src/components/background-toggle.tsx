@@ -14,7 +14,7 @@ import {
   setLoadingAtom,
   setErrorAtom,
 } from "@/store/background";
-import { getRandomBackgroundPhoto } from "@/lib/pexels";
+import { getRandomNaturePhoto } from "@/lib/pexels";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -54,7 +54,7 @@ export function BackgroundToggle() {
     setError(null);
 
     try {
-      const photo = await getRandomBackgroundPhoto();
+      const photo = await getRandomNaturePhoto();
       if (photo) {
         setCurrentPhoto(photo);
       }

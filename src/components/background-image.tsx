@@ -13,7 +13,7 @@ import {
   setLoadingAtom,
   setErrorAtom,
 } from "@/store/background";
-import { getRandomBackgroundPhoto } from "@/lib/pexels";
+import { getRandomNaturePhoto } from "@/lib/pexels";
 import Image from "next/image";
 
 export function BackgroundImage() {
@@ -42,7 +42,7 @@ export function BackgroundImage() {
     setError(null);
 
     try {
-      const photo = await getRandomBackgroundPhoto();
+      const photo = await getRandomNaturePhoto();
       if (photo) {
         setCurrentPhoto(photo);
       } else {
@@ -79,12 +79,11 @@ export function BackgroundImage() {
         }}
       >
         <Image
-          src={currentPhoto.src.large2x}
+          src={currentPhoto.src.original}
           alt={currentPhoto.alt || "Background"}
           fill
           className="object-cover"
           priority
-          quality={85}
         />
       </div>
 

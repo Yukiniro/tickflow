@@ -56,7 +56,7 @@ export interface PexelsCollectionsResponse {
 export async function searchPhotos(
   query: string = 'nature',
   page: number = 1,
-  perPage: number = 10
+  perPage: number = 10,
 ): Promise<PexelsResponse> {
   try {
     const response = await fetch(
@@ -105,68 +105,14 @@ export async function getCuratedPhotos(
   }
 }
 
-// 获取 Collections 列表
-export async function getCollections(
-  page: number = 1,
-  perPage: number = 15
-): Promise<PexelsCollectionsResponse> {
-  try {
-    const response = await fetch(
-      `${PEXELS_API_URL}/collections?page=${page}&per_page=${perPage}`,
-      {
-        headers: {
-          Authorization: PEXELS_API_KEY,
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`Pexels API error: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching collections from Pexels:', error);
-    throw error;
-  }
-}
-
-// 获取指定 Collection 中的图片
-export async function getCollectionPhotos(
-  collectionId: string,
-  page: number = 1,
-  perPage: number = 10
-): Promise<PexelsResponse> {
-  try {
-    const response = await fetch(
-      `${PEXELS_API_URL}/collections/${collectionId}?page=${page}&per_page=${perPage}`,
-      {
-        headers: {
-          Authorization: PEXELS_API_KEY,
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`Pexels API error: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching collection photos from Pexels:', error);
-    throw error;
-  }
-}
-
 // 获取随机背景图片（使用精选图片）
 export async function getRandomBackgroundPhoto(): Promise<PexelsPhoto | null> {
   try {
-    // 随机选择页码（1-10页）以获得更多样化的图片
-    const randomPage = Math.floor(Math.random() * 10) + 1;
-    const response = await getCuratedPhotos(randomPage, 1);
+    const response = await getCuratedPhotos(1, 10);
     
     if (response.photos && response.photos.length > 0) {
-      return response.photos[0];
+      const randomIndex = Math.floor(Math.random() * response.photos.length);
+      return response.photos[randomIndex];
     }
     
     return null;
@@ -176,22 +122,25 @@ export async function getRandomBackgroundPhoto(): Promise<PexelsPhoto | null> {
   }
 }
 
-// 从指定 Collection 获取随机背景图片
-export async function getRandomCollectionPhoto(collectionId: string): Promise<PexelsPhoto | null> {
+// 获取 Nature 类别的随机背景图片
+export async function getRandomNaturePhoto(): Promise<PexelsPhoto | null> {
   try {
-    const randomPage = Math.floor(Math.random() * 5) + 1;
-    const response = await getCollectionPhotos(collectionId, randomPage, 1);
-    
+
+    const queryList = ['nature', 'mountain', 'forest', 'ocean'];
+    const response = await searchPhotos(queryList[Math.floor(Math.random() * queryList.length)]);
     if (response.photos && response.photos.length > 0) {
-      return response.photos[0];
+      const randomIndex = Math.floor(Math.random() * response.photos.length);
+      return response.photos[randomIndex];
     }
     
     return null;
   } catch (error) {
-    console.error('Error fetching random collection photo:', error);
+    console.error('Error fetching random nature photo:', error);
     return null;
   }
 }
+
+
 
 // 预定义的背景类别
 export const BACKGROUND_CATEGORIES = [
