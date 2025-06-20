@@ -62,6 +62,11 @@
     "twitterAria": "分享到 Twitter",
     "text": "来看看这个优雅的在线时钟应用！"
   },
+  "github": {
+    "label": "GitHub",
+    "tooltip": "查看 GitHub 仓库",
+    "ariaLabel": "GitHub 仓库"
+  },
   "metadata": {
     "title": "TickFlow - 优雅的时钟应用",
     "description": "TickFlow 是一个功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种时钟样式。支持实时显示、优雅动画、响应式设计，为您带来极致的时间体验。",

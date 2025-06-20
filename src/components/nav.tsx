@@ -9,6 +9,7 @@ import { ClockTypeSelector } from "./clock-type-selector";
 import { BackgroundToggle } from "./background-toggle";
 import { ShareButton } from "./share-button";
 import { FullscreenToggle } from "./fullscreen-toggle";
+import { GithubIcon } from "./github-icon";
 import { useTime } from "@/hooks/use-time";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -22,6 +23,7 @@ interface NavProps {
   showBackgroundToggle?: boolean;
   showShareButton?: boolean;
   showFullscreenToggle?: boolean;
+  showGithub?: boolean;
 }
 
 // 根据路径获取 Nav 属性的函数
@@ -32,6 +34,7 @@ const getNavProps = (pathname: string) => {
       showLanguageSwitcher: true,
       showThemeToggle: true,
       showShareButton: true,
+      showGithub: true,
     };
   }
 
@@ -51,6 +54,7 @@ const getNavProps = (pathname: string) => {
       showBackgroundToggle: true,
       showShareButton: true,
       showFullscreenToggle: true,
+      showGithub: true,
     };
   }
 
@@ -58,6 +62,7 @@ const getNavProps = (pathname: string) => {
   return {
     showLanguageSwitcher: true,
     showThemeToggle: true,
+    showGithub: true,
   };
 };
 
@@ -78,6 +83,7 @@ export function Nav(props: NavProps = {}) {
     showBackgroundToggle = dynamicProps.showBackgroundToggle || false,
     showShareButton = dynamicProps.showShareButton || false,
     showFullscreenToggle = dynamicProps.showFullscreenToggle || false,
+    showGithub = dynamicProps.showGithub || false,
   } = props;
 
   if (!mounted) {
@@ -92,7 +98,8 @@ export function Nav(props: NavProps = {}) {
     showThemeToggle ||
     showBackgroundToggle ||
     showShareButton ||
-    showFullscreenToggle;
+    showFullscreenToggle ||
+    showGithub;
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -119,6 +126,7 @@ export function Nav(props: NavProps = {}) {
               {showLanguageSwitcher && <LanguageSwitcher />}
               {showShareButton && <ShareButton />}
               {showThemeToggle && <ThemeToggle />}
+              {showGithub && <GithubIcon />}
             </div>
           </div>
         )}

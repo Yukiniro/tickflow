@@ -62,13 +62,18 @@
     "twitterAria": "Share on Twitter",
     "text": "Check out this elegant online clock app!"
   },
+  "github": {
+    "label": "GitHub",
+    "tooltip": "View GitHub repository",
+    "ariaLabel": "GitHub repository"
+  },
   "metadata": {
     "title": "TickFlow - Elegant Clock App",
-    "description": "TickFlow is a feature-rich online clock application that provides flip clock, digital clock, analog clock and other clock styles. Supports real-time display, elegant animations, responsive design, bringing you the ultimate time experience.",
+    "description": "TickFlow is a feature-rich online clock application that provides flip clock, digital clock, analog clock and other clock styles. Supports real-time display, elegant animations, and responsive design for an ultimate time experience.",
     "keywords": "online clock,real-time clock,digital clock,flip clock,analog clock,time display,world clock,clock app,TickFlow,在线时钟,实时时钟,数字时钟,翻转时钟,模拟时钟,时间显示,世界时钟,时钟应用",
     "openGraph": {
       "title": "TickFlow - Elegant Clock App",
-      "description": "Feature-rich online clock application with flip clock, digital clock, analog clock and other styles, supporting real-time display and elegant animation effects"
+      "description": "Feature-rich online clock application with flip clock, digital clock, analog clock and other styles, supporting real-time display and elegant animations"
     },
     "twitter": {
       "title": "TickFlow - Elegant Clock App",
@@ -78,7 +83,7 @@
   "fullscreen": {
     "enter": "Fullscreen",
     "exit": "Exit Fullscreen",
-    "enterTooltip": "Preview clock in fullscreen",
+    "enterTooltip": "Fullscreen preview clock",
     "exitTooltip": "Exit fullscreen preview",
     "enterAria": "Enter fullscreen mode",
     "exitAria": "Exit fullscreen mode"
