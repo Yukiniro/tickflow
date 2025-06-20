@@ -10,6 +10,7 @@ import { BackgroundToggle } from "./background-toggle";
 import { ShareButton } from "./share-button";
 import { FullscreenToggle } from "./fullscreen-toggle";
 import { useTime } from "@/hooks/use-time";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 interface NavProps {
@@ -23,17 +24,61 @@ interface NavProps {
   showFullscreenToggle?: boolean;
 }
 
-export function Nav({
-  showClockTypeSelector = false,
-  showLanguageSwitcher = false,
-  showTimeFormatToggle = false,
-  showSoundToggle = false,
-  showThemeToggle = false,
-  showBackgroundToggle = false,
-  showShareButton = false,
-  showFullscreenToggle = false,
-}: NavProps = {}) {
+// 根据路径获取 Nav 属性的函数
+const getNavProps = (pathname: string) => {
+  // 首页路径
+  if (pathname === "/" || pathname === "/zh" || pathname === "/en" || pathname === "/ja") {
+    return {
+      showLanguageSwitcher: true,
+      showThemeToggle: true,
+      showShareButton: true,
+    };
+  }
+
+  // 时钟页面路径
+  if (
+    pathname.includes("/basic") ||
+    pathname.includes("/digital") ||
+    pathname.includes("/comic") ||
+    pathname.includes("/flip")
+  ) {
+    return {
+      showClockTypeSelector: true,
+      showLanguageSwitcher: true,
+      showTimeFormatToggle: true,
+      showSoundToggle: true,
+      showThemeToggle: true,
+      showBackgroundToggle: true,
+      showShareButton: true,
+      showFullscreenToggle: true,
+    };
+  }
+
+  // 默认属性
+  return {
+    showLanguageSwitcher: true,
+    showThemeToggle: true,
+  };
+};
+
+export function Nav(props: NavProps = {}) {
+  const pathname = usePathname();
   const { is24Hour, toggleTimeFormat, mounted } = useTime();
+
+  // 根据路径获取动态属性
+  const dynamicProps = getNavProps(pathname);
+
+  // 合并传入的 props 和动态属性，传入的 props 优先级更高
+  const {
+    showClockTypeSelector = dynamicProps.showClockTypeSelector || false,
+    showLanguageSwitcher = dynamicProps.showLanguageSwitcher || false,
+    showTimeFormatToggle = dynamicProps.showTimeFormatToggle || false,
+    showSoundToggle = dynamicProps.showSoundToggle || false,
+    showThemeToggle = dynamicProps.showThemeToggle || false,
+    showBackgroundToggle = dynamicProps.showBackgroundToggle || false,
+    showShareButton = dynamicProps.showShareButton || false,
+    showFullscreenToggle = dynamicProps.showFullscreenToggle || false,
+  } = props;
 
   if (!mounted) {
     return null;
@@ -68,11 +113,11 @@ export function Nav({
             <div className="flex items-center space-x-2">
               {hasLeftControls && showClockTypeSelector && <ClockTypeSelector />}
               {showBackgroundToggle && <BackgroundToggle />}
-              {showShareButton && <ShareButton />}
               {showFullscreenToggle && <FullscreenToggle />}
-              {showLanguageSwitcher && <LanguageSwitcher />}
               {showTimeFormatToggle && <TimeFormatToggle is24Hour={is24Hour} onToggle={toggleTimeFormat} />}
               {showSoundToggle && <SoundToggle />}
+              {showLanguageSwitcher && <LanguageSwitcher />}
+              {showShareButton && <ShareButton />}
               {showThemeToggle && <ThemeToggle />}
             </div>
           </div>

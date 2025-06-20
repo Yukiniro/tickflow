@@ -112,16 +112,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextIntlClientProvider messages={messages}>
-            <Nav
-              showClockTypeSelector={true}
-              showLanguageSwitcher={true}
-              showTimeFormatToggle={true}
-              showSoundToggle={true}
-              showThemeToggle={true}
-              showBackgroundToggle={true}
-              showShareButton={true}
-              showFullscreenToggle={true}
-            />
+            <Nav />
             <main>{children}</main>
           </NextIntlClientProvider>
         </ThemeProvider>
