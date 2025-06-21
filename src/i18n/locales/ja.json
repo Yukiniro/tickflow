@@ -88,5 +88,10 @@
     "exitTooltip": "全画面プレビューを終了",
     "enterAria": "全画面モードに入る",
     "exitAria": "全画面モードを終了"
+  },
+  "manifest": {
+    "name": "TickFlow - エレガントな時計アプリ",
+    "short_name": "TickFlow",
+    "description": "フリップ時計、デジタル時計、アナログ時計などのスタイルを備えた機能豊富なオンライン時計アプリケーション"
   }
 } 

@@ -88,5 +88,10 @@
     "exitTooltip": "Exit fullscreen preview",
     "enterAria": "Enter fullscreen mode",
     "exitAria": "Exit fullscreen mode"
+  },
+  "manifest": {
+    "name": "TickFlow - Elegant Clock App",
+    "short_name": "TickFlow",
+    "description": "Feature-rich online clock application with flip clock, digital clock, analog clock and other styles"
   }
 } 

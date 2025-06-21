@@ -1,10 +1,22 @@
 import { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
+import { detectLocaleFromHeaders, getManifestConfig } from '@/lib/utils/manifest'
 
-export default function manifest(): MetadataRoute.Manifest {
+export default async function manifest(): Promise<MetadataRoute.Manifest> {
+  // 获取请求头中的语言信息
+  const headersList = await headers()
+  const acceptLanguage = headersList.get('accept-language')
+  
+  // 检测用户的首选语言
+  const locale = detectLocaleFromHeaders(acceptLanguage)
+  
+  // 获取本地化配置
+  const config = await getManifestConfig(locale)
+
   return {
-    name: 'TickFlow - 优雅的时钟应用',
-    short_name: 'TickFlow',
-    description: '功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种样式',
+    name: config.name,
+    short_name: config.short_name,
+    description: config.description,
     start_url: '/',
     display: 'standalone',
     orientation: 'portrait',

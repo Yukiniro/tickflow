@@ -88,5 +88,10 @@
     "exitTooltip": "退出全屏预览",
     "enterAria": "进入全屏模式",
     "exitAria": "退出全屏模式"
+  },
+  "manifest": {
+    "name": "TickFlow - 优雅的时钟应用",
+    "short_name": "TickFlow",
+    "description": "功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种样式"
   }
 } 
