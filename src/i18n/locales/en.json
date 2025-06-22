@@ -4,7 +4,8 @@
     "basic": "Basic",
     "comic": "Comic",
     "digital": "Digital",
-    "flip": "Flip"
+    "flip": "Flip",
+    "analog": "Analog"
   },
   "home": {
     "title": "TickFlow - Elegant Online Clock",
@@ -93,5 +94,22 @@
     "name": "TickFlow - Elegant Clock App",
     "short_name": "TickFlow",
     "description": "Feature-rich online clock application with flip clock, digital clock, analog clock and other styles"
+  },
+  "clockTypes": {
+    "basic": "Basic",
+    "flip": "Flip",
+    "digital": "Digital",
+    "comic": "Comic",
+    "analog": "Analog"
+  },
+  "analogClock": {
+    "title": "Analog Clock",
+    "description": "Classic analog clock display with hour, minute, and second hands",
+    "hourHand": "Hour Hand",
+    "minuteHand": "Minute Hand",
+    "secondHand": "Second Hand", 
+    "clockFace": "Clock Face",
+    "hourMarkers": "Hour Markers",
+    "minuteMarkers": "Minute Markers"
   }
 } 

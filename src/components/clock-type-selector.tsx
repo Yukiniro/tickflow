@@ -28,6 +28,10 @@ const clockTypes = [
     key: "comic",
     path: "/comic",
   },
+  {
+    key: "analog",
+    path: "/analog",
+  },
 ] as const;
 
 export function ClockTypeSelector() {

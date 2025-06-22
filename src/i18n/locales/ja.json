@@ -4,7 +4,8 @@
     "basic": "ベーシック",
     "comic": "コミック",
     "digital": "デジタル",
-    "flip": "フリップ"
+    "flip": "フリップ",
+    "analog": "アナログ"
   },
   "home": {
     "title": "TickFlow - エレガントなオンライン時計",
@@ -93,5 +94,22 @@
     "name": "TickFlow - エレガントな時計アプリ",
     "short_name": "TickFlow",
     "description": "フリップ時計、デジタル時計、アナログ時計などのスタイルを備えた機能豊富なオンライン時計アプリケーション"
+  },
+  "clockTypes": {
+    "basic": "ベーシック",
+    "flip": "フリップ",
+    "digital": "デジタル",
+    "comic": "コミック",
+    "analog": "アナログ"
+  },
+  "analogClock": {
+    "title": "アナログ時計",
+    "description": "時針、分針、秒針と目盛りを持つクラシックなアナログ時計表示",
+    "hourHand": "時針",
+    "minuteHand": "分針",
+    "secondHand": "秒針",
+    "clockFace": "文字盤",
+    "hourMarkers": "時間目盛り",
+    "minuteMarkers": "分目盛り"
   }
 } 

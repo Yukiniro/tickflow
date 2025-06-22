@@ -43,7 +43,8 @@ const getNavProps = (pathname: string) => {
     pathname.includes("/basic") ||
     pathname.includes("/digital") ||
     pathname.includes("/comic") ||
-    pathname.includes("/flip")
+    pathname.includes("/flip") ||
+    pathname.includes("/analog")
   ) {
     return {
       showClockTypeSelector: true,

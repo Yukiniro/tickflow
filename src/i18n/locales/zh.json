@@ -4,7 +4,8 @@
     "basic": "基础",
     "comic": "漫画",
     "digital": "数字",
-    "flip": "翻转"
+    "flip": "翻转",
+    "analog": "模拟"
   },
   "home": {
     "title": "TickFlow - 优雅的在线时钟",
@@ -93,5 +94,22 @@
     "name": "TickFlow - 优雅的时钟应用",
     "short_name": "TickFlow",
     "description": "功能丰富的在线时钟应用，提供翻转时钟、数字时钟、模拟时钟等多种样式"
+  },
+  "clockTypes": {
+    "basic": "基础",
+    "flip": "翻页",
+    "digital": "数字",
+    "comic": "漫画",
+    "analog": "模拟"
+  },
+  "analogClock": {
+    "title": "模拟时钟",
+    "description": "经典的模拟时钟显示，具有时针、分针、秒针和刻度",
+    "hourHand": "时针",
+    "minuteHand": "分针", 
+    "secondHand": "秒针",
+    "clockFace": "表盘",
+    "hourMarkers": "小时刻度",
+    "minuteMarkers": "分钟刻度"
   }
 } 
