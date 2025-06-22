@@ -117,5 +117,16 @@
   "ledClock": {
     "title": "LED时钟",
     "description": "经典LED点阵显示时钟，每个数字由发光像素点组成"
+  },
+  "ledTheme": {
+    "selectColor": "选择{color}主题",
+    "themes": {
+      "green": "经典绿色",
+      "blue": "科技蓝",
+      "red": "警示红",
+      "purple": "魅力紫",
+      "orange": "活力橙",
+      "cyan": "清新青"
+    }
   }
 } 

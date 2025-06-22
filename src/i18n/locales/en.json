@@ -117,5 +117,16 @@
   "ledClock": {
     "title": "LED Clock",
     "description": "Classic LED matrix display clock with glowing pixel dots forming each digit"
+  },
+  "ledTheme": {
+    "selectColor": "Select {color} theme",
+    "themes": {
+      "green": "Classic Green",
+      "blue": "Tech Blue",
+      "red": "Alert Red",
+      "purple": "Charm Purple",
+      "orange": "Vibrant Orange",
+      "cyan": "Fresh Cyan"
+    }
   }
 } 

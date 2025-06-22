@@ -2,10 +2,94 @@
 
 import { useTime } from "@/hooks/use-time";
 import { useTranslations } from "next-intl";
+import { useState, useEffect } from "react";
+import { LedThemeSelector } from "@/components/led-theme-selector";
+
+export interface LedTheme {
+  id: string;
+  name: string;
+  color: string;
+  shadowColor: string;
+  borderColor: string;
+}
+
+export const LED_THEMES: LedTheme[] = [
+  {
+    id: "green",
+    name: "themes.green",
+    color: "#22c55e",
+    shadowColor: "rgba(34, 197, 94, 0.8)",
+    borderColor: "border-green-500/30",
+  },
+  {
+    id: "blue",
+    name: "themes.blue",
+    color: "#3b82f6",
+    shadowColor: "rgba(59, 130, 246, 0.8)",
+    borderColor: "border-blue-500/30",
+  },
+  {
+    id: "red",
+    name: "themes.red",
+    color: "#ef4444",
+    shadowColor: "rgba(239, 68, 68, 0.8)",
+    borderColor: "border-red-500/30",
+  },
+  {
+    id: "purple",
+    name: "themes.purple",
+    color: "#a855f7",
+    shadowColor: "rgba(168, 85, 247, 0.8)",
+    borderColor: "border-purple-500/30",
+  },
+  {
+    id: "orange",
+    name: "themes.orange",
+    color: "#f97316",
+    shadowColor: "rgba(249, 115, 22, 0.8)",
+    borderColor: "border-orange-500/30",
+  },
+  {
+    id: "cyan",
+    name: "themes.cyan",
+    color: "#06b6d4",
+    shadowColor: "rgba(6, 182, 212, 0.8)",
+    borderColor: "border-cyan-500/30",
+  },
+];
 
 export function LedClock() {
   const { hours, minutes, seconds, ampm, is24Hour, mounted } = useTime();
   const t = useTranslations("ledClock");
+
+  // LED主题状态
+  const [currentTheme, setCurrentTheme] = useState<LedTheme>(LED_THEMES[0]);
+
+  // 从localStorage加载保存的主题
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("led-theme");
+      if (savedTheme) {
+        try {
+          const parsedTheme = JSON.parse(savedTheme);
+          const foundTheme = LED_THEMES.find(theme => theme.id === parsedTheme.id);
+          if (foundTheme) {
+            setCurrentTheme(foundTheme);
+          }
+        } catch (error) {
+          console.error("Error parsing saved LED theme:", error);
+        }
+      }
+    }
+  }, []);
+
+  // 保存主题到localStorage
+  const handleThemeChange = (theme: LedTheme) => {
+    setCurrentTheme(theme);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("led-theme", JSON.stringify(theme));
+    }
+  };
 
   if (!mounted) {
     return null;
@@ -125,14 +209,10 @@ export function LedClock() {
             {row.map((isActive, colIndex) => (
               <div
                 key={colIndex}
-                className={`w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full transition-all duration-200 ${
-                  isActive ? "bg-green-400 dark:bg-green-300" : "bg-gray-600/20 dark:bg-gray-500/20"
-                }`}
+                className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full transition-colors duration-200"
                 style={{
-                  boxShadow: isActive
-                    ? "0 0 12px rgba(34, 197, 94, 0.8), 0 0 24px rgba(34, 197, 94, 0.4), inset 0 0 8px rgba(34, 197, 94, 0.3)"
-                    : "none",
-                  filter: isActive ? "brightness(1.2) contrast(1.1)" : "none",
+                  backgroundColor: isActive ? currentTheme.color : "rgba(107, 114, 128, 0.2)",
+                  boxShadow: isActive ? `0 0 12px ${currentTheme.shadowColor}` : "none",
                 }}
               />
             ))}
@@ -178,11 +258,10 @@ export function LedClock() {
             {row.map((isActive, colIndex) => (
               <div
                 key={colIndex}
-                className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-all duration-200 ${
-                  isActive ? "bg-green-400 dark:bg-green-300" : "bg-gray-600/15 dark:bg-gray-500/15"
-                }`}
+                className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-colors duration-200"
                 style={{
-                  boxShadow: isActive ? "0 0 8px rgba(34, 197, 94, 0.6), 0 0 16px rgba(34, 197, 94, 0.3)" : "none",
+                  backgroundColor: isActive ? currentTheme.color : "rgba(107, 114, 128, 0.15)",
+                  boxShadow: isActive ? `0 0 8px ${currentTheme.shadowColor}` : "none",
                 }}
               />
             ))}
@@ -212,89 +291,33 @@ export function LedClock() {
   const timeChars = timeString.split("");
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      {/* 像素点阵时钟显示 - 带有科技感背景 */}
-      <div className="relative">
-        {/* 时钟背景容器 */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gray-900 via-black to-gray-800 dark:from-black dark:via-gray-900 dark:to-black border border-green-500/30 shadow-2xl" />
-
-        {/* 网格纹理背景 */}
-        <div
-          className="absolute inset-0 rounded-3xl opacity-20 overflow-hidden"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "30px 30px",
-          }}
-        />
-
-        {/* 动态光效背景 */}
-        <div
-          className="absolute inset-0 rounded-3xl opacity-40 overflow-hidden"
-          style={{
-            background: `
-              radial-gradient(circle at 30% 70%, rgba(34, 197, 94, 0.15) 0%, transparent 60%),
-              radial-gradient(circle at 70% 30%, rgba(34, 197, 94, 0.1) 0%, transparent 60%)
-            `,
-            animation: "pulse 4s ease-in-out infinite",
-          }}
-        />
-
-        {/* 扫描线效果 */}
-        <div
-          className="absolute inset-0 rounded-3xl pointer-events-none opacity-15 overflow-hidden"
-          style={{
-            background: `
-              repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(34, 197, 94, 0.1) 2px,
-                rgba(34, 197, 94, 0.1) 4px
-              )
-            `,
-            animation: "scan 3s linear infinite",
-          }}
-        />
-
-        {/* 主时钟内容 */}
-        <div className="relative z-10 flex items-center justify-center gap-4 md:gap-6 lg:gap-8 p-8 md:p-12">
-          {timeChars.map((char, index) => renderDigit(char, `digit-${index}`))}
+    <div className="min-h-screen p-4 flex flex-col">
+      {/* 时钟显示区域 */}
+      <div className="flex-1 flex items-center justify-center flex-col relative">
+        {/* 颜色主题选择器 - 粘性布局在时钟上方 */}
+        <div className="sticky top-8 z-10 mb-8">
+          <LedThemeSelector currentTheme={currentTheme} onThemeChange={handleThemeChange} themes={LED_THEMES} />
         </div>
-      </div>
 
-      {/* AM/PM 显示 (12小时制) */}
-      {!is24Hour && ampm && (
-        <div className="mt-6 px-4 py-2 rounded-xl bg-black/80 backdrop-blur-sm border border-green-500/20 shadow-lg">
-          <div className="flex items-center justify-center gap-2">
-            {ampm.split("").map((char, index) => renderLetter(char, `letter-${index}`))}
+        {/* LED时钟显示 */}
+        <div
+          className={`relative p-8 md:p-12 rounded-3xl bg-gray-900 dark:bg-black border ${currentTheme.borderColor} shadow-2xl`}
+        >
+          {/* 主时钟内容 */}
+          <div className="flex items-center justify-center gap-4 md:gap-6 lg:gap-8">
+            {timeChars.map((char, index) => renderDigit(char, `digit-${index}`))}
           </div>
         </div>
-      )}
 
-      {/* CSS 动画 */}
-      <style jsx>{`
-        @keyframes scan {
-          0% {
-            transform: translateY(-100%);
-          }
-          100% {
-            transform: translateY(100%);
-          }
-        }
-
-        @keyframes pulse {
-          0%,
-          100% {
-            opacity: 0.4;
-          }
-          50% {
-            opacity: 0.7;
-          }
-        }
-      `}</style>
+        {/* AM/PM 显示 */}
+        {!is24Hour && ampm && (
+          <div className={`mt-6 px-4 py-2 rounded-xl bg-gray-800 dark:bg-gray-900 border ${currentTheme.borderColor}`}>
+            <div className="flex items-center justify-center gap-2">
+              {ampm.split("").map((char, index) => renderLetter(char, `letter-${index}`))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

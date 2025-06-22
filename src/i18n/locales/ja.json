@@ -117,5 +117,16 @@
   "ledClock": {
     "title": "LED時計",
     "description": "発光ピクセルドットで各数字を形成するクラシックLEDマトリックス表示時計"
+  },
+  "ledTheme": {
+    "selectColor": "{color}テーマを選択",
+    "themes": {
+      "green": "クラシックグリーン",
+      "blue": "テックブルー",
+      "red": "アラートレッド",
+      "purple": "チャームパープル",
+      "orange": "バイブラントオレンジ",
+      "cyan": "フレッシュシアン"
+    }
   }
 } 
