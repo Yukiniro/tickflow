@@ -5,7 +5,8 @@
     "comic": "コミック",
     "digital": "デジタル",
     "flip": "フリップ",
-    "analog": "アナログ"
+    "analog": "アナログ",
+    "led": "LED"
   },
   "home": {
     "title": "TickFlow - エレガントなオンライン時計",
@@ -100,7 +101,8 @@
     "flip": "フリップ",
     "digital": "デジタル",
     "comic": "コミック",
-    "analog": "アナログ"
+    "analog": "アナログ",
+    "led": "LED"
   },
   "analogClock": {
     "title": "アナログ時計",
@@ -111,5 +113,9 @@
     "clockFace": "文字盤",
     "hourMarkers": "時間目盛り",
     "minuteMarkers": "分目盛り"
+  },
+  "ledClock": {
+    "title": "LED時計",
+    "description": "発光ピクセルドットで各数字を形成するクラシックLEDマトリックス表示時計"
   }
 } 

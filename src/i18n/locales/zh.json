@@ -5,7 +5,8 @@
     "comic": "漫画",
     "digital": "数字",
     "flip": "翻转",
-    "analog": "模拟"
+    "analog": "模拟",
+    "led": "LED"
   },
   "home": {
     "title": "TickFlow - 优雅的在线时钟",
@@ -100,7 +101,8 @@
     "flip": "翻页",
     "digital": "数字",
     "comic": "漫画",
-    "analog": "模拟"
+    "analog": "模拟",
+    "led": "LED"
   },
   "analogClock": {
     "title": "模拟时钟",
@@ -111,5 +113,9 @@
     "clockFace": "表盘",
     "hourMarkers": "小时刻度",
     "minuteMarkers": "分钟刻度"
+  },
+  "ledClock": {
+    "title": "LED时钟",
+    "description": "经典LED点阵显示时钟，每个数字由发光像素点组成"
   }
 } 

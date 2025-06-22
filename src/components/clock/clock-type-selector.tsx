@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export const CLOCK_TYPES = {
   BASIC: "basic",
@@ -13,6 +13,7 @@ export const CLOCK_TYPES = {
   DIGITAL: "digital",
   COMIC: "comic",
   ANALOG: "analog",
+  LED: "led",
 } as const;
 
 export type ClockType = (typeof CLOCK_TYPES)[keyof typeof CLOCK_TYPES];

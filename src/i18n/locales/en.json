@@ -5,7 +5,8 @@
     "comic": "Comic",
     "digital": "Digital",
     "flip": "Flip",
-    "analog": "Analog"
+    "analog": "Analog",
+    "led": "LED"
   },
   "home": {
     "title": "TickFlow - Elegant Online Clock",
@@ -100,7 +101,8 @@
     "flip": "Flip",
     "digital": "Digital",
     "comic": "Comic",
-    "analog": "Analog"
+    "analog": "Analog",
+    "led": "LED"
   },
   "analogClock": {
     "title": "Analog Clock",
@@ -111,5 +113,9 @@
     "clockFace": "Clock Face",
     "hourMarkers": "Hour Markers",
     "minuteMarkers": "Minute Markers"
+  },
+  "ledClock": {
+    "title": "LED Clock",
+    "description": "Classic LED matrix display clock with glowing pixel dots forming each digit"
   }
 } 

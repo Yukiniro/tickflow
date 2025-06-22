@@ -32,6 +32,10 @@ const clockTypes = [
     key: "analog",
     path: "/analog",
   },
+  {
+    key: "led",
+    path: "/led",
+  },
 ] as const;
 
 export function ClockTypeSelector() {
