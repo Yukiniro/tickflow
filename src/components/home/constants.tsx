@@ -1,4 +1,18 @@
 import React from "react";
+import {
+  Clock,
+  FlipHorizontal,
+  Watch,
+  Palette,
+  Clock3,
+  Zap,
+  Smartphone,
+  Paintbrush,
+  Maximize,
+  Globe,
+  Image,
+  Share2,
+} from "lucide-react";
 
 export const CONTACT_LINKS = [
   {
@@ -13,7 +27,7 @@ export const CONTACT_LINKS = [
   },
   {
     type: "email" as const,
-    href: "mailto:contact@tickflow.com",
+    href: "mailto:yukiniro@hotmail.com",
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -24,7 +38,7 @@ export const CONTACT_LINKS = [
   },
   {
     type: "github" as const,
-    href: "https://github.com/tickflow",
+    href: "https://github.com/Yukiniro/tickflow",
     icon: (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -34,43 +48,95 @@ export const CONTACT_LINKS = [
   },
 ];
 
-export const FEATURES = [
+export const CLOCK_FEATURES = [
   {
-    type: "analog" as const,
-    icon: (
-      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12,6 12,12 16,14" />
-      </svg>
-    ),
+    type: "basic" as const,
+    icon: Clock,
     gradientFrom: "from-blue-500",
     gradientTo: "to-blue-600",
     hoverColor: "text-blue-600 dark:group-hover:text-blue-400",
+    href: "/basic",
   },
   {
-    type: "digital" as const,
-    icon: (
-      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <rect x="3" y="4" width="18" height="12" rx="1" />
-        <line x1="7" y1="8" x2="7" y2="12" />
-        <line x1="11" y1="8" x2="11" y2="12" />
-        <line x1="15" y1="8" x2="17" y2="12" />
-      </svg>
-    ),
+    type: "flip" as const,
+    icon: FlipHorizontal,
     gradientFrom: "from-purple-500",
     gradientTo: "to-purple-600",
     hoverColor: "text-purple-600 dark:group-hover:text-purple-400",
+    href: "/flip",
   },
   {
-    type: "timezone" as const,
-    icon: (
-      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-      </svg>
-    ),
+    type: "digital" as const,
+    icon: Watch,
     gradientFrom: "from-green-500",
     gradientTo: "to-green-600",
     hoverColor: "text-green-600 dark:group-hover:text-green-400",
+    href: "/digital",
+  },
+  {
+    type: "comic" as const,
+    icon: Palette,
+    gradientFrom: "from-pink-500",
+    gradientTo: "to-pink-600",
+    hoverColor: "text-pink-600 dark:group-hover:text-pink-400",
+    href: "/comic",
+  },
+  {
+    type: "analog" as const,
+    icon: Clock3,
+    gradientFrom: "from-orange-500",
+    gradientTo: "to-orange-600",
+    hoverColor: "text-orange-600 dark:group-hover:text-orange-400",
+    href: "/analog",
+  },
+  {
+    type: "led" as const,
+    icon: Zap,
+    gradientFrom: "from-cyan-500",
+    gradientTo: "to-cyan-600",
+    hoverColor: "text-cyan-600 dark:group-hover:text-cyan-400",
+    href: "/led",
   },
 ];
+
+export const HIGHLIGHT_FEATURES = [
+  {
+    type: "responsive" as const,
+    icon: Smartphone,
+    gradientFrom: "from-blue-500",
+    gradientTo: "to-blue-600",
+  },
+  {
+    type: "themes" as const,
+    icon: Paintbrush,
+    gradientFrom: "from-purple-500",
+    gradientTo: "to-purple-600",
+  },
+  {
+    type: "fullscreen" as const,
+    icon: Maximize,
+    gradientFrom: "from-green-500",
+    gradientTo: "to-green-600",
+  },
+  {
+    type: "multilingual" as const,
+    icon: Globe,
+    gradientFrom: "from-orange-500",
+    gradientTo: "to-orange-600",
+  },
+  {
+    type: "background" as const,
+    icon: Image,
+    gradientFrom: "from-pink-500",
+    gradientTo: "to-pink-600",
+  },
+  {
+    type: "share" as const,
+    icon: Share2,
+    gradientFrom: "from-cyan-500",
+    gradientTo: "to-cyan-600",
+  },
+];
+
+// 保持向后兼容
+export const FEATURES = CLOCK_FEATURES;

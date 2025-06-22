@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { generateHomeMetadata } from "@/lib/metadata";
-import { HeroSection, FeaturesSection, CTASection, Footer } from "@/components/home";
+import { HeroSection, FeaturesSection, HighlightsSection, CTASection, Footer } from "@/components/home";
 
 export function generateStaticParams() {
   return ["en", "zh", "ja"].map(locale => ({ locale }));
@@ -22,6 +22,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <div className="min-h-screen flex flex-col pt-14 bg-background">
       <HeroSection />
       <FeaturesSection />
+      <HighlightsSection />
       <CTASection />
       <Footer />
     </div>

@@ -9,32 +9,90 @@
     "led": "LED"
   },
   "home": {
-    "title": "TickFlow - 优雅的在线时钟",
+    "title": "TickFlow - 多样化时钟体验",
     "subtitle": "一个简洁、美观的网页时钟应用，让时间显示成为一种享受。",
     "features": {
-      "title": "主要功能",
-      "analog": {
-        "title": "模拟时钟",
-        "description": "经典的模拟时钟显示，支持多种表盘样式和指针动画。"
+      "title": "丰富的时钟样式",
+      "subtitle": "每种时钟都经过精心设计，为您带来独特的视觉体验",
+      "basic": {
+        "title": "基础时钟",
+        "description": "简洁优雅的数字时钟，清晰易读，支持12/24小时制切换，适合日常使用。",
+        "icon": "clock"
+      },
+      "flip": {
+        "title": "翻页时钟",
+        "description": "经典机械翻页效果，每秒的翻转动画带来怀旧的视觉享受，仿佛回到机械时代。",
+        "icon": "flipHorizontal"
       },
       "digital": {
-        "title": "数字时钟",
-        "description": "清晰的数字时间显示，支持12/24小时制切换。"
+        "title": "数字手表",
+        "description": "现代数字手表风格，精致的界面设计，支持秒表功能和多种显示模式。",
+        "icon": "watch"
       },
-      "timezone": {
-        "title": "多时区",
-        "description": "支持全球主要时区，轻松查看不同地区的时间。"
+      "comic": {
+        "title": "漫画时钟",
+        "description": "充满趣味的漫画风格设计，色彩丰富，为您的时间显示增添活力和创意。",
+        "icon": "palette"
+      },
+      "analog": {
+        "title": "模拟时钟",
+        "description": "传统模拟表盘，精美的时针、分针、秒针设计，支持悬停显示数字时间。",
+        "icon": "clock3"
+      },
+      "led": {
+        "title": "LED点阵",
+        "description": "科技感十足的LED点阵显示，6种颜色主题可选，每个数字由发光像素点组成。",
+        "icon": "zap"
+      }
+    },
+    "highlights": {
+      "title": "核心特性",
+      "subtitle": "为您提供完整的时钟体验",
+      "responsive": {
+        "title": "响应式设计",
+        "description": "完美适配桌面、平板、手机等各种设备，随时随地享受优雅的时间显示。"
+      },
+      "themes": {
+        "title": "主题定制",
+        "description": "支持明暗主题切换，LED时钟提供6种颜色主题，打造个性化的视觉体验。"
+      },
+      "fullscreen": {
+        "title": "全屏模式",
+        "description": "一键进入全屏模式，去除干扰，专注于纯净的时间显示体验。"
+      },
+      "multilingual": {
+        "title": "多语言支持",
+        "description": "支持中文、英文、日文三种语言界面，满足不同用户的使用需求。"
+      },
+      "background": {
+        "title": "动态背景",
+        "description": "精美的背景图片支持，可调节透明度和模糊度，营造沉浸式的视觉氛围。"
+      },
+      "share": {
+        "title": "便捷分享",
+        "description": "支持链接分享和社交媒体分享，与朋友一起体验优雅的时间艺术。"
       }
     },
     "cta": {
-      "title": "开始使用",
-      "description": "立即体验优雅的时间显示。",
-      "button": "开始使用"
+      "title": "立即开始时间之旅",
+      "description": "选择您喜爱的时钟样式，开启个性化的时间体验。",
+      "button": "探索时钟",
+      "secondary": "查看源码"
     },
+
     "footer": {
       "about": {
-        "title": "关于",
-        "description": "TickFlow 是一个开源的在线时钟应用，致力于为用户提供优雅的时间显示体验。"
+        "title": "关于 TickFlow",
+        "description": "TickFlow 是一个开源的多样化时钟应用，致力于为用户提供丰富多彩的时间显示体验。从经典到现代，从简约到绚丽，总有一款适合您。"
+      },
+      "quickLinks": {
+        "title": "快速链接",
+        "basic": "基础时钟",
+        "flip": "翻页时钟",
+        "digital": "数字手表",
+        "comic": "漫画时钟",
+        "analog": "模拟时钟",
+        "led": "LED点阵"
       },
       "contact": "联系我们",
       "email": "邮箱：yukiniro@hotmail.com",

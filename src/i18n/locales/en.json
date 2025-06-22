@@ -9,34 +9,92 @@
     "led": "LED"
   },
   "home": {
-    "title": "TickFlow - Elegant Online Clock",
+    "title": "TickFlow - Diverse Clock Experience",
     "subtitle": "A clean and beautiful web clock application that makes time display a pleasure.",
     "features": {
-      "title": "Key Features",
-      "analog": {
-        "title": "Analog Clock",
-        "description": "Classic analog clock display with multiple dial styles and hand animations."
+      "title": "Rich Clock Styles",
+      "subtitle": "Each clock is carefully designed to bring you a unique visual experience",
+      "basic": {
+        "title": "Basic Clock",
+        "description": "Simple and elegant digital clock, clear and readable, supports 12/24 hour format switching, perfect for daily use.",
+        "icon": "clock"
+      },
+      "flip": {
+        "title": "Flip Clock",
+        "description": "Classic mechanical flip effect, the flip animation every second brings nostalgic visual enjoyment, as if returning to the mechanical era.",
+        "icon": "flipHorizontal"
       },
       "digital": {
-        "title": "Digital Clock",
-        "description": "Clear digital time display with 12/24 hour format switching."
+        "title": "Digital Watch",
+        "description": "Modern digital watch style, exquisite interface design, supports stopwatch function and multiple display modes.",
+        "icon": "watch"
       },
-      "timezone": {
-        "title": "Multi-timezone",
-        "description": "Support for major global timezones, easily view times in different regions."
+      "comic": {
+        "title": "Comic Clock",
+        "description": "Fun comic-style design, rich colors, adding vitality and creativity to your time display.",
+        "icon": "palette"
+      },
+      "analog": {
+        "title": "Analog Clock",
+        "description": "Traditional analog dial, beautiful hour, minute, and second hand design, supports hover to display digital time.",
+        "icon": "clock3"
+      },
+      "led": {
+        "title": "LED Matrix",
+        "description": "Tech-savvy LED matrix display, 6 color themes available, each digit composed of glowing pixel dots.",
+        "icon": "zap"
+      }
+    },
+    "highlights": {
+      "title": "Core Features",
+      "subtitle": "Providing you with a complete clock experience",
+      "responsive": {
+        "title": "Responsive Design",
+        "description": "Perfect adaptation to desktop, tablet, mobile and other devices, enjoy elegant time display anytime, anywhere."
+      },
+      "themes": {
+        "title": "Theme Customization",
+        "description": "Supports light/dark theme switching, LED clock provides 6 color themes, creating a personalized visual experience."
+      },
+      "fullscreen": {
+        "title": "Fullscreen Mode",
+        "description": "One-click to enter fullscreen mode, remove distractions, focus on pure time display experience."
+      },
+      "multilingual": {
+        "title": "Multi-language Support",
+        "description": "Supports Chinese, English, and Japanese interfaces, meeting the needs of different users."
+      },
+      "background": {
+        "title": "Dynamic Background",
+        "description": "Beautiful background image support, adjustable transparency and blur, creating an immersive visual atmosphere."
+      },
+      "share": {
+        "title": "Easy Sharing",
+        "description": "Supports link sharing and social media sharing, experience elegant time art with friends."
       }
     },
     "cta": {
-      "title": "Get Started",
-      "description": "Experience elegant time display now.",
-      "button": "Get Started"
+      "title": "Start Your Time Journey Now",
+      "description": "Choose your favorite clock style and start a personalized time experience.",
+      "button": "Explore Clocks",
+      "secondary": "View Source"
     },
+
     "footer": {
       "about": {
-        "title": "About",
-        "description": "TickFlow is an open-source online clock application dedicated to providing users with an elegant time display experience."
+        "title": "About TickFlow",
+        "description": "TickFlow is an open-source diverse clock application, dedicated to providing users with rich and colorful time display experiences. From classic to modern, from simple to gorgeous, there's always one for you."
       },
-      "contact": "Contact",
+      "quickLinks": {
+        "title": "Quick Links",
+        "basic": "Basic Clock",
+        "flip": "Flip Clock",
+        "digital": "Digital Watch",
+        "comic": "Comic Clock",
+        "analog": "Analog Clock",
+        "led": "LED Matrix"
+      },
+      "contact": "Contact Us",
       "email": "Email: yukiniro@hotmail.com",
       "github": "GitHub: https://github.com/Yukiniro/tickflow",
       "twitter": "Twitter: @Yukiniro",
