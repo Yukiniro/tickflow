@@ -369,6 +369,16 @@ body {
           drop-shadow(0.5px 0.5px 0 #e2e8f0);
 }
 
+/* Enhanced visibility styles for no-background scenarios */
+.clock-text-enhanced {
+  color: hsl(var(--foreground));
+  font-weight: 900;
+}
+
+.dark .clock-text-enhanced {
+  color: hsl(var(--foreground));
+}
+
 /* Modern browsers with text-stroke support will use stroke, others will use filter */
 @supports (-webkit-text-stroke: 1px black) {
   .clock-text-outline,
