@@ -2,6 +2,7 @@
 
 import { useAtomValue, useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
+import { trackBackgroundToggle } from "@/components/google-analytics";
 import {
   enabledAtom,
   opacityAtom,
@@ -43,7 +44,9 @@ export function BackgroundToggle() {
 
   // 切换背景启用状态
   const handleToggle = () => {
-    setEnabled(!enabled);
+    const newEnabled = !enabled;
+    trackBackgroundToggle(newEnabled);
+    setEnabled(newEnabled);
   };
 
   // 更换背景图片

@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
 import { StructuredData } from "@/components/structured-data";
@@ -117,6 +118,7 @@ export default async function RootLayout({
             <main>{children}</main>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <GoogleAnalytics />
         <Analytics />
       </body>
     </html>

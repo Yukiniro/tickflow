@@ -3,6 +3,7 @@
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
+import { trackLanguageChange } from "@/components/google-analytics";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,6 +26,7 @@ export function LanguageSwitcher() {
   const currentLanguage = languages.find(lang => lang.code === locale);
 
   const handleLanguageChange = (newLocale: string) => {
+    trackLanguageChange(newLocale);
     router.replace(pathname, { locale: newLocale });
   };
 

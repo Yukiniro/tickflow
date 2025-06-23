@@ -170,6 +170,34 @@ src/
 
 ## 🔧 开发指南
 
+### 环境变量配置
+
+创建 `.env.local` 文件并添加以下配置：
+
+```bash
+# Google Analytics (可选)
+# 获取你的 GA4 测量 ID: https://analytics.google.com/
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# Pexels API (可选，用于背景图片)
+# 获取你的 API 密钥: https://www.pexels.com/api/
+PEXELS_API_KEY=your_pexels_api_key_here
+```
+
+### Google Analytics 集成
+
+项目已集成 Google Analytics 4，支持以下功能：
+
+- **页面浏览跟踪** - 自动跟踪页面访问
+- **事件跟踪** - 跟踪用户交互行为：
+  - 时钟类型切换
+  - 语言切换
+  - 主题切换
+  - 背景设置
+  - 声音开关
+  - 时间格式切换
+  - 全屏模式
+
 ### 代码规范
 - 使用 TypeScript 确保类型安全
 - 遵循 React 最佳实践

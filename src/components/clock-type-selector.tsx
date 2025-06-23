@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
+import { trackClockTypeChange } from "@/components/google-analytics";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -46,6 +47,8 @@ export function ClockTypeSelector() {
   const currentClockType = clockTypes.find(type => type.path === pathname);
 
   const handleClockTypeChange = (path: string) => {
+    const clockType = path.replace("/", "");
+    trackClockTypeChange(clockType);
     router.push(path);
   };
 

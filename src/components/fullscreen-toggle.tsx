@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
+import { trackFullscreenToggle } from "@/components/google-analytics";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Maximize2, Minimize2 } from "lucide-react";
 
@@ -83,7 +84,9 @@ export function FullscreenToggle() {
   // 监听全屏状态变化
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(!!getFullscreenElement());
+      const isCurrentlyFullscreen = !!getFullscreenElement();
+      setIsFullscreen(isCurrentlyFullscreen);
+      trackFullscreenToggle(isCurrentlyFullscreen);
     };
 
     // 添加各种浏览器前缀的事件监听器
