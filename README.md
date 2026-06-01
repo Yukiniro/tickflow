@@ -240,7 +240,7 @@ PEXELS_API_KEY=your_pexels_api_key_here
 - [next-intl](https://next-intl-docs.vercel.app/) - 国际化解决方案
 - [Radix UI](https://www.radix-ui.com/) - 无障碍 UI 组件
 - [Pexels](https://www.pexels.com/) - 高质量图片资源
-- [Lucide](https://lucide.dev/) - 精美图标库
+- [React Icons](https://react-icons.github.io/react-icons/) - 图标库（Lucide UI 图标 + Simple Icons 品牌图标）
 
 ## 📞 联系我们
 

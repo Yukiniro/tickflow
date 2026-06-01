@@ -3,11 +3,11 @@
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { LucideIcon } from "lucide-react";
+import { IconType } from "react-icons";
 
 interface FeatureCardProps {
   type: "basic" | "flip" | "digital" | "comic" | "analog" | "led";
-  icon: LucideIcon;
+  icon: IconType;
   gradientFrom: string;
   gradientTo: string;
   hoverColor: string;
@@ -21,7 +21,7 @@ export function FeatureCard({ type, icon: Icon, gradientFrom, gradientTo, hoverC
     <div className="group p-8 rounded-2xl border border-border bg-card hover:bg-accent/50 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
       <div
         className={cn(
-          "w-16 h-16 mx-auto mb-6 bg-gradient-to-br rounded-2xl flex items-center justify-center",
+          "w-16 h-16 mx-auto mb-6 bg-linear-to-br rounded-2xl flex items-center justify-center",
           gradientFrom,
           gradientTo,
         )}

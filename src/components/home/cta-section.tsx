@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { CTAButton } from "./cta-button";
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { SiGithub as Github } from "react-icons/si";
 
 export function CTASection() {
   const t = useTranslations("home");

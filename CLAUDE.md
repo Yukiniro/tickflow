@@ -4,31 +4,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-Package manager is **pnpm** (pinned to `pnpm@8.15.4`).
+Package manager is **pnpm** (pinned to `pnpm@11.5.0` via the `packageManager` field; pnpm 11 reads settings from [pnpm-workspace.yaml](pnpm-workspace.yaml), e.g. `allowBuilds`).
 
 ```bash
 pnpm install        # install dependencies
 pnpm dev            # start dev server at http://localhost:3000
-pnpm build          # production build
+pnpm build          # production build (Turbopack, the Next 16 default)
 pnpm start          # serve the production build
-pnpm lint           # next lint (ESLint 9 + eslint-config-next)
+pnpm lint           # eslint . (flat config, ESLint 9 + eslint-config-next 16)
 pnpm format         # prettier --write over src/**/*.{ts,tsx,css}
 ```
 
 There is **no test suite** in this repo — no test runner or test files are configured.
 
-Note: [next.config.ts](next.config.ts) sets `eslint.ignoreDuringBuilds: true`, so **lint errors do not fail `pnpm build`**. Run `pnpm lint` explicitly to catch them.
+Note: Next 16 removed `next lint` and no longer runs ESLint during `next build`, so **lint never blocks `pnpm build`** — run `pnpm lint` explicitly to catch issues.
 
 ## Architecture
 
-Next.js 15 (App Router) + React 19 + TypeScript, styled with Tailwind CSS. The app is a multi-style clock site; the import alias `@/*` maps to `src/*`.
+Next.js 16 (App Router) + React 19 + TypeScript, styled with Tailwind CSS v4. The app is a multi-style clock site; the import alias `@/*` maps to `src/*`.
 
 ### Internationalization (next-intl) — the routing backbone
 
 Every page lives under the `[locale]` segment, so **all routes are locale-prefixed** (e.g. `/en/analog`, `/zh/digital`). The wiring spans several files:
 
 - [src/i18n/routing.ts](src/i18n/routing.ts) — the single source of truth for `locales` (`en`, `zh`, `ja`) and `defaultLocale` (`en`).
-- [src/middleware.ts](src/middleware.ts) — `next-intl` middleware that handles locale negotiation/redirects; its `matcher` excludes `api`, `_next`, `_vercel`, and any path with a dot.
+- [src/proxy.ts](src/proxy.ts) — `next-intl` middleware that handles locale negotiation/redirects; its `matcher` excludes `api`, `_next`, `_vercel`, and any path with a dot. (Next 16 renamed the `middleware` file convention to `proxy`; the `next-intl/middleware` import is unchanged.)
 - [src/i18n/request.ts](src/i18n/request.ts) — loads `src/i18n/locales/<locale>.json` as the message bundle per request.
 - The `next-intl` plugin is applied in [next.config.ts](next.config.ts) via `createNextIntlPlugin()`.
 

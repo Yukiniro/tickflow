@@ -24,7 +24,7 @@ export function HighlightsSection() {
               >
                 <div
                   className={cn(
-                    "w-12 h-12 mb-4 bg-gradient-to-br rounded-lg flex items-center justify-center",
+                    "w-12 h-12 mb-4 bg-linear-to-br rounded-lg flex items-center justify-center",
                     feature.gradientFrom,
                     feature.gradientTo,
                   )}

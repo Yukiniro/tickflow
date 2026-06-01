@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Globe } from "lucide-react";
+import { LuGlobe as Globe } from "react-icons/lu";
 
 const languages = [
   { code: "en", name: "English", flag: "🇺🇸" },

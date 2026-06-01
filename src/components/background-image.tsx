@@ -131,7 +131,7 @@ export function BackgroundImage() {
             href={currentPhoto.photographer_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-white bg-black/50 px-2 py-1 rounded backdrop-blur-sm"
+            className="text-xs text-white bg-black/50 px-2 py-1 rounded backdrop-blur-xs"
           >
             Photo by {currentPhoto.photographer} on Pexels
           </a>
@@ -141,7 +141,7 @@ export function BackgroundImage() {
       {/* 加载指示器 */}
       {loading && (
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
-          <div className="bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-sm flex items-center gap-2">
+          <div className="bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-xs flex items-center gap-2">
             <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             {t("loading")}
           </div>
@@ -151,7 +151,7 @@ export function BackgroundImage() {
       {/* 错误提示 */}
       {imageError && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-          <div className="bg-red-500/90 text-white px-4 py-2 rounded-lg backdrop-blur-sm">{t("error")}</div>
+          <div className="bg-red-500/90 text-white px-4 py-2 rounded-lg backdrop-blur-xs">{t("error")}</div>
         </div>
       )}
     </>

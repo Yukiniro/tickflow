@@ -1,18 +1,18 @@
 import React from "react";
 import {
-  Clock,
-  FlipHorizontal,
-  Watch,
-  Palette,
-  Clock3,
-  Zap,
-  Smartphone,
-  Paintbrush,
-  Maximize,
-  Globe,
-  Image,
-  Share2,
-} from "lucide-react";
+  LuClock as Clock,
+  LuFlipHorizontal as FlipHorizontal,
+  LuWatch as Watch,
+  LuPalette as Palette,
+  LuClock3 as Clock3,
+  LuZap as Zap,
+  LuSmartphone as Smartphone,
+  LuPaintbrush as Paintbrush,
+  LuMaximize as Maximize,
+  LuGlobe as Globe,
+  LuImage as Image,
+  LuShare2 as Share2,
+} from "react-icons/lu";
 
 export const CONTACT_LINKS = [
   {

@@ -108,7 +108,7 @@ function FlipDigit({ value }: FlipDigitProps) {
         </div>
 
         {/* 中间分割线 */}
-        <div className="absolute top-1/2 left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-gray-400 dark:via-gray-500 to-transparent transform -translate-y-0.5 z-30 rounded-full"></div>
+        <div className="absolute top-1/2 left-2 right-2 h-0.5 bg-linear-to-r from-transparent via-gray-400 dark:via-gray-500 to-transparent transform -translate-y-0.5 z-30 rounded-full"></div>
       </div>
     </div>
   );
@@ -148,8 +148,8 @@ export function FlipClock() {
 
       {/* AM/PM 指示器 */}
       {ampm && (
-        <div className="px-8 py-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border-2 border-primary/30 rounded-2xl shadow-xl backdrop-blur-sm relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shimmer"></div>
+        <div className="px-8 py-4 bg-linear-to-r from-primary/20 via-primary/10 to-primary/20 border-2 border-primary/30 rounded-2xl shadow-xl backdrop-blur-xs relative overflow-hidden">
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shimmer"></div>
           <span className="text-3xl lg:text-4xl xl:text-5xl font-black text-primary tracking-wider relative z-10">
             {ampm}
           </span>

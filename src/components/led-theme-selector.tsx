@@ -33,7 +33,7 @@ export function LedThemeSelector({ currentTheme, onThemeChange, themes }: LedThe
               onClick={() => handleThemeChange(theme)}
               className={`
                 relative w-12 h-12 rounded-full transition-all duration-300 
-                focus:outline-none
+                focus:outline-hidden
                 ${
                   currentTheme.id === theme.id
                     ? "ring-2 ring-offset-2 ring-offset-gray-100 dark:ring-offset-gray-800"

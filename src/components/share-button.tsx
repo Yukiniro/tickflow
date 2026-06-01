@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Twitter } from "lucide-react";
+import { SiX as Twitter } from "react-icons/si";
 
 export function ShareButton() {
   const t = useTranslations("share");
