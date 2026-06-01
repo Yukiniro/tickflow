@@ -8,6 +8,12 @@
     "analog": "Analog",
     "led": "LED"
   },
+  "theme": {
+    "label": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
   "home": {
     "title": "TickFlow - Diverse Clock Experience",
     "subtitle": "A clean and beautiful web clock application that makes time display a pleasure.",

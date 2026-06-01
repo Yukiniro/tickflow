@@ -8,6 +8,12 @@
     "analog": "模拟",
     "led": "LED"
   },
+  "theme": {
+    "label": "切换主题",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统"
+  },
   "home": {
     "title": "TickFlow - 多样化时钟体验",
     "subtitle": "一个简洁、美观的网页时钟应用，让时间显示成为一种享受。",

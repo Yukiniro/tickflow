@@ -8,6 +8,12 @@
     "analog": "アナログ",
     "led": "LED"
   },
+  "theme": {
+    "label": "テーマを切り替え",
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システムに従う"
+  },
   "home": {
     "title": "TickFlow - 多様な時計体験",
     "subtitle": "時間表示を楽しみにする、清潔で美しいウェブ時計アプリケーション。",
