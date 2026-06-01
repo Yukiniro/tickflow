@@ -12,7 +12,6 @@ import { FullscreenToggle } from "./fullscreen-toggle";
 import { GithubIcon } from "./github-icon";
 import { useTime } from "@/hooks/use-time";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 interface NavProps {
   showClockTypeSelector?: boolean;
@@ -70,7 +69,7 @@ const getNavProps = (pathname: string) => {
 
 export function Nav(props: NavProps = {}) {
   const pathname = usePathname();
-  const { is24Hour, toggleTimeFormat, mounted } = useTime();
+  const { is24Hour, toggleTimeFormat, mounted, seconds } = useTime();
 
   // 根据路径获取动态属性
   const dynamicProps = getNavProps(pathname);
@@ -104,12 +103,12 @@ export function Nav(props: NavProps = {}) {
     showGithub;
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60">
+    <nav className="fixed top-0 z-50 w-full border-b border-border bg-background">
       <div className="container flex h-14 items-center">
         <div className="mr-8 flex">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.png" alt="TickFlow Logo" width={24} height={24} className="rounded-sm" />
-            <span className="text-lg font-semibold tracking-tight">TickFlow</span>
+          <Link href="/" className="group flex items-center gap-2.5">
+            <span className="h-3.5 w-3.5 bg-rail transition-transform duration-75 group-hover:scale-110" />
+            <span className="text-lg font-extrabold uppercase tracking-tight text-foreground">TickFlow</span>
           </Link>
         </div>
 
@@ -133,6 +132,16 @@ export function Nav(props: NavProps = {}) {
           </div>
         )}
       </div>
+
+      {/* 秒进度线:每分钟从 0 推进到满,呼应站台时钟的滴答(全站签名) */}
+      <span
+        aria-hidden
+        className="absolute bottom-0 left-0 h-px bg-rail"
+        style={{
+          width: `${((seconds + 1) / 60) * 100}%`,
+          transition: seconds === 0 ? "none" : "width 1s linear",
+        }}
+      />
     </nav>
   );
 }

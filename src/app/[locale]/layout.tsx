@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -12,7 +12,11 @@ import { SEOOptimizations } from "@/components/seo-optimizations";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap",
+});
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -111,7 +115,7 @@ export default async function RootLayout({
         <StructuredData locale={locale} />
         <SEOOptimizations />
       </head>
-      <body className={inter.className}>
+      <body className={`${archivo.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextIntlClientProvider messages={messages}>
             <Nav />

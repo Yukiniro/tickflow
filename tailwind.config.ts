@@ -22,6 +22,10 @@ const config: Config = {
   			ring: 'hsl(var(--ring))',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+  			rail: {
+  				DEFAULT: 'hsl(var(--rail))',
+  				foreground: 'hsl(var(--rail-foreground))'
+  			},
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'
@@ -125,6 +129,7 @@ const config: Config = {
 			shimmer: 'shimmer 2s infinite'
 		},
   				fontFamily: {
+			sans: ['var(--font-archivo)', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			comic: ['Comic Sans MS', 'cursive'],
 		},
 		perspective: {
