@@ -1,40 +1,41 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
 import { HIGHLIGHT_FEATURES } from "./constants";
 
 export function HighlightsSection() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-20 px-4 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">{t("highlights.title")}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t("highlights.subtitle")}</p>
+    <section className="border-b border-border bg-muted/30">
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 border-b-2 border-foreground pb-5">
+          <div className="mb-3 flex items-center gap-3">
+            <span className="h-2.5 w-2.5 bg-rail" />
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Specifications</span>
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">{t("highlights.title")}</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">{t("highlights.subtitle")}</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {HIGHLIGHT_FEATURES.map(feature => {
+
+        {/* 规格网格:发丝线构成的瑞士网格 */}
+        <div className="grid grid-cols-1 border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
+          {HIGHLIGHT_FEATURES.map((feature, i) => {
             const Icon = feature.icon;
             return (
-              <div
-                key={feature.type}
-                className="group p-6 rounded-xl border border-border bg-card hover:bg-accent/50 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  className={cn(
-                    "w-12 h-12 mb-4 bg-gradient-to-br rounded-lg flex items-center justify-center",
-                    feature.gradientFrom,
-                    feature.gradientTo,
-                  )}
-                >
-                  <Icon className="w-6 h-6 text-white" />
+              <div key={feature.type} className="group border-b border-r border-border p-7 transition-colors duration-75 hover:bg-background">
+                <div className="mb-5 flex items-center justify-between">
+                  <span className="font-mono text-xs font-bold tabular-nums tracking-widest text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <Icon className="h-5 w-5 text-foreground transition-colors duration-75 group-hover:text-rail" strokeWidth={2} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-card-foreground">
+                <h3 className="mb-2 text-lg font-bold tracking-tight text-foreground">
                   {t(`highlights.${feature.type}.title`)}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">{t(`highlights.${feature.type}.description`)}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {t(`highlights.${feature.type}.description`)}
+                </p>
               </div>
             );
           })}

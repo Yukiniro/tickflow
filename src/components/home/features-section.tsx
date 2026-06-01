@@ -8,15 +8,24 @@ export function FeaturesSection() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-20 px-4 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">{t("features.title")}</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t("features.subtitle")}</p>
+    <section className="border-b border-border bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 flex items-end justify-between gap-6 border-b-2 border-foreground pb-5">
+          <div>
+            <div className="mb-3 flex items-center gap-3">
+              <span className="h-2.5 w-2.5 bg-rail" />
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Departures</span>
+            </div>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">{t("features.title")}</h2>
+          </div>
+          <p className="hidden max-w-xs text-right text-sm leading-relaxed text-muted-foreground md:block">
+            {t("features.subtitle")}
+          </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {CLOCK_FEATURES.map(feature => (
-            <FeatureCard key={feature.type} {...feature} />
+
+        <div className="border-t border-border">
+          {CLOCK_FEATURES.map((feature, i) => (
+            <FeatureCard key={feature.type} type={feature.type} icon={feature.icon} index={i} href={feature.href} />
           ))}
         </div>
       </div>

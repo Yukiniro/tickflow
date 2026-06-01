@@ -1,0 +1,196 @@
+{
+  "navigation": {
+    "home": "홈",
+    "basic": "베이직",
+    "comic": "코믹",
+    "digital": "디지털",
+    "flip": "플립",
+    "analog": "아날로그",
+    "led": "LED"
+  },
+  "theme": {
+    "label": "테마 전환",
+    "light": "라이트",
+    "dark": "다크",
+    "system": "시스템"
+  },
+  "home": {
+    "title": "TickFlow - 다채로운 시계 경험",
+    "subtitle": "시간 표시를 즐거움으로 만드는 깔끔하고 아름다운 웹 시계 애플리케이션.",
+    "features": {
+      "title": "풍부한 시계 스타일",
+      "subtitle": "각 시계는 독특한 시각적 경험을 선사하도록 정교하게 디자인되었습니다",
+      "basic": {
+        "title": "베이직 시계",
+        "description": "심플하고 우아한 디지털 시계로 선명하고 읽기 쉬우며, 12/24시간 형식 전환을 지원하여 일상 사용에 완벽합니다.",
+        "icon": "clock"
+      },
+      "flip": {
+        "title": "플립 시계",
+        "description": "클래식한 기계식 플립 효과로, 매초 넘어가는 플립 애니메이션이 향수를 불러일으키는 시각적 즐거움을 선사하며 마치 기계 시대로 돌아간 듯합니다.",
+        "icon": "flipHorizontal"
+      },
+      "digital": {
+        "title": "디지털 워치",
+        "description": "현대적인 디지털 워치 스타일, 정교한 인터페이스 디자인, 스톱워치 기능과 다양한 표시 모드를 지원합니다.",
+        "icon": "watch"
+      },
+      "comic": {
+        "title": "코믹 시계",
+        "description": "재미있는 코믹 스타일 디자인, 풍부한 색상으로 시간 표시에 활력과 창의성을 더합니다.",
+        "icon": "palette"
+      },
+      "analog": {
+        "title": "아날로그 시계",
+        "description": "전통적인 아날로그 다이얼, 아름다운 시침·분침·초침 디자인, 마우스를 올리면 디지털 시간을 표시합니다.",
+        "icon": "clock3"
+      },
+      "led": {
+        "title": "LED 매트릭스",
+        "description": "기술적인 LED 매트릭스 디스플레이, 6가지 색상 테마 제공, 각 숫자는 빛나는 픽셀 점으로 구성됩니다.",
+        "icon": "zap"
+      }
+    },
+    "highlights": {
+      "title": "핵심 기능",
+      "subtitle": "완벽한 시계 경험을 제공합니다",
+      "responsive": {
+        "title": "반응형 디자인",
+        "description": "데스크톱, 태블릿, 모바일 등 다양한 기기에 완벽하게 적응하여 언제 어디서나 우아한 시간 표시를 즐기세요."
+      },
+      "themes": {
+        "title": "테마 커스터마이징",
+        "description": "라이트/다크 테마 전환 지원, LED 시계는 6가지 색상 테마를 제공하여 개인화된 시각적 경험을 만듭니다."
+      },
+      "fullscreen": {
+        "title": "전체 화면 모드",
+        "description": "원클릭으로 전체 화면 모드에 진입하여 방해 요소를 제거하고 순수한 시간 표시 경험에 집중하세요."
+      },
+      "multilingual": {
+        "title": "다국어 지원",
+        "description": "여러 언어 인터페이스를 지원하여 전 세계 다양한 사용자의 요구를 충족합니다."
+      },
+      "background": {
+        "title": "동적 배경",
+        "description": "아름다운 배경 이미지 지원, 투명도와 흐림 조절 가능, 몰입감 있는 시각적 분위기를 연출합니다."
+      },
+      "share": {
+        "title": "간편한 공유",
+        "description": "링크 공유와 소셜 미디어 공유를 지원하여 친구들과 우아한 시간 예술을 경험하세요."
+      }
+    },
+    "cta": {
+      "title": "지금 시간 여정을 시작하세요",
+      "description": "좋아하는 시계 스타일을 선택하고 개인화된 시간 경험을 시작하세요.",
+      "button": "시계 둘러보기",
+      "secondary": "소스 보기"
+    },
+
+    "footer": {
+      "about": {
+        "title": "TickFlow 소개",
+        "description": "TickFlow는 오픈 소스 다채로운 시계 애플리케이션으로, 사용자에게 풍부하고 다채로운 시간 표시 경험을 제공하는 데 전념합니다. 클래식부터 모던까지, 심플함부터 화려함까지, 항상 당신을 위한 하나가 있습니다."
+      },
+      "quickLinks": {
+        "title": "빠른 링크",
+        "basic": "베이직 시계",
+        "flip": "플립 시계",
+        "digital": "디지털 워치",
+        "comic": "코믹 시계",
+        "analog": "아날로그 시계",
+        "led": "LED 매트릭스"
+      },
+      "contact": "문의하기",
+      "email": "Email: yukiniro@hotmail.com",
+      "github": "GitHub: https://github.com/Yukiniro/tickflow",
+      "twitter": "Twitter: @Yukiniro",
+      "copyright": "모든 권리 보유."
+    }
+  },
+  "background": {
+    "title": "배경",
+    "settings": "배경 설정",
+    "enable": "배경 이미지 사용",
+    "refresh": "배경 새로고침",
+    "refreshing": "새로고침 중...",
+    "opacity": "불투명도",
+    "blur": "흐림",
+    "loading": "로딩 중...",
+    "error": "로드 실패"
+  },
+  "share": {
+    "title": "공유",
+    "tooltip": "이 페이지 공유",
+    "copyTooltip": "페이지 링크 복사",
+    "copyLink": "링크 복사",
+    "copied": "복사됨",
+    "twitter": "Twitter에 공유",
+    "twitterTooltip": "이 페이지를 Twitter에 공유",
+    "twitterAria": "Twitter에 공유",
+    "text": "이 우아한 온라인 시계 앱을 확인해 보세요!"
+  },
+  "github": {
+    "label": "GitHub",
+    "tooltip": "GitHub 저장소 보기",
+    "ariaLabel": "GitHub 저장소"
+  },
+  "metadata": {
+    "title": "TickFlow - 우아한 시계 앱",
+    "description": "TickFlow는 플립 시계, 디지털 시계, 아날로그 시계 등 다양한 시계 스타일을 제공하는 기능이 풍부한 온라인 시계 애플리케이션입니다. 실시간 표시, 우아한 애니메이션, 반응형 디자인을 지원하여 궁극의 시간 경험을 선사합니다.",
+    "keywords": "온라인 시계,실시간 시계,디지털 시계,플립 시계,아날로그 시계,시간 표시,세계 시계,시계 앱,TickFlow,online clock,digital clock,flip clock,analog clock",
+    "openGraph": {
+      "title": "TickFlow - 우아한 시계 앱",
+      "description": "플립 시계, 디지털 시계, 아날로그 시계 등 다양한 스타일을 갖춘 기능이 풍부한 온라인 시계 애플리케이션, 실시간 표시와 우아한 애니메이션 지원"
+    },
+    "twitter": {
+      "title": "TickFlow - 우아한 시계 앱",
+      "description": "플립 시계, 디지털 시계 등 다양한 스타일을 지원하는 기능이 풍부한 온라인 시계 애플리케이션"
+    }
+  },
+  "fullscreen": {
+    "enter": "전체 화면",
+    "exit": "전체 화면 종료",
+    "enterTooltip": "시계 전체 화면 미리보기",
+    "exitTooltip": "전체 화면 미리보기 종료",
+    "enterAria": "전체 화면 모드 진입",
+    "exitAria": "전체 화면 모드 종료"
+  },
+  "manifest": {
+    "name": "TickFlow - 우아한 시계 앱",
+    "short_name": "TickFlow",
+    "description": "플립 시계, 디지털 시계, 아날로그 시계 등 다양한 스타일을 갖춘 기능이 풍부한 온라인 시계 애플리케이션"
+  },
+  "clockTypes": {
+    "basic": "베이직",
+    "flip": "플립",
+    "digital": "디지털",
+    "comic": "코믹",
+    "analog": "아날로그",
+    "led": "LED"
+  },
+  "analogClock": {
+    "title": "아날로그 시계",
+    "description": "시침, 분침, 초침이 있는 클래식 아날로그 시계 디스플레이",
+    "hourHand": "시침",
+    "minuteHand": "분침",
+    "secondHand": "초침",
+    "clockFace": "시계판",
+    "hourMarkers": "시간 눈금",
+    "minuteMarkers": "분 눈금"
+  },
+  "ledClock": {
+    "title": "LED 시계",
+    "description": "빛나는 픽셀 점이 각 숫자를 구성하는 클래식 LED 매트릭스 디스플레이 시계"
+  },
+  "ledTheme": {
+    "selectColor": "{color} 테마 선택",
+    "themes": {
+      "green": "클래식 그린",
+      "blue": "테크 블루",
+      "red": "알림 레드",
+      "purple": "매력 퍼플",
+      "orange": "활기찬 오렌지",
+      "cyan": "상쾌한 시안"
+    }
+  }
+}

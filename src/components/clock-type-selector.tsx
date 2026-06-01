@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Clock } from "lucide-react";
+import { LuClock as Clock } from "react-icons/lu";
 
 const clockTypes = [
   {

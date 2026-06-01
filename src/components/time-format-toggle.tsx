@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock } from "lucide-react";
+import { LuClock as Clock } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { trackTimeFormatChange } from "@/components/google-analytics";
 

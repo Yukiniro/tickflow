@@ -1,6 +1,6 @@
 "use client";
 
-import { Volume2, VolumeX } from "lucide-react";
+import { LuVolume2 as Volume2, LuVolumeX as VolumeX } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { useAtom } from "jotai";
 import { soundEnabledAtom } from "@/store/sound";

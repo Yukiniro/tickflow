@@ -1,0 +1,196 @@
+{
+  "navigation": {
+    "home": "Início",
+    "basic": "Básico",
+    "comic": "Quadrinhos",
+    "digital": "Digital",
+    "flip": "Flip",
+    "analog": "Analógico",
+    "led": "LED"
+  },
+  "theme": {
+    "label": "Alternar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "home": {
+    "title": "TickFlow - Uma experiência de relógio diversa",
+    "subtitle": "Um aplicativo web de relógio limpo e bonito que torna a exibição das horas um prazer.",
+    "features": {
+      "title": "Estilos de relógio variados",
+      "subtitle": "Cada relógio é cuidadosamente projetado para oferecer uma experiência visual única",
+      "basic": {
+        "title": "Relógio básico",
+        "description": "Relógio digital simples e elegante, claro e legível, com suporte à alternância entre formato de 12 e 24 horas, perfeito para o uso diário.",
+        "icon": "clock"
+      },
+      "flip": {
+        "title": "Relógio de pás",
+        "description": "Efeito mecânico clássico de pás: a animação que vira a cada segundo proporciona um prazer visual nostálgico, como um retorno à era mecânica.",
+        "icon": "flipHorizontal"
+      },
+      "digital": {
+        "title": "Relógio digital",
+        "description": "Estilo de relógio digital moderno, design de interface refinado, com suporte a função de cronômetro e vários modos de exibição.",
+        "icon": "watch"
+      },
+      "comic": {
+        "title": "Relógio em quadrinhos",
+        "description": "Design divertido em estilo de quadrinhos, cores vivas que trazem vitalidade e criatividade à sua exibição das horas.",
+        "icon": "palette"
+      },
+      "analog": {
+        "title": "Relógio analógico",
+        "description": "Mostrador analógico tradicional, belo design dos ponteiros de horas, minutos e segundos, exibe a hora digital ao passar o cursor.",
+        "icon": "clock3"
+      },
+      "led": {
+        "title": "Matriz LED",
+        "description": "Display de matriz LED com visual tecnológico, 6 temas de cores disponíveis, cada dígito composto por pontos de pixels brilhantes.",
+        "icon": "zap"
+      }
+    },
+    "highlights": {
+      "title": "Recursos principais",
+      "subtitle": "Oferecemos a você uma experiência de relógio completa",
+      "responsive": {
+        "title": "Design responsivo",
+        "description": "Adaptação perfeita a desktops, tablets, dispositivos móveis e outros aparelhos; aproveite uma exibição elegante das horas a qualquer hora e em qualquer lugar."
+      },
+      "themes": {
+        "title": "Personalização de temas",
+        "description": "Suporta a alternância entre tema claro e escuro; o relógio LED oferece 6 temas de cores para criar uma experiência visual personalizada."
+      },
+      "fullscreen": {
+        "title": "Modo tela cheia",
+        "description": "Entre no modo de tela cheia com um clique, elimine as distrações e concentre-se em uma experiência pura de exibição das horas."
+      },
+      "multilingual": {
+        "title": "Suporte multilíngue",
+        "description": "Suporta interfaces em vários idiomas, atendendo às necessidades de usuários do mundo todo."
+      },
+      "background": {
+        "title": "Fundo dinâmico",
+        "description": "Suporte a belas imagens de fundo, opacidade e desfoque ajustáveis, para criar uma atmosfera visual imersiva."
+      },
+      "share": {
+        "title": "Compartilhamento fácil",
+        "description": "Suporta o compartilhamento por link e em redes sociais; experimente a elegante arte do tempo com os amigos."
+      }
+    },
+    "cta": {
+      "title": "Comece agora a sua jornada no tempo",
+      "description": "Escolha o seu estilo de relógio favorito e comece uma experiência temporal personalizada.",
+      "button": "Explorar relógios",
+      "secondary": "Ver código-fonte"
+    },
+
+    "footer": {
+      "about": {
+        "title": "Sobre o TickFlow",
+        "description": "O TickFlow é um aplicativo de relógio de código aberto e diverso, dedicado a proporcionar aos usuários experiências ricas e coloridas de exibição das horas. Do clássico ao moderno, do simples ao deslumbrante, sempre há um para você."
+      },
+      "quickLinks": {
+        "title": "Links rápidos",
+        "basic": "Relógio básico",
+        "flip": "Relógio de pás",
+        "digital": "Relógio digital",
+        "comic": "Relógio em quadrinhos",
+        "analog": "Relógio analógico",
+        "led": "Matriz LED"
+      },
+      "contact": "Fale conosco",
+      "email": "Email: yukiniro@hotmail.com",
+      "github": "GitHub: https://github.com/Yukiniro/tickflow",
+      "twitter": "Twitter: @Yukiniro",
+      "copyright": "Todos os direitos reservados."
+    }
+  },
+  "background": {
+    "title": "Fundo",
+    "settings": "Configurações de fundo",
+    "enable": "Ativar imagem de fundo",
+    "refresh": "Atualizar fundo",
+    "refreshing": "Atualizando...",
+    "opacity": "Opacidade",
+    "blur": "Desfoque",
+    "loading": "Carregando...",
+    "error": "Falha ao carregar"
+  },
+  "share": {
+    "title": "Compartilhar",
+    "tooltip": "Compartilhar esta página",
+    "copyTooltip": "Copiar link da página",
+    "copyLink": "Copiar link",
+    "copied": "Copiado",
+    "twitter": "Compartilhar no Twitter",
+    "twitterTooltip": "Compartilhar esta página no Twitter",
+    "twitterAria": "Compartilhar no Twitter",
+    "text": "Confira este elegante aplicativo de relógio online!"
+  },
+  "github": {
+    "label": "GitHub",
+    "tooltip": "Ver repositório no GitHub",
+    "ariaLabel": "Repositório no GitHub"
+  },
+  "metadata": {
+    "title": "TickFlow - Aplicativo de relógio elegante",
+    "description": "O TickFlow é um aplicativo de relógio online rico em recursos que oferece relógio de pás, relógio digital, relógio analógico e outros estilos de relógio. Suporta exibição em tempo real, animações elegantes e design responsivo para uma experiência temporal definitiva.",
+    "keywords": "relógio online,relógio em tempo real,relógio digital,relógio de pás,relógio analógico,exibição das horas,relógio mundial,aplicativo de relógio,TickFlow,online clock,digital clock,flip clock,analog clock",
+    "openGraph": {
+      "title": "TickFlow - Aplicativo de relógio elegante",
+      "description": "Aplicativo de relógio online rico em recursos com relógio de pás, digital, analógico e outros estilos, com suporte a exibição em tempo real e animações elegantes"
+    },
+    "twitter": {
+      "title": "TickFlow - Aplicativo de relógio elegante",
+      "description": "Aplicativo de relógio online rico em recursos que suporta relógio de pás, digital e outros estilos"
+    }
+  },
+  "fullscreen": {
+    "enter": "Tela cheia",
+    "exit": "Sair da tela cheia",
+    "enterTooltip": "Visualizar o relógio em tela cheia",
+    "exitTooltip": "Sair da visualização em tela cheia",
+    "enterAria": "Entrar no modo de tela cheia",
+    "exitAria": "Sair do modo de tela cheia"
+  },
+  "manifest": {
+    "name": "TickFlow - Aplicativo de relógio elegante",
+    "short_name": "TickFlow",
+    "description": "Aplicativo de relógio online rico em recursos com relógio de pás, digital, analógico e outros estilos"
+  },
+  "clockTypes": {
+    "basic": "Básico",
+    "flip": "Flip",
+    "digital": "Digital",
+    "comic": "Quadrinhos",
+    "analog": "Analógico",
+    "led": "LED"
+  },
+  "analogClock": {
+    "title": "Relógio analógico",
+    "description": "Exibição de relógio analógico clássico com ponteiros de horas, minutos e segundos",
+    "hourHand": "Ponteiro das horas",
+    "minuteHand": "Ponteiro dos minutos",
+    "secondHand": "Ponteiro dos segundos",
+    "clockFace": "Mostrador",
+    "hourMarkers": "Marcadores das horas",
+    "minuteMarkers": "Marcadores dos minutos"
+  },
+  "ledClock": {
+    "title": "Relógio LED",
+    "description": "Relógio clássico de display de matriz LED, em que pontos de pixels brilhantes formam cada dígito"
+  },
+  "ledTheme": {
+    "selectColor": "Selecionar tema {color}",
+    "themes": {
+      "green": "Verde clássico",
+      "blue": "Azul tecnológico",
+      "red": "Vermelho alerta",
+      "purple": "Roxo encanto",
+      "orange": "Laranja vibrante",
+      "cyan": "Ciano fresco"
+    }
+  }
+}

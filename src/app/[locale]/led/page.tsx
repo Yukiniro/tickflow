@@ -3,9 +3,10 @@ import { Metadata } from "next";
 import { LedClock } from "@/components/clock/led-clock";
 import { BackgroundImage } from "@/components/background-image";
 import { FullscreenContainer } from "@/components/fullscreen-container";
+import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
-  return ["en", "zh", "ja"].map(locale => ({ locale }));
+  return routing.locales.map(locale => ({ locale }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

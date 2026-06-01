@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { trackFullscreenToggle } from "@/components/google-analytics";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Maximize2, Minimize2 } from "lucide-react";
+import { LuMaximize2 as Maximize2, LuMinimize2 as Minimize2 } from "react-icons/lu";
 
 export function FullscreenToggle() {
   const t = useTranslations("fullscreen");

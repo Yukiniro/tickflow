@@ -16,10 +16,11 @@ export function CTAButton({ href = "/basic", className }: CTAButtonProps) {
     <Link
       href={href}
       className={cn(
-        "px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl",
+        "group inline-flex items-center gap-3 bg-rail px-8 py-4 text-base font-bold uppercase tracking-wide text-rail-foreground transition-colors duration-75 hover:bg-foreground hover:text-background",
         className,
       )}
     >
+      <span className="h-2 w-2 bg-rail-foreground transition-colors duration-75 group-hover:bg-background" />
       {t("cta.button")}
     </Link>
   );

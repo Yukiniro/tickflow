@@ -8,6 +8,12 @@
     "analog": "模拟",
     "led": "LED"
   },
+  "theme": {
+    "label": "切换主题",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统"
+  },
   "home": {
     "title": "TickFlow - 多样化时钟体验",
     "subtitle": "一个简洁、美观的网页时钟应用，让时间显示成为一种享受。",
@@ -62,7 +68,7 @@
       },
       "multilingual": {
         "title": "多语言支持",
-        "description": "支持中文、英文、日文三种语言界面，满足不同用户的使用需求。"
+        "description": "支持多种语言界面，满足全球不同用户的使用需求。"
       },
       "background": {
         "title": "动态背景",

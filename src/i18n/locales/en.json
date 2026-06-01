@@ -8,6 +8,12 @@
     "analog": "Analog",
     "led": "LED"
   },
+  "theme": {
+    "label": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
   "home": {
     "title": "TickFlow - Diverse Clock Experience",
     "subtitle": "A clean and beautiful web clock application that makes time display a pleasure.",
@@ -62,7 +68,7 @@
       },
       "multilingual": {
         "title": "Multi-language Support",
-        "description": "Supports Chinese, English, and Japanese interfaces, meeting the needs of different users."
+        "description": "Supports interfaces in multiple languages, meeting the needs of users worldwide."
       },
       "background": {
         "title": "Dynamic Background",

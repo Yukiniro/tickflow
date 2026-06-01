@@ -26,7 +26,7 @@ import {
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import { Slider } from "@/components/ui/slider";
-import { Image as ImageIcon, RefreshCw } from "lucide-react";
+import { LuImage as ImageIcon, LuRefreshCw as RefreshCw } from "react-icons/lu";
 
 export function BackgroundToggle() {
   const t = useTranslations("background");
@@ -115,7 +115,7 @@ export function BackgroundToggle() {
             {/* 模糊度控制 */}
             <div className="px-2 py-2">
               <div className="text-sm font-medium mb-2">
-                {t("blur")}: {blur}px
+                {t("blur-sm")}: {blur}px
               </div>
               <Slider
                 value={[blur]}

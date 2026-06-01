@@ -1,0 +1,6 @@
+# pnpm 11 起，原 package.json 的 "pnpm" 字段配置迁移至此
+# 允许这些依赖在安装时运行构建脚本（sharp 用于 next/image 图片优化）
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  sharp: true

@@ -1,0 +1,196 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "basic": "Basique",
+    "comic": "Comique",
+    "digital": "Numérique",
+    "flip": "Flip",
+    "analog": "Analogique",
+    "led": "LED"
+  },
+  "theme": {
+    "label": "Changer de thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "home": {
+    "title": "TickFlow - Une expérience d'horloge variée",
+    "subtitle": "Une application web d'horloge épurée et élégante qui fait de l'affichage de l'heure un plaisir.",
+    "features": {
+      "title": "Des styles d'horloge variés",
+      "subtitle": "Chaque horloge est soigneusement conçue pour vous offrir une expérience visuelle unique",
+      "basic": {
+        "title": "Horloge basique",
+        "description": "Horloge numérique simple et élégante, claire et lisible, prenant en charge le passage du format 12/24 heures, parfaite pour un usage quotidien.",
+        "icon": "clock"
+      },
+      "flip": {
+        "title": "Horloge à volets",
+        "description": "Effet classique de volets mécaniques : l'animation qui se retourne chaque seconde offre un plaisir visuel nostalgique, comme un retour à l'ère mécanique.",
+        "icon": "flipHorizontal"
+      },
+      "digital": {
+        "title": "Montre numérique",
+        "description": "Style de montre numérique moderne, design d'interface raffiné, prend en charge la fonction chronomètre et plusieurs modes d'affichage.",
+        "icon": "watch"
+      },
+      "comic": {
+        "title": "Horloge BD",
+        "description": "Design amusant de style bande dessinée, couleurs riches, qui apporte vitalité et créativité à votre affichage de l'heure.",
+        "icon": "palette"
+      },
+      "analog": {
+        "title": "Horloge analogique",
+        "description": "Cadran analogique traditionnel, beau design des aiguilles des heures, des minutes et des secondes, affiche l'heure numérique au survol.",
+        "icon": "clock3"
+      },
+      "led": {
+        "title": "Matrice LED",
+        "description": "Affichage matriciel LED high-tech, 6 thèmes de couleurs disponibles, chaque chiffre composé de points lumineux.",
+        "icon": "zap"
+      }
+    },
+    "highlights": {
+      "title": "Fonctionnalités clés",
+      "subtitle": "Pour vous offrir une expérience d'horloge complète",
+      "responsive": {
+        "title": "Design responsive",
+        "description": "Adaptation parfaite aux ordinateurs de bureau, tablettes, mobiles et autres appareils, pour profiter d'un affichage élégant de l'heure partout et à tout moment."
+      },
+      "themes": {
+        "title": "Personnalisation des thèmes",
+        "description": "Prend en charge le passage entre thème clair et sombre ; l'horloge LED propose 6 thèmes de couleurs pour une expérience visuelle personnalisée."
+      },
+      "fullscreen": {
+        "title": "Mode plein écran",
+        "description": "Passez en plein écran en un clic, éliminez les distractions et concentrez-vous sur une expérience pure d'affichage de l'heure."
+      },
+      "multilingual": {
+        "title": "Prise en charge multilingue",
+        "description": "Prend en charge des interfaces en plusieurs langues, répondant aux besoins des utilisateurs du monde entier."
+      },
+      "background": {
+        "title": "Arrière-plan dynamique",
+        "description": "Prise en charge de magnifiques images d'arrière-plan, opacité et flou réglables, pour créer une ambiance visuelle immersive."
+      },
+      "share": {
+        "title": "Partage facile",
+        "description": "Prend en charge le partage par lien et sur les réseaux sociaux ; partagez l'art élégant du temps avec vos amis."
+      }
+    },
+    "cta": {
+      "title": "Commencez votre voyage temporel dès maintenant",
+      "description": "Choisissez votre style d'horloge préféré et démarrez une expérience temporelle personnalisée.",
+      "button": "Explorer les horloges",
+      "secondary": "Voir le code source"
+    },
+
+    "footer": {
+      "about": {
+        "title": "À propos de TickFlow",
+        "description": "TickFlow est une application d'horloge open source variée, dédiée à offrir aux utilisateurs des expériences d'affichage de l'heure riches et colorées. Du classique au moderne, du sobre au somptueux, il y en a toujours une pour vous."
+      },
+      "quickLinks": {
+        "title": "Liens rapides",
+        "basic": "Horloge basique",
+        "flip": "Horloge à volets",
+        "digital": "Montre numérique",
+        "comic": "Horloge BD",
+        "analog": "Horloge analogique",
+        "led": "Matrice LED"
+      },
+      "contact": "Nous contacter",
+      "email": "Email: yukiniro@hotmail.com",
+      "github": "GitHub: https://github.com/Yukiniro/tickflow",
+      "twitter": "Twitter: @Yukiniro",
+      "copyright": "Tous droits réservés."
+    }
+  },
+  "background": {
+    "title": "Arrière-plan",
+    "settings": "Paramètres d'arrière-plan",
+    "enable": "Activer l'image d'arrière-plan",
+    "refresh": "Actualiser l'arrière-plan",
+    "refreshing": "Actualisation...",
+    "opacity": "Opacité",
+    "blur": "Flou",
+    "loading": "Chargement...",
+    "error": "Échec du chargement"
+  },
+  "share": {
+    "title": "Partager",
+    "tooltip": "Partager cette page",
+    "copyTooltip": "Copier le lien de la page",
+    "copyLink": "Copier le lien",
+    "copied": "Copié",
+    "twitter": "Partager sur Twitter",
+    "twitterTooltip": "Partager cette page sur Twitter",
+    "twitterAria": "Partager sur Twitter",
+    "text": "Découvrez cette élégante application d'horloge en ligne !"
+  },
+  "github": {
+    "label": "GitHub",
+    "tooltip": "Voir le dépôt GitHub",
+    "ariaLabel": "Dépôt GitHub"
+  },
+  "metadata": {
+    "title": "TickFlow - Application d'horloge élégante",
+    "description": "TickFlow est une application d'horloge en ligne riche en fonctionnalités qui propose des styles d'horloge à volets, numérique, analogique et autres. Prend en charge l'affichage en temps réel, des animations élégantes et un design responsive pour une expérience temporelle ultime.",
+    "keywords": "horloge en ligne,horloge temps réel,horloge numérique,horloge à volets,horloge analogique,affichage de l'heure,horloge mondiale,application horloge,TickFlow,online clock,digital clock,flip clock,analog clock",
+    "openGraph": {
+      "title": "TickFlow - Application d'horloge élégante",
+      "description": "Application d'horloge en ligne riche en fonctionnalités avec horloge à volets, numérique, analogique et autres styles, prenant en charge l'affichage en temps réel et des animations élégantes"
+    },
+    "twitter": {
+      "title": "TickFlow - Application d'horloge élégante",
+      "description": "Application d'horloge en ligne riche en fonctionnalités prenant en charge l'horloge à volets, numérique et d'autres styles"
+    }
+  },
+  "fullscreen": {
+    "enter": "Plein écran",
+    "exit": "Quitter le plein écran",
+    "enterTooltip": "Aperçu de l'horloge en plein écran",
+    "exitTooltip": "Quitter l'aperçu en plein écran",
+    "enterAria": "Passer en mode plein écran",
+    "exitAria": "Quitter le mode plein écran"
+  },
+  "manifest": {
+    "name": "TickFlow - Application d'horloge élégante",
+    "short_name": "TickFlow",
+    "description": "Application d'horloge en ligne riche en fonctionnalités avec horloge à volets, numérique, analogique et autres styles"
+  },
+  "clockTypes": {
+    "basic": "Basique",
+    "flip": "Flip",
+    "digital": "Numérique",
+    "comic": "Comique",
+    "analog": "Analogique",
+    "led": "LED"
+  },
+  "analogClock": {
+    "title": "Horloge analogique",
+    "description": "Affichage d'horloge analogique classique avec aiguilles des heures, des minutes et des secondes",
+    "hourHand": "Aiguille des heures",
+    "minuteHand": "Aiguille des minutes",
+    "secondHand": "Aiguille des secondes",
+    "clockFace": "Cadran",
+    "hourMarkers": "Index des heures",
+    "minuteMarkers": "Index des minutes"
+  },
+  "ledClock": {
+    "title": "Horloge LED",
+    "description": "Horloge à affichage matriciel LED classique, chaque chiffre formé de points lumineux"
+  },
+  "ledTheme": {
+    "selectColor": "Sélectionner le thème {color}",
+    "themes": {
+      "green": "Vert classique",
+      "blue": "Bleu tech",
+      "red": "Rouge alerte",
+      "purple": "Violet charme",
+      "orange": "Orange vif",
+      "cyan": "Cyan frais"
+    }
+  }
+}

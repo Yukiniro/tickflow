@@ -47,7 +47,7 @@ export function AnalogClock() {
         <div className="absolute inset-0 rounded-full bg-gray-100 dark:bg-gray-800 shadow-2xl" />
 
         {/* 内圈阴影效果 */}
-        <div className="absolute inset-2 rounded-full shadow-inner bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-700 dark:to-gray-900" />
+        <div className="absolute inset-2 rounded-full shadow-inner bg-linear-to-br from-gray-50 to-gray-200 dark:from-gray-700 dark:to-gray-900" />
 
         {/* 数字时间显示 - hover时显示 */}
         <div
@@ -55,7 +55,7 @@ export function AnalogClock() {
             isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
           }`}
         >
-          <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xs rounded-lg px-4 py-2 shadow-lg border border-gray-200 dark:border-gray-700">
             <div className="flex flex-col items-center">
               <div className="text-2xl font-mono font-bold text-gray-800 dark:text-gray-200 tabular-nums">
                 {formatTime()}
@@ -81,7 +81,7 @@ export function AnalogClock() {
           return (
             <div
               key={`minute-${i}`}
-              className={`absolute w-0.5 h-2 bg-gray-600 dark:bg-gray-400 rounded-full shadow-sm transition-opacity duration-300 ${
+              className={`absolute w-0.5 h-2 bg-gray-600 dark:bg-gray-400 rounded-full shadow-xs transition-opacity duration-300 ${
                 isHovered ? "opacity-30" : "opacity-100"
               }`}
               style={{
