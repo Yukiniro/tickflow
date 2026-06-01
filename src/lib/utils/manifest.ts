@@ -1,6 +1,6 @@
 import { routing } from '@/i18n/routing'
 
-export type SupportedLocale = 'zh' | 'en' | 'ja'
+export type SupportedLocale = (typeof routing.locales)[number]
 
 /**
  * 从 Accept-Language 头中检测用户的首选语言
@@ -29,7 +29,7 @@ export function detectLocaleFromHeaders(acceptLanguage: string | null): Supporte
     }
   }
 
-  return 'zh' // 如果没有匹配的语言，回退到中文
+  return routing.defaultLocale // 如果没有匹配的语言，回退到默认语言（en）
 }
 
 /**

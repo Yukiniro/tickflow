@@ -1,0 +1,196 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "basic": "Basis",
+    "comic": "Comic",
+    "digital": "Digital",
+    "flip": "Flip",
+    "analog": "Analog",
+    "led": "LED"
+  },
+  "theme": {
+    "label": "Thema wechseln",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "home": {
+    "title": "TickFlow - Vielfältiges Uhren-Erlebnis",
+    "subtitle": "Eine schlichte und schöne Web-Uhren-Anwendung, die die Zeitanzeige zum Vergnügen macht.",
+    "features": {
+      "title": "Vielfältige Uhrenstile",
+      "subtitle": "Jede Uhr ist sorgfältig gestaltet, um Ihnen ein einzigartiges visuelles Erlebnis zu bieten",
+      "basic": {
+        "title": "Basis-Uhr",
+        "description": "Schlichte und elegante Digitaluhr, klar und gut lesbar, unterstützt den Wechsel zwischen 12- und 24-Stunden-Format, perfekt für den täglichen Gebrauch.",
+        "icon": "clock"
+      },
+      "flip": {
+        "title": "Klappuhr",
+        "description": "Klassischer mechanischer Klapp-Effekt: Die Klappanimation jede Sekunde sorgt für nostalgischen visuellen Genuss, als kehrte man ins mechanische Zeitalter zurück.",
+        "icon": "flipHorizontal"
+      },
+      "digital": {
+        "title": "Digitaluhr",
+        "description": "Moderner Digitaluhren-Stil, edles Interface-Design, unterstützt Stoppuhr-Funktion und mehrere Anzeigemodi.",
+        "icon": "watch"
+      },
+      "comic": {
+        "title": "Comic-Uhr",
+        "description": "Verspieltes Design im Comic-Stil, kräftige Farben, die Ihrer Zeitanzeige Lebendigkeit und Kreativität verleihen.",
+        "icon": "palette"
+      },
+      "analog": {
+        "title": "Analoguhr",
+        "description": "Traditionelles analoges Zifferblatt, schönes Design von Stunden-, Minuten- und Sekundenzeiger, zeigt beim Überfahren die digitale Zeit an.",
+        "icon": "clock3"
+      },
+      "led": {
+        "title": "LED-Matrix",
+        "description": "Technische LED-Matrix-Anzeige, 6 Farbthemen verfügbar, jede Ziffer aus leuchtenden Pixelpunkten zusammengesetzt.",
+        "icon": "zap"
+      }
+    },
+    "highlights": {
+      "title": "Kernfunktionen",
+      "subtitle": "Wir bieten Ihnen ein vollständiges Uhren-Erlebnis",
+      "responsive": {
+        "title": "Responsives Design",
+        "description": "Perfekte Anpassung an Desktop, Tablet, Mobilgerät und andere Geräte – genießen Sie jederzeit und überall eine elegante Zeitanzeige."
+      },
+      "themes": {
+        "title": "Thema-Anpassung",
+        "description": "Unterstützt den Wechsel zwischen hellem und dunklem Thema; die LED-Uhr bietet 6 Farbthemen für ein personalisiertes visuelles Erlebnis."
+      },
+      "fullscreen": {
+        "title": "Vollbildmodus",
+        "description": "Mit einem Klick in den Vollbildmodus wechseln, Ablenkungen entfernen und sich auf das reine Erlebnis der Zeitanzeige konzentrieren."
+      },
+      "multilingual": {
+        "title": "Mehrsprachige Unterstützung",
+        "description": "Unterstützt Oberflächen in mehreren Sprachen und erfüllt die Bedürfnisse von Nutzern weltweit."
+      },
+      "background": {
+        "title": "Dynamischer Hintergrund",
+        "description": "Unterstützung für schöne Hintergrundbilder, einstellbare Transparenz und Unschärfe, für eine immersive visuelle Atmosphäre."
+      },
+      "share": {
+        "title": "Einfaches Teilen",
+        "description": "Unterstützt das Teilen per Link und über soziale Medien; erleben Sie elegante Zeitkunst mit Freunden."
+      }
+    },
+    "cta": {
+      "title": "Beginnen Sie jetzt Ihre Zeitreise",
+      "description": "Wählen Sie Ihren bevorzugten Uhrenstil und starten Sie ein personalisiertes Zeiterlebnis.",
+      "button": "Uhren entdecken",
+      "secondary": "Quellcode ansehen"
+    },
+
+    "footer": {
+      "about": {
+        "title": "Über TickFlow",
+        "description": "TickFlow ist eine quelloffene, vielfältige Uhren-Anwendung, die sich der Bereitstellung reichhaltiger und farbenfroher Zeitanzeige-Erlebnisse widmet. Von klassisch bis modern, von schlicht bis prächtig – es ist immer eine für Sie dabei."
+      },
+      "quickLinks": {
+        "title": "Schnelllinks",
+        "basic": "Basis-Uhr",
+        "flip": "Klappuhr",
+        "digital": "Digitaluhr",
+        "comic": "Comic-Uhr",
+        "analog": "Analoguhr",
+        "led": "LED-Matrix"
+      },
+      "contact": "Kontakt",
+      "email": "Email: yukiniro@hotmail.com",
+      "github": "GitHub: https://github.com/Yukiniro/tickflow",
+      "twitter": "Twitter: @Yukiniro",
+      "copyright": "Alle Rechte vorbehalten."
+    }
+  },
+  "background": {
+    "title": "Hintergrund",
+    "settings": "Hintergrundeinstellungen",
+    "enable": "Hintergrundbild aktivieren",
+    "refresh": "Hintergrund aktualisieren",
+    "refreshing": "Wird aktualisiert...",
+    "opacity": "Deckkraft",
+    "blur": "Unschärfe",
+    "loading": "Wird geladen...",
+    "error": "Laden fehlgeschlagen"
+  },
+  "share": {
+    "title": "Teilen",
+    "tooltip": "Diese Seite teilen",
+    "copyTooltip": "Seitenlink kopieren",
+    "copyLink": "Link kopieren",
+    "copied": "Kopiert",
+    "twitter": "Auf Twitter teilen",
+    "twitterTooltip": "Diese Seite auf Twitter teilen",
+    "twitterAria": "Auf Twitter teilen",
+    "text": "Schau dir diese elegante Online-Uhren-App an!"
+  },
+  "github": {
+    "label": "GitHub",
+    "tooltip": "GitHub-Repository ansehen",
+    "ariaLabel": "GitHub-Repository"
+  },
+  "metadata": {
+    "title": "TickFlow - Elegante Uhren-App",
+    "description": "TickFlow ist eine funktionsreiche Online-Uhren-Anwendung, die Klappuhr, Digitaluhr, Analoguhr und weitere Uhrenstile bietet. Unterstützt Echtzeitanzeige, elegante Animationen und responsives Design für ein ultimatives Zeiterlebnis.",
+    "keywords": "Online-Uhr,Echtzeituhr,Digitaluhr,Klappuhr,Analoguhr,Zeitanzeige,Weltuhr,Uhren-App,TickFlow,online clock,digital clock,flip clock,analog clock",
+    "openGraph": {
+      "title": "TickFlow - Elegante Uhren-App",
+      "description": "Funktionsreiche Online-Uhren-Anwendung mit Klappuhr, Digitaluhr, Analoguhr und weiteren Stilen, unterstützt Echtzeitanzeige und elegante Animationen"
+    },
+    "twitter": {
+      "title": "TickFlow - Elegante Uhren-App",
+      "description": "Funktionsreiche Online-Uhren-Anwendung, die Klappuhr, Digitaluhr und weitere Stile unterstützt"
+    }
+  },
+  "fullscreen": {
+    "enter": "Vollbild",
+    "exit": "Vollbild beenden",
+    "enterTooltip": "Uhr im Vollbild ansehen",
+    "exitTooltip": "Vollbildvorschau beenden",
+    "enterAria": "In den Vollbildmodus wechseln",
+    "exitAria": "Vollbildmodus beenden"
+  },
+  "manifest": {
+    "name": "TickFlow - Elegante Uhren-App",
+    "short_name": "TickFlow",
+    "description": "Funktionsreiche Online-Uhren-Anwendung mit Klappuhr, Digitaluhr, Analoguhr und weiteren Stilen"
+  },
+  "clockTypes": {
+    "basic": "Basis",
+    "flip": "Flip",
+    "digital": "Digital",
+    "comic": "Comic",
+    "analog": "Analog",
+    "led": "LED"
+  },
+  "analogClock": {
+    "title": "Analoguhr",
+    "description": "Klassische Analoguhr-Anzeige mit Stunden-, Minuten- und Sekundenzeiger",
+    "hourHand": "Stundenzeiger",
+    "minuteHand": "Minutenzeiger",
+    "secondHand": "Sekundenzeiger",
+    "clockFace": "Zifferblatt",
+    "hourMarkers": "Stundenmarkierungen",
+    "minuteMarkers": "Minutenmarkierungen"
+  },
+  "ledClock": {
+    "title": "LED-Uhr",
+    "description": "Klassische LED-Matrix-Anzeigeuhr, bei der leuchtende Pixelpunkte jede Ziffer bilden"
+  },
+  "ledTheme": {
+    "selectColor": "Thema {color} auswählen",
+    "themes": {
+      "green": "Klassisches Grün",
+      "blue": "Tech-Blau",
+      "red": "Alarm-Rot",
+      "purple": "Charme-Violett",
+      "orange": "Lebhaftes Orange",
+      "cyan": "Frisches Cyan"
+    }
+  }
+}

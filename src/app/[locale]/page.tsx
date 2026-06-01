@@ -1,17 +1,18 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { generateHomeMetadata } from "@/lib/metadata";
+import { routing } from "@/i18n/routing";
 import { HeroSection, FeaturesSection, HighlightsSection, CTASection, Footer } from "@/components/home";
 
 export function generateStaticParams() {
-  return ["en", "zh", "ja"].map(locale => ({ locale }));
+  return routing.locales.map(locale => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("home");
+  const tMeta = await getTranslations("metadata");
 
-  return generateHomeMetadata(locale, t("title"), t("subtitle"));
+  return generateHomeMetadata(t("title"), t("subtitle"), tMeta("keywords"));
 }
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
