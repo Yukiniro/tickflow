@@ -59,44 +59,44 @@ export function ShichenClock() {
       role="img"
       aria-label={`${cur.epithet} ${subtitle} ${keLabel} ${modern}`}
     >
-      {/* 主角:满屏地支巨字。key=idx → 换时辰时重挂载触发墨晕淡入 */}
+      {/* 主角:地支大字。收敛尺寸以免压迫四周;key=idx → 换时辰时墨晕淡入 */}
       <span
         key={idx}
-        className="shichen-hero shichen-bloom select-none font-bold leading-[0.7]"
-        style={{ fontSize: "min(86vh, 76vmin)" }}
+        className="shichen-hero shichen-bloom select-none font-bold leading-[0.74]"
+        style={{ fontSize: "min(46vh, 50vmin)" }}
       >
         {cur.branch}
       </span>
 
-      {/* 题字:竖排别称,右上角(避开居中巨字,窄屏不相撞) */}
+      {/* 题字:竖排别称,右上角(下移让开 fixed 导航栏) */}
       <span
-        className="shichen-epithet absolute top-5 right-5 select-none font-bold leading-none md:top-10 md:right-12"
-        style={{ writingMode: "vertical-rl", fontSize: "min(11vh, 8vmin)" }}
+        className="shichen-epithet absolute top-16 right-5 select-none font-bold leading-none md:top-20 md:right-10"
+        style={{ writingMode: "vertical-rl", fontSize: "min(9vh, 7vmin)" }}
       >
         {cur.epithet}
       </span>
 
-      {/* 左上:现代时段 + 本地化生肖 */}
-      <div className="absolute top-5 left-5 md:top-10 md:left-12">
-        <div className="font-mono text-xs tracking-[0.3em] md:text-sm" style={{ color: "var(--ink-soft)" }}>
+      {/* 左上:现代时段 + 本地化生肖(下移让开导航栏,限宽防溢出) */}
+      <div className="absolute top-16 left-5 max-w-[55vw] md:top-20 md:left-10">
+        <div className="font-mono text-xs tracking-[0.3em]" style={{ color: "var(--ink-soft)" }}>
           {cur.range}
         </div>
-        <div className="shichen-epithet mt-1.5 text-base font-bold md:text-xl" style={{ color: "var(--ink)" }}>
+        <div className="shichen-epithet mt-1.5 truncate text-sm font-bold md:text-base" style={{ color: "var(--ink)" }}>
           {subtitle}
         </div>
       </div>
 
       {/* 左下:朱砂落款印 — 当前刻 */}
       <span
-        className="shichen-seal absolute bottom-8 left-5 flex items-center justify-center rounded-[20%] font-bold select-none md:bottom-12 md:left-12"
-        style={{ writingMode: "vertical-rl", padding: "0.6rem 0.5rem", fontSize: "min(5.5vh, 4.4vmin)", letterSpacing: "0.14em" }}
+        className="shichen-seal absolute bottom-7 left-5 flex items-center justify-center rounded-[20%] font-bold select-none md:bottom-10 md:left-10"
+        style={{ writingMode: "vertical-rl", padding: "0.5rem 0.4rem", fontSize: "min(4.2vh, 3.8vmin)", letterSpacing: "0.12em" }}
       >
         {keLabel}
       </span>
 
       {/* 右下:现代时间 */}
       <div
-        className="absolute right-5 bottom-7 font-mono text-xs tabular-nums tracking-[0.3em] md:right-12 md:bottom-10 md:text-sm"
+        className="absolute right-5 bottom-7 font-mono text-xs tabular-nums tracking-[0.25em] md:right-10 md:bottom-10 md:text-sm"
         style={{ color: "var(--ink-soft)" }}
       >
         {modern}
