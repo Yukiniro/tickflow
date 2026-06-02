@@ -1,6 +1,6 @@
 "use client";
 
-import { useTime } from "@/hooks/use-time";
+import { useClock } from "@/hooks/use-clock";
 import { useState, useEffect, useRef } from "react";
 
 interface FlipDigitProps {
@@ -109,7 +109,7 @@ function FlipDigit({ value }: FlipDigitProps) {
 }
 
 export function FlipClock() {
-  const { hours, minutes, seconds, ampm, mounted } = useTime();
+  const { hours, minutes, seconds, ampm, mounted } = useClock();
 
   if (!mounted) {
     return (

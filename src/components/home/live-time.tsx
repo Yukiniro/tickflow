@@ -12,7 +12,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 /**
  * 巨型实时时间排版。tabular-nums 等宽对齐;分隔符 `:` 每秒随心跳脉冲(全站签名交互)。
- * 复用 useTime(),不新增计时器。
+ * 复用 useClock() 只读订阅,不新增计时器。
  */
 export function LiveTime({ className, showSeconds = true }: LiveTimeProps) {
   const { hours, minutes, seconds, ampm, is24Hour, mounted } = useClock();

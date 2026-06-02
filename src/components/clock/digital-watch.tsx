@@ -1,9 +1,9 @@
 'use client';
 
-import { useTime } from '@/hooks/use-time';
+import { useClock } from '@/hooks/use-clock';
 
 export function DigitalWatch() {
-  const { hours, minutes, seconds, ampm, mounted } = useTime();
+  const { hours, minutes, seconds, ampm, mounted } = useClock();
 
   if (!mounted) {
     return null;

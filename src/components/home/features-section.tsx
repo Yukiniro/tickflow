@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import { FeatureCard } from "./feature-card";
 import { CLOCK_FEATURES } from "./constants";

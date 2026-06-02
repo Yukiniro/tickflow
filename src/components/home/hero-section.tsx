@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import { CTAButton } from "./cta-button";
 import { MondaineClock } from "./mondaine-clock";

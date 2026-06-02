@@ -1,46 +1,32 @@
 "use client";
 
-import { useTime } from "@/hooks/use-time";
+import { useClock } from "@/hooks/use-clock";
 import { useAtomValue } from "jotai";
 import { enabledAtom } from "@/store/background";
+import { cn } from "@/lib/utils";
 
 export function BasicClock() {
-  const { hours, minutes, seconds, ampm, mounted } = useTime();
+  const { hours, minutes, seconds, ampm, mounted } = useClock();
   const backgroundEnabled = useAtomValue(enabledAtom);
 
   if (!mounted) {
     return null;
   }
 
-  // 根据背景启用状态选择样式类
-  const getTextStyle = () => {
-    if (backgroundEnabled) {
-      // 有背景时使用轮廓样式，确保在任何背景上都可见
-      return "clock-text-outline";
-    } else {
-      // 无背景时使用增强可见性样式，适应浅色/深色主题
-      return "clock-text-enhanced";
-    }
-  };
-
-  const getAmPmStyle = () => {
-    if (backgroundEnabled) {
-      return "clock-text-outline-small";
-    } else {
-      return "text-muted-foreground font-bold";
-    }
-  };
+  // 有背景:轮廓样式保证任意背景上可见;无背景:增强样式适配深浅主题
+  const textStyle = backgroundEnabled ? "clock-text-outline" : "clock-text-enhanced";
+  const ampmStyle = backgroundEnabled ? "clock-text-outline-small" : "text-muted-foreground font-bold";
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
-      <div className={`text-[16vw] font-bold tabular-nums tracking-wider ${getTextStyle()}`}>
+      <div className={cn("text-[16vw] font-bold tabular-nums tracking-wider", textStyle)}>
         {String(hours).padStart(2, "0")}
         <span>:</span>
         {String(minutes).padStart(2, "0")}
         <span>:</span>
         {String(seconds).padStart(2, "0")}
       </div>
-      {ampm && <div className={`text-[4vw] font-medium ${getAmPmStyle()}`}>{ampm}</div>}
+      {ampm && <div className={cn("text-[4vw] font-medium", ampmStyle)}>{ampm}</div>}
     </div>
   );
 }

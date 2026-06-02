@@ -1,14 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-
-export interface LedTheme {
-  id: string;
-  name: string;
-  color: string;
-  shadowColor: string;
-  borderColor: string;
-}
+import { type LedTheme } from "@/components/clock/led-themes";
 
 interface LedThemeSelectorProps {
   currentTheme: LedTheme;

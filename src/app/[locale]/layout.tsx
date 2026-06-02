@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Providers } from "@/app/providers";
 import { Nav } from "@/components/nav";
 import { StructuredData } from "@/components/structured-data";
 import { SEOOptimizations } from "@/components/seo-optimizations";
@@ -126,8 +127,10 @@ export default async function RootLayout({
       <body className={`${archivo.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextIntlClientProvider messages={messages}>
-            <Nav />
-            <main>{children}</main>
+            <Providers>
+              <Nav />
+              <main>{children}</main>
+            </Providers>
           </NextIntlClientProvider>
         </ThemeProvider>
         <GoogleAnalytics />

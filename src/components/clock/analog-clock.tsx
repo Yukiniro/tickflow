@@ -1,13 +1,11 @@
 "use client";
 
-import { useTime } from "@/hooks/use-time";
+import { useClock } from "@/hooks/use-clock";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 
 export function AnalogClock() {
-  const { hours, minutes, seconds, mounted, is24Hour, ampm } = useTime();
+  const { hours, minutes, seconds, mounted, is24Hour, ampm } = useClock();
   const t = useTranslations("analogClock");
-  const [isHovered, setIsHovered] = useState(false);
 
   if (!mounted) {
     return null;
@@ -37,11 +35,9 @@ export function AnalogClock() {
   return (
     <div className="flex items-center justify-center">
       <div
-        className="relative w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] cursor-pointer transition-all duration-300 hover:scale-105"
+        className="group relative w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] cursor-pointer transition-all duration-300 hover:scale-105"
         role="img"
         aria-label={t("description")}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         {/* 时钟背景 */}
         <div className="absolute inset-0 rounded-full bg-gray-100 dark:bg-gray-800 shadow-2xl" />
@@ -50,11 +46,8 @@ export function AnalogClock() {
         <div className="absolute inset-2 rounded-full shadow-inner bg-linear-to-br from-gray-50 to-gray-200 dark:from-gray-700 dark:to-gray-900" />
 
         {/* 数字时间显示 - hover时显示 */}
-        <div
-          className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 transition-all duration-300 ${
-            isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
-          }`}
-        >
+        <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 scale-75 transform opacity-0 transition-all duration-300 pointer-events-none group-hover:scale-100 group-hover:opacity-100 group-hover:pointer-events-auto">
+
           <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xs rounded-lg px-4 py-2 shadow-lg border border-gray-200 dark:border-gray-700">
             <div className="flex flex-col items-center">
               <div className="text-2xl font-mono font-bold text-gray-800 dark:text-gray-200 tabular-nums">
@@ -81,9 +74,7 @@ export function AnalogClock() {
           return (
             <div
               key={`minute-${i}`}
-              className={`absolute w-0.5 h-2 bg-gray-600 dark:bg-gray-400 rounded-full shadow-xs transition-opacity duration-300 ${
-                isHovered ? "opacity-30" : "opacity-100"
-              }`}
+              className="absolute w-0.5 h-2 bg-gray-600 dark:bg-gray-400 rounded-full shadow-xs transition-opacity duration-300 opacity-100 group-hover:opacity-30"
               style={{
                 left: `${x}%`,
                 top: `${y}%`,
@@ -106,9 +97,7 @@ export function AnalogClock() {
           return (
             <div
               key={`hour-${i}`}
-              className={`absolute w-1 h-6 bg-gray-800 dark:bg-gray-200 rounded-full shadow-md transition-opacity duration-300 ${
-                isHovered ? "opacity-40" : "opacity-100"
-              }`}
+              className="absolute w-1 h-6 bg-gray-800 dark:bg-gray-200 rounded-full shadow-md transition-opacity duration-300 opacity-100 group-hover:opacity-40"
               style={{
                 left: `${x}%`,
                 top: `${y}%`,
@@ -122,9 +111,7 @@ export function AnalogClock() {
 
         {/* 时针 */}
         <div
-          className={`absolute left-1/2 top-1/2 w-1.5 h-[25%] bg-gray-800 dark:bg-gray-200 rounded-full origin-bottom shadow-lg transition-opacity duration-300 ${
-            isHovered ? "opacity-30" : "opacity-100"
-          }`}
+          className="absolute left-1/2 top-1/2 w-1.5 h-[25%] bg-gray-800 dark:bg-gray-200 rounded-full origin-bottom shadow-lg transition-opacity duration-300 opacity-100 group-hover:opacity-30"
           style={{
             transform: `translate(-50%, -100%) rotate(${hourDegrees}deg)`,
             filter: "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))",
@@ -134,9 +121,7 @@ export function AnalogClock() {
 
         {/* 分针 */}
         <div
-          className={`absolute left-1/2 top-1/2 w-1 h-[35%] bg-gray-800 dark:bg-gray-200 rounded-full origin-bottom shadow-lg transition-opacity duration-300 ${
-            isHovered ? "opacity-30" : "opacity-100"
-          }`}
+          className="absolute left-1/2 top-1/2 w-1 h-[35%] bg-gray-800 dark:bg-gray-200 rounded-full origin-bottom shadow-lg transition-opacity duration-300 opacity-100 group-hover:opacity-30"
           style={{
             transform: `translate(-50%, -100%) rotate(${minuteDegrees}deg)`,
             filter: "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))",
@@ -146,9 +131,7 @@ export function AnalogClock() {
 
         {/* 秒针 */}
         <div
-          className={`absolute left-1/2 top-1/2 w-0.5 h-[40%] bg-red-500 rounded-full origin-bottom shadow-md transition-opacity duration-300 ${
-            isHovered ? "opacity-40" : "opacity-100"
-          }`}
+          className="absolute left-1/2 top-1/2 w-0.5 h-[40%] bg-red-500 rounded-full origin-bottom shadow-md transition-opacity duration-300 opacity-100 group-hover:opacity-40"
           style={{
             transform: `translate(-50%, -100%) rotate(${secondDegrees}deg)`,
             filter: "drop-shadow(0 1px 3px rgba(239, 68, 68, 0.4))",
@@ -158,9 +141,7 @@ export function AnalogClock() {
 
         {/* 中心圆点 */}
         <div
-          className={`absolute left-1/2 top-1/2 w-3 h-3 bg-gray-800 dark:bg-gray-200 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-lg transition-opacity duration-300 ${
-            isHovered ? "opacity-30" : "opacity-100"
-          }`}
+          className="absolute left-1/2 top-1/2 w-3 h-3 bg-gray-800 dark:bg-gray-200 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-lg transition-opacity duration-300 opacity-100 group-hover:opacity-30"
           style={{
             filter: "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))",
           }}
