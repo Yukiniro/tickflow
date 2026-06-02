@@ -64,7 +64,7 @@ export function ShichenClock() {
         {/* key=idx → 换时辰时巨字墨晕淡入 */}
         <span
           key={idx}
-          className="shichen-hero shichen-bloom select-none font-bold leading-[0.74]"
+          className="shichen-hero shichen-bloom select-none font-bold leading-none"
           style={{ fontSize: "min(46vh, 50vmin)" }}
         >
           {cur.branch}
