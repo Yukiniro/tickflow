@@ -30,9 +30,12 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
 }
 
 // 用于手动发送事件的工具函数
-export const gtag = (...args: any[]) => {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag(...args);
+type GtagFn = (...args: unknown[]) => void;
+
+export const gtag = (...args: unknown[]) => {
+  if (typeof window !== "undefined") {
+    const w = window as Window & { gtag?: GtagFn };
+    w.gtag?.(...args);
   }
 };
 

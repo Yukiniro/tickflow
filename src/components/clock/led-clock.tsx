@@ -1,7 +1,6 @@
 "use client";
 
 import { useTime } from "@/hooks/use-time";
-import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import { LedThemeSelector } from "@/components/led-theme-selector";
 
@@ -60,7 +59,6 @@ export const LED_THEMES: LedTheme[] = [
 
 export function LedClock() {
   const { hours, minutes, seconds, ampm, is24Hour, mounted } = useTime();
-  const t = useTranslations("ledClock");
 
   // LED主题状态
   const [currentTheme, setCurrentTheme] = useState<LedTheme>(LED_THEMES[0]);
@@ -74,6 +72,8 @@ export function LedClock() {
           const parsedTheme = JSON.parse(savedTheme);
           const foundTheme = LED_THEMES.find(theme => theme.id === parsedTheme.id);
           if (foundTheme) {
+            // 从 localStorage 水合主题:挂载后读取,属预期的 effect 内置位
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setCurrentTheme(foundTheme);
           }
         } catch (error) {

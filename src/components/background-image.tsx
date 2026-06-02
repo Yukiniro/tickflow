@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import {
@@ -33,6 +33,8 @@ export function BackgroundImage() {
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
+    // 挂载标记:SSR 水合后置位,属预期用法
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -63,8 +65,12 @@ export function BackgroundImage() {
   // 当启用状态改变时重新加载图片
   useEffect(() => {
     if (mounted && enabled) {
+      // loadBackgroundPhoto 内部同步置位 loading 状态,挂载/启用变化时按预期触发
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       loadBackgroundPhoto();
     }
+    // loadBackgroundPhoto 每次渲染重建,仅在 mounted/enabled 变化时加载,故意省略
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, enabled]);
 
   // 处理高分辨率图片加载完成

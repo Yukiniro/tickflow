@@ -35,7 +35,7 @@ export function ClockTypeSelector() {
 
   return (
     <div className="flex gap-2 p-4">
-      {Object.entries(CLOCK_TYPES).map(([key, value]) => (
+      {Object.entries(CLOCK_TYPES).map(([, value]) => (
         <Button
           key={value}
           variant={currentType === value ? "default" : "outline"}

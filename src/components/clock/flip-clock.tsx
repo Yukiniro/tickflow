@@ -29,12 +29,6 @@ function FlipDigit({ value }: FlipDigitProps) {
     }
   }, [value]);
 
-  useEffect(() => {
-    setCurrentValue(value);
-    setNextValue(value);
-    prevValueRef.current = value;
-  }, []);
-
   const currentDisplay = String(currentValue).padStart(2, "0");
   const nextDisplay = String(nextValue).padStart(2, "0");
 

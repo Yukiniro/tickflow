@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations("analogClock");
+  const t = await getTranslations({ locale, namespace: "analogClock" });
 
   return {
     title: t("title"),
