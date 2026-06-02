@@ -5,8 +5,8 @@ import { useAtomValue } from "jotai";
 import { formattedTimeAtom, is24HourAtom } from "@/store/time";
 
 /**
- * 只读时钟订阅:读取由 <Nav> 的 useTime() 心跳驱动的 timeAtom,
- * 不新建 setInterval / AudioContext。用于纯展示组件(活钟、时间排版),
+ * 只读时钟订阅:读取由根 <ClockHeartbeat> 心跳驱动的 timeAtom,
+ * 不新建 setInterval / AudioContext。用于所有纯展示组件(各类时钟、时间排版),
  * 避免重复计时器与多个音频上下文。
  */
 export function useClock() {

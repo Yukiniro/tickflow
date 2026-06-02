@@ -10,7 +10,8 @@ import { BackgroundToggle } from "./background-toggle";
 import { ShareButton } from "./share-button";
 import { FullscreenToggle } from "./fullscreen-toggle";
 import { GithubIcon } from "./github-icon";
-import { useTime } from "@/hooks/use-time";
+import { useClock } from "@/hooks/use-clock";
+import { useTimeFormat } from "@/hooks/use-time-format";
 import { usePathname } from "next/navigation";
 
 interface NavProps {
@@ -69,7 +70,8 @@ const getNavProps = (pathname: string) => {
 
 export function Nav(props: NavProps = {}) {
   const pathname = usePathname();
-  const { is24Hour, toggleTimeFormat, mounted, seconds } = useTime();
+  const { mounted, seconds } = useClock();
+  const { is24Hour, toggleTimeFormat } = useTimeFormat();
 
   // 根据路径获取动态属性
   const dynamicProps = getNavProps(pathname);
