@@ -6,7 +6,9 @@
     "digital": "Digital",
     "flip": "Flip",
     "analog": "Analog",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "theme": {
     "label": "Toggle theme",
@@ -49,6 +51,16 @@
         "title": "LED Matrix",
         "description": "Tech-savvy LED matrix display, 6 color themes available, each digit composed of glowing pixel dots.",
         "icon": "zap"
+      },
+      "nixie": {
+        "title": "Nixie Tube Clock",
+        "description": "Retro vacuum-tube glow — warm amber numerals float behind glass with ghostly unlit cathodes, just like the real thing.",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "Chinese Double-Hours",
+        "description": "The current double-hour as a screen-filling ink character, stamped with a vermilion seal — this moment alone, no list.",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +97,6 @@
       "button": "Explore Clocks",
       "secondary": "View Source"
     },
-
     "footer": {
       "about": {
         "title": "About TickFlow",
@@ -98,7 +109,9 @@
         "digital": "Digital Watch",
         "comic": "Comic Clock",
         "analog": "Analog Clock",
-        "led": "LED Matrix"
+        "led": "LED Matrix",
+        "nixie": "Nixie Tube Clock",
+        "shichen": "Chinese Double-Hours"
       },
       "contact": "Contact Us",
       "email": "Email: yukiniro@hotmail.com",
@@ -166,7 +179,9 @@
     "digital": "Digital",
     "comic": "Comic",
     "analog": "Analog",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "basicClock": {
     "title": "Basic Clock",
@@ -189,7 +204,7 @@
     "description": "Classic analog clock display with hour, minute, and second hands",
     "hourHand": "Hour Hand",
     "minuteHand": "Minute Hand",
-    "secondHand": "Second Hand", 
+    "secondHand": "Second Hand",
     "clockFace": "Clock Face",
     "hourMarkers": "Hour Markers",
     "minuteMarkers": "Minute Markers"
@@ -208,5 +223,28 @@
       "orange": "Vibrant Orange",
       "cyan": "Fresh Cyan"
     }
+  },
+  "nixieClock": {
+    "title": "Nixie Tube Clock",
+    "description": "Retro Nixie tube display with warm glowing numerals behind glass"
+  },
+  "shichenClock": {
+    "title": "Chinese Double-Hour Clock",
+    "description": "The current shichen rendered as a screen-filling ink character",
+    "hourOf": "Hour of the {animal}",
+    "zodiac": {
+      "zi": "Rat",
+      "chou": "Ox",
+      "yin": "Tiger",
+      "mao": "Rabbit",
+      "chen": "Dragon",
+      "si": "Snake",
+      "wu": "Horse",
+      "wei": "Goat",
+      "shen": "Monkey",
+      "you": "Rooster",
+      "xu": "Dog",
+      "hai": "Pig"
+    }
   }
-} 
+}

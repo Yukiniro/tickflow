@@ -6,7 +6,9 @@
     "digital": "Digital",
     "flip": "Flip",
     "analog": "Analog",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "theme": {
     "label": "Thema wechseln",
@@ -49,6 +51,16 @@
         "title": "LED-Matrix",
         "description": "Technische LED-Matrix-Anzeige, 6 Farbthemen verfügbar, jede Ziffer aus leuchtenden Pixelpunkten zusammengesetzt.",
         "icon": "zap"
+      },
+      "nixie": {
+        "title": "Nixie-Röhrenuhr",
+        "description": "Retro-Röhrenglühen — warme bernsteinfarbene Ziffern schweben hinter Glas mit geisterhaften unbeleuchteten Kathoden, wie echt.",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "Zwölf-Shichen-Uhr",
+        "description": "Das aktuelle Shichen als bildschirmfüllendes Tuschezeichen, mit Zinnoberstempel — nur dieser Augenblick, keine Liste.",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +97,6 @@
       "button": "Uhren entdecken",
       "secondary": "Quellcode ansehen"
     },
-
     "footer": {
       "about": {
         "title": "Über TickFlow",
@@ -98,7 +109,9 @@
         "digital": "Digitaluhr",
         "comic": "Comic-Uhr",
         "analog": "Analoguhr",
-        "led": "LED-Matrix"
+        "led": "LED-Matrix",
+        "nixie": "Nixie-Röhrenuhr",
+        "shichen": "Zwölf-Shichen-Uhr"
       },
       "contact": "Kontakt",
       "email": "Email: yukiniro@hotmail.com",
@@ -166,7 +179,9 @@
     "digital": "Digital",
     "comic": "Comic",
     "analog": "Analog",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "basicClock": {
     "title": "Basis-Uhr",
@@ -207,6 +222,29 @@
       "purple": "Charme-Violett",
       "orange": "Lebhaftes Orange",
       "cyan": "Frisches Cyan"
+    }
+  },
+  "nixieClock": {
+    "title": "Nixie-Röhrenuhr",
+    "description": "Retro-Nixie-Röhrenanzeige mit warm leuchtenden Ziffern hinter Glas"
+  },
+  "shichenClock": {
+    "title": "Zwölf-Shichen-Uhr",
+    "description": "Das aktuelle Shichen als bildschirmfüllendes Tuschezeichen",
+    "hourOf": "Stunde des {animal}",
+    "zodiac": {
+      "zi": "Ratte",
+      "chou": "Ochse",
+      "yin": "Tiger",
+      "mao": "Hase",
+      "chen": "Drache",
+      "si": "Schlange",
+      "wu": "Pferd",
+      "wei": "Ziege",
+      "shen": "Affe",
+      "you": "Hahn",
+      "xu": "Hund",
+      "hai": "Schwein"
     }
   }
 }

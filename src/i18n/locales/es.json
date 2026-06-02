@@ -6,7 +6,9 @@
     "digital": "Digital",
     "flip": "Flip",
     "analog": "Analógico",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "theme": {
     "label": "Cambiar tema",
@@ -49,6 +51,16 @@
         "title": "Matriz LED",
         "description": "Pantalla de matriz LED de aspecto tecnológico, 6 temas de color disponibles, cada dígito compuesto por puntos de píxeles brillantes.",
         "icon": "zap"
+      },
+      "nixie": {
+        "title": "Reloj de tubos Nixie",
+        "description": "Brillo retro de tubos de vacío: cifras ámbar cálidas flotan tras el cristal con cátodos apagados fantasmales, como las de verdad.",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "Reloj de los doce shichen",
+        "description": "El shichen actual como un ideograma a tinta a pantalla completa, sellado en bermellón — solo este instante, sin lista.",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +97,6 @@
       "button": "Explorar relojes",
       "secondary": "Ver código fuente"
     },
-
     "footer": {
       "about": {
         "title": "Acerca de TickFlow",
@@ -98,7 +109,9 @@
         "digital": "Reloj digital",
         "comic": "Reloj cómic",
         "analog": "Reloj analógico",
-        "led": "Matriz LED"
+        "led": "Matriz LED",
+        "nixie": "Reloj de tubos Nixie",
+        "shichen": "Reloj de los doce shichen"
       },
       "contact": "Contáctanos",
       "email": "Email: yukiniro@hotmail.com",
@@ -166,7 +179,9 @@
     "digital": "Digital",
     "comic": "Cómic",
     "analog": "Analógico",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "basicClock": {
     "title": "Reloj básico",
@@ -207,6 +222,29 @@
       "purple": "Púrpura encanto",
       "orange": "Naranja vibrante",
       "cyan": "Cian fresco"
+    }
+  },
+  "nixieClock": {
+    "title": "Reloj de tubos Nixie",
+    "description": "Pantalla retro de tubos Nixie con cifras cálidas que brillan tras el cristal"
+  },
+  "shichenClock": {
+    "title": "Reloj de los doce shichen",
+    "description": "El shichen actual como un gran ideograma a tinta a pantalla completa",
+    "hourOf": "Hora del {animal}",
+    "zodiac": {
+      "zi": "Rata",
+      "chou": "Buey",
+      "yin": "Tigre",
+      "mao": "Conejo",
+      "chen": "Dragón",
+      "si": "Serpiente",
+      "wu": "Caballo",
+      "wei": "Cabra",
+      "shen": "Mono",
+      "you": "Gallo",
+      "xu": "Perro",
+      "hai": "Cerdo"
     }
   }
 }

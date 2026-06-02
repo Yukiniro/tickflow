@@ -6,6 +6,8 @@ import {
   LuPalette as Palette,
   LuClock3 as Clock3,
   LuZap as Zap,
+  LuLightbulb as Lightbulb,
+  LuCompass as Compass,
   LuSmartphone as Smartphone,
   LuPaintbrush as Paintbrush,
   LuMaximize as Maximize,
@@ -96,6 +98,22 @@ export const CLOCK_FEATURES = [
     gradientTo: "to-cyan-600",
     hoverColor: "text-cyan-600 dark:group-hover:text-cyan-400",
     href: "/led",
+  },
+  {
+    type: "nixie" as const,
+    icon: Lightbulb,
+    gradientFrom: "from-amber-500",
+    gradientTo: "to-amber-600",
+    hoverColor: "text-amber-600 dark:group-hover:text-amber-400",
+    href: "/nixie",
+  },
+  {
+    type: "shichen" as const,
+    icon: Compass,
+    gradientFrom: "from-red-500",
+    gradientTo: "to-red-600",
+    hoverColor: "text-red-600 dark:group-hover:text-red-400",
+    href: "/shichen",
   },
 ];
 

@@ -6,7 +6,9 @@
     "digital": "数字",
     "flip": "翻转",
     "analog": "模拟",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "辉光管",
+    "shichen": "时辰"
   },
   "theme": {
     "label": "切换主题",
@@ -49,6 +51,16 @@
         "title": "LED点阵",
         "description": "科技感十足的LED点阵显示，6种颜色主题可选，每个数字由发光像素点组成。",
         "icon": "zap"
+      },
+      "nixie": {
+        "title": "辉光管时钟",
+        "description": "复古真空管辉光，暖橙数字在玻璃管中浮现，未点亮的阴极若隐若现，还原真实质感。",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "十二时辰",
+        "description": "以满屏大字直书当下时辰,水墨为底、朱砂为印,只强化此刻,不列全数。",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +97,6 @@
       "button": "探索时钟",
       "secondary": "查看源码"
     },
-
     "footer": {
       "about": {
         "title": "关于 TickFlow",
@@ -98,7 +109,9 @@
         "digital": "数字手表",
         "comic": "漫画时钟",
         "analog": "模拟时钟",
-        "led": "LED点阵"
+        "led": "LED点阵",
+        "nixie": "辉光管时钟",
+        "shichen": "十二时辰"
       },
       "contact": "联系我们",
       "email": "邮箱：yukiniro@hotmail.com",
@@ -166,7 +179,9 @@
     "digital": "数字",
     "comic": "漫画",
     "analog": "模拟",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "辉光管",
+    "shichen": "时辰"
   },
   "basicClock": {
     "title": "基础时钟",
@@ -188,7 +203,7 @@
     "title": "模拟时钟",
     "description": "经典的模拟时钟显示，具有时针、分针、秒针和刻度",
     "hourHand": "时针",
-    "minuteHand": "分针", 
+    "minuteHand": "分针",
     "secondHand": "秒针",
     "clockFace": "表盘",
     "hourMarkers": "小时刻度",
@@ -208,5 +223,28 @@
       "orange": "活力橙",
       "cyan": "清新青"
     }
+  },
+  "nixieClock": {
+    "title": "辉光管时钟",
+    "description": "复古辉光管显示，暖橙色数字在玻璃管中发光"
+  },
+  "shichenClock": {
+    "title": "十二时辰",
+    "description": "满屏水墨大字直书当下时辰",
+    "hourOf": "{animal}时",
+    "zodiac": {
+      "zi": "鼠",
+      "chou": "牛",
+      "yin": "虎",
+      "mao": "兔",
+      "chen": "龙",
+      "si": "蛇",
+      "wu": "马",
+      "wei": "羊",
+      "shen": "猴",
+      "you": "鸡",
+      "xu": "狗",
+      "hai": "猪"
+    }
   }
-} 
+}

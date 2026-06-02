@@ -6,7 +6,9 @@
     "digital": "Digital",
     "flip": "Flip",
     "analog": "Analógico",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "theme": {
     "label": "Alternar tema",
@@ -49,6 +51,16 @@
         "title": "Matriz LED",
         "description": "Display de matriz LED com visual tecnológico, 6 temas de cores disponíveis, cada dígito composto por pontos de pixels brilhantes.",
         "icon": "zap"
+      },
+      "nixie": {
+        "title": "Relógio de válvulas Nixie",
+        "description": "Brilho retro de válvulas — algarismos âmbar quentes flutuam atrás do vidro com cátodos apagados fantasmagóricos, como os de verdade.",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "Relógio dos doze shichen",
+        "description": "O shichen atual como um ideograma a tinta em ecrã inteiro, selado a vermelhão — só este instante, sem lista.",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +97,6 @@
       "button": "Explorar relógios",
       "secondary": "Ver código-fonte"
     },
-
     "footer": {
       "about": {
         "title": "Sobre o TickFlow",
@@ -98,7 +109,9 @@
         "digital": "Relógio digital",
         "comic": "Relógio em quadrinhos",
         "analog": "Relógio analógico",
-        "led": "Matriz LED"
+        "led": "Matriz LED",
+        "nixie": "Relógio de válvulas Nixie",
+        "shichen": "Relógio dos doze shichen"
       },
       "contact": "Fale conosco",
       "email": "Email: yukiniro@hotmail.com",
@@ -166,7 +179,9 @@
     "digital": "Digital",
     "comic": "Quadrinhos",
     "analog": "Analógico",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "basicClock": {
     "title": "Relógio básico",
@@ -207,6 +222,29 @@
       "purple": "Roxo encanto",
       "orange": "Laranja vibrante",
       "cyan": "Ciano fresco"
+    }
+  },
+  "nixieClock": {
+    "title": "Relógio de válvulas Nixie",
+    "description": "Visor retro de válvulas Nixie com algarismos quentes a brilhar atrás do vidro"
+  },
+  "shichenClock": {
+    "title": "Relógio dos doze shichen",
+    "description": "O shichen atual como um grande ideograma a tinta em ecrã inteiro",
+    "hourOf": "Hora do {animal}",
+    "zodiac": {
+      "zi": "Rato",
+      "chou": "Boi",
+      "yin": "Tigre",
+      "mao": "Coelho",
+      "chen": "Dragão",
+      "si": "Serpente",
+      "wu": "Cavalo",
+      "wei": "Cabra",
+      "shen": "Macaco",
+      "you": "Galo",
+      "xu": "Cão",
+      "hai": "Porco"
     }
   }
 }

@@ -6,7 +6,9 @@
     "digital": "디지털",
     "flip": "플립",
     "analog": "아날로그",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "닉시",
+    "shichen": "십이시진"
   },
   "theme": {
     "label": "테마 전환",
@@ -49,6 +51,16 @@
         "title": "LED 매트릭스",
         "description": "기술적인 LED 매트릭스 디스플레이, 6가지 색상 테마 제공, 각 숫자는 빛나는 픽셀 점으로 구성됩니다.",
         "icon": "zap"
+      },
+      "nixie": {
+        "title": "닉시관 시계",
+        "description": "레트로 진공관의 빛 — 따뜻한 호박색 숫자가 유리 뒤에 떠 있고 꺼진 음극이 은은히 비치는, 진짜 같은 느낌.",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "십이시진 시계",
+        "description": "지금의 시진을 화면을 가득 채운 큰 글자로 적고, 수묵과 주인(朱印)으로 '지금'만을 강조합니다.",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +97,6 @@
       "button": "시계 둘러보기",
       "secondary": "소스 보기"
     },
-
     "footer": {
       "about": {
         "title": "TickFlow 소개",
@@ -98,7 +109,9 @@
         "digital": "디지털 워치",
         "comic": "코믹 시계",
         "analog": "아날로그 시계",
-        "led": "LED 매트릭스"
+        "led": "LED 매트릭스",
+        "nixie": "닉시관 시계",
+        "shichen": "십이시진 시계"
       },
       "contact": "문의하기",
       "email": "Email: yukiniro@hotmail.com",
@@ -166,7 +179,9 @@
     "digital": "디지털",
     "comic": "코믹",
     "analog": "아날로그",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "닉시",
+    "shichen": "십이시진"
   },
   "basicClock": {
     "title": "베이직 시계",
@@ -207,6 +222,29 @@
       "purple": "매력 퍼플",
       "orange": "활기찬 오렌지",
       "cyan": "상쾌한 시안"
+    }
+  },
+  "nixieClock": {
+    "title": "닉시관 시계",
+    "description": "유리 뒤에서 따뜻하게 빛나는 숫자의 레트로 닉시관 디스플레이"
+  },
+  "shichenClock": {
+    "title": "십이시진 시계",
+    "description": "지금의 시진을 화면 가득한 수묵 대자로 표시",
+    "hourOf": "{animal}의 시간",
+    "zodiac": {
+      "zi": "쥐",
+      "chou": "소",
+      "yin": "호랑이",
+      "mao": "토끼",
+      "chen": "용",
+      "si": "뱀",
+      "wu": "말",
+      "wei": "양",
+      "shen": "원숭이",
+      "you": "닭",
+      "xu": "개",
+      "hai": "돼지"
     }
   }
 }

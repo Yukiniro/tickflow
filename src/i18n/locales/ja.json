@@ -6,7 +6,9 @@
     "digital": "デジタル",
     "flip": "フリップ",
     "analog": "アナログ",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "ニキシー",
+    "shichen": "十二時辰"
   },
   "theme": {
     "label": "テーマを切り替え",
@@ -49,6 +51,16 @@
         "title": "LEDマトリックス",
         "description": "テクノロジー感あふれるLEDマトリックス表示、6つのカラーテーマが選択可能、各数字は発光ピクセルドットで構成。",
         "icon": "zap"
+      },
+      "nixie": {
+        "title": "ニキシー管時計",
+        "description": "レトロな真空管の輝き。温かみのある琥珀色の数字がガラスの奥に浮かび、未点灯の陰極がうっすら見える本格仕様。",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "十二時辰",
+        "description": "今この時辰を画面いっぱいの大字で直書し、水墨と朱印で「今」だけを際立たせます。",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +97,6 @@
       "button": "時計を探索",
       "secondary": "ソースを表示"
     },
-
     "footer": {
       "about": {
         "title": "TickFlowについて",
@@ -98,7 +109,9 @@
         "digital": "デジタルウォッチ",
         "comic": "コミック時計",
         "analog": "アナログ時計",
-        "led": "LEDマトリックス"
+        "led": "LEDマトリックス",
+        "nixie": "ニキシー管時計",
+        "shichen": "十二時辰"
       },
       "contact": "お問い合わせ",
       "email": "メール：yukiniro@hotmail.com",
@@ -166,7 +179,9 @@
     "digital": "デジタル",
     "comic": "コミック",
     "analog": "アナログ",
-    "led": "LED"
+    "led": "LED",
+    "nixie": "ニキシー",
+    "shichen": "十二時辰"
   },
   "basicClock": {
     "title": "ベーシック時計",
@@ -208,5 +223,28 @@
       "orange": "バイブラントオレンジ",
       "cyan": "フレッシュシアン"
     }
+  },
+  "nixieClock": {
+    "title": "ニキシー管時計",
+    "description": "ガラスの奥で温かく光る数字を映すレトロなニキシー管表示"
+  },
+  "shichenClock": {
+    "title": "十二時辰時計",
+    "description": "今の時辰を画面いっぱいの水墨大字で表示",
+    "hourOf": "{animal}の刻",
+    "zodiac": {
+      "zi": "鼠",
+      "chou": "牛",
+      "yin": "虎",
+      "mao": "兎",
+      "chen": "龍",
+      "si": "蛇",
+      "wu": "馬",
+      "wei": "羊",
+      "shen": "猿",
+      "you": "鶏",
+      "xu": "犬",
+      "hai": "猪"
+    }
   }
-} 
+}

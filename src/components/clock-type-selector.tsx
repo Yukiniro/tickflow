@@ -37,6 +37,14 @@ const clockTypes = [
     key: "led",
     path: "/led",
   },
+  {
+    key: "nixie",
+    path: "/nixie",
+  },
+  {
+    key: "shichen",
+    path: "/shichen",
+  },
 ] as const;
 
 export function ClockTypeSelector() {

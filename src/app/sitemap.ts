@@ -12,7 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/basic', 
     '/comic',
     '/analog',
-    '/led'
+    '/led',
+    '/nixie',
+    '/shichen'
   ]
   
   // 为每个语言和页面创建URL
