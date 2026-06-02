@@ -7,7 +7,6 @@
     "flip": "Flip",
     "analog": "Analogique",
     "led": "LED",
-    "binary": "Binaire",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -53,11 +52,6 @@
         "description": "Affichage matriciel LED high-tech, 6 thèmes de couleurs disponibles, chaque chiffre composé de points lumineux.",
         "icon": "zap"
       },
-      "binary": {
-        "title": "Horloge binaire",
-        "description": "Affichage binaire BCD pour les geeks — chaque colonne de points lumineux encode un chiffre de l'heure, avec 6 thèmes de couleur.",
-        "icon": "binary"
-      },
       "nixie": {
         "title": "Horloge à tubes Nixie",
         "description": "Lueur rétro des tubes à vide — des chiffres ambrés flottent derrière le verre avec des cathodes éteintes fantomatiques, comme les vrais.",
@@ -65,7 +59,7 @@
       },
       "shichen": {
         "title": "Horloge des douze shichen",
-        "description": "Les douze shichen traditionnels — les heures des branches terrestres sur un cadran d'encre et de vermillon, indiquant le quart (kè) en cours.",
+        "description": "Les douze shichen traditionnels en rouleau vertical d'une journée — les branches terrestres s'écoulent de zǐ à hài, l'heure actuelle en vermillon avec son épithète, son signe et son kè.",
         "icon": "compass"
       }
     },
@@ -116,7 +110,6 @@
         "comic": "Horloge BD",
         "analog": "Horloge analogique",
         "led": "Matrice LED",
-        "binary": "Horloge binaire",
         "nixie": "Horloge à tubes Nixie",
         "shichen": "Horloge des douze shichen"
       },
@@ -187,7 +180,6 @@
     "comic": "Comique",
     "analog": "Analogique",
     "led": "LED",
-    "binary": "Binaire",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -216,17 +208,13 @@
       "cyan": "Cyan frais"
     }
   },
-  "binaryClock": {
-    "title": "Horloge binaire",
-    "description": "Horloge binaire BCD où chaque colonne de points lumineux encode un chiffre de l'heure"
-  },
   "nixieClock": {
     "title": "Horloge à tubes Nixie",
     "description": "Affichage rétro à tubes Nixie avec des chiffres chauds qui brillent derrière le verre"
   },
   "shichenClock": {
     "title": "Horloge des douze shichen",
-    "description": "Mesure du temps traditionnelle des douze shichen sur un cadran d'encre et de vermillon",
+    "description": "Les douze shichen traditionnels présentés en rouleau vertical à l'encre",
     "hourOf": "Heure du {animal}",
     "zodiac": {
       "zi": "Rat",

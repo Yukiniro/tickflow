@@ -7,7 +7,6 @@
     "flip": "Flip",
     "analog": "Analog",
     "led": "LED",
-    "binary": "Binär",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -53,11 +52,6 @@
         "description": "Technische LED-Matrix-Anzeige, 6 Farbthemen verfügbar, jede Ziffer aus leuchtenden Pixelpunkten zusammengesetzt.",
         "icon": "zap"
       },
-      "binary": {
-        "title": "Binäruhr",
-        "description": "Geeky BCD-Binäranzeige — jede Spalte leuchtender Punkte kodiert eine Ziffer der Uhrzeit, mit 6 Farbthemen.",
-        "icon": "binary"
-      },
       "nixie": {
         "title": "Nixie-Röhrenuhr",
         "description": "Retro-Röhrenglühen — warme bernsteinfarbene Ziffern schweben hinter Glas mit geisterhaften unbeleuchteten Kathoden, wie echt.",
@@ -65,7 +59,7 @@
       },
       "shichen": {
         "title": "Zwölf-Shichen-Uhr",
-        "description": "Traditionelle zwölf Shichen — die Erdzweig-Stunden auf einem Zifferblatt aus Tusche und Zinnober, mit der aktuellen Viertelstunde (kè).",
+        "description": "Traditionelle zwölf Shichen als senkrechte Tagesrolle — die Erdzweige fließen von zǐ bis hài, die aktuelle Stunde leuchtet zinnoberrot mit Beiname, Tierkreis und kè.",
         "icon": "compass"
       }
     },
@@ -116,7 +110,6 @@
         "comic": "Comic-Uhr",
         "analog": "Analoguhr",
         "led": "LED-Matrix",
-        "binary": "Binäruhr",
         "nixie": "Nixie-Röhrenuhr",
         "shichen": "Zwölf-Shichen-Uhr"
       },
@@ -187,7 +180,6 @@
     "comic": "Comic",
     "analog": "Analog",
     "led": "LED",
-    "binary": "Binär",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -216,17 +208,13 @@
       "cyan": "Frisches Cyan"
     }
   },
-  "binaryClock": {
-    "title": "Binäruhr",
-    "description": "Binäre BCD-Uhr, bei der jede Spalte leuchtender Punkte eine Ziffer der Uhrzeit kodiert"
-  },
   "nixieClock": {
     "title": "Nixie-Röhrenuhr",
     "description": "Retro-Nixie-Röhrenanzeige mit warm leuchtenden Ziffern hinter Glas"
   },
   "shichenClock": {
     "title": "Zwölf-Shichen-Uhr",
-    "description": "Traditionelle Zeitmessung der zwölf Shichen auf einem Zifferblatt aus Tusche und Zinnober",
+    "description": "Traditionelle zwölf Shichen als senkrechte Tusche-Tagesrolle",
     "hourOf": "Stunde des {animal}",
     "zodiac": {
       "zi": "Ratte",

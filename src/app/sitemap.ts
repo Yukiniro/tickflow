@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/comic',
     '/analog',
     '/led',
-    '/binary',
     '/nixie',
     '/shichen'
   ]

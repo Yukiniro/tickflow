@@ -7,7 +7,6 @@
     "flip": "Flip",
     "analog": "Analog",
     "led": "LED",
-    "binary": "Binary",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -53,11 +52,6 @@
         "description": "Tech-savvy LED matrix display, 6 color themes available, each digit composed of glowing pixel dots.",
         "icon": "zap"
       },
-      "binary": {
-        "title": "Binary Clock",
-        "description": "Geeky BCD binary display — each column of glowing dots encodes one digit of the time, with 6 color themes.",
-        "icon": "binary"
-      },
       "nixie": {
         "title": "Nixie Tube Clock",
         "description": "Retro vacuum-tube glow — warm amber numerals float behind glass with ghostly unlit cathodes, just like the real thing.",
@@ -65,7 +59,7 @@
       },
       "shichen": {
         "title": "Chinese Double-Hours",
-        "description": "Traditional twelve shichen — earthly-branch hours on an ink-and-vermilion dial, showing the quarter (kè) you're in.",
+        "description": "Traditional twelve shichen as a vertical day-scroll — earthly branches flow from zǐ to hài, the current hour glowing vermilion with its epithet, zodiac, and kè.",
         "icon": "compass"
       }
     },
@@ -103,7 +97,6 @@
       "button": "Explore Clocks",
       "secondary": "View Source"
     },
-
     "footer": {
       "about": {
         "title": "About TickFlow",
@@ -117,7 +110,6 @@
         "comic": "Comic Clock",
         "analog": "Analog Clock",
         "led": "LED Matrix",
-        "binary": "Binary Clock",
         "nixie": "Nixie Tube Clock",
         "shichen": "Chinese Double-Hours"
       },
@@ -188,7 +180,6 @@
     "comic": "Comic",
     "analog": "Analog",
     "led": "LED",
-    "binary": "Binary",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -197,7 +188,7 @@
     "description": "Classic analog clock display with hour, minute, and second hands",
     "hourHand": "Hour Hand",
     "minuteHand": "Minute Hand",
-    "secondHand": "Second Hand", 
+    "secondHand": "Second Hand",
     "clockFace": "Clock Face",
     "hourMarkers": "Hour Markers",
     "minuteMarkers": "Minute Markers"
@@ -217,17 +208,13 @@
       "cyan": "Fresh Cyan"
     }
   },
-  "binaryClock": {
-    "title": "Binary Clock",
-    "description": "Binary BCD clock where each column of glowing dots encodes a digit of the time"
-  },
   "nixieClock": {
     "title": "Nixie Tube Clock",
     "description": "Retro Nixie tube display with warm glowing numerals behind glass"
   },
   "shichenClock": {
     "title": "Chinese Double-Hour Clock",
-    "description": "Traditional twelve-shichen timekeeping on an ink-and-vermilion dial",
+    "description": "Traditional twelve shichen presented as a vertical ink day-scroll",
     "hourOf": "Hour of the {animal}",
     "zodiac": {
       "zi": "Rat",
@@ -244,4 +231,4 @@
       "hai": "Pig"
     }
   }
-} 
+}

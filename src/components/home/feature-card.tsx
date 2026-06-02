@@ -7,7 +7,7 @@ import { IconType } from "react-icons";
 import { LuArrowRight } from "react-icons/lu";
 
 interface FeatureCardProps {
-  type: "basic" | "flip" | "digital" | "comic" | "analog" | "led" | "binary" | "nixie" | "shichen";
+  type: "basic" | "flip" | "digital" | "comic" | "analog" | "led" | "nixie" | "shichen";
   icon: IconType;
   index: number;
   href?: string;

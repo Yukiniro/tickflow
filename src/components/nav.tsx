@@ -45,7 +45,6 @@ const getNavProps = (pathname: string) => {
     pathname.includes("/flip") ||
     pathname.includes("/analog") ||
     pathname.includes("/led") ||
-    pathname.includes("/binary") ||
     pathname.includes("/nixie") ||
     pathname.includes("/shichen")
   ) {

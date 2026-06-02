@@ -7,7 +7,6 @@
     "flip": "Flip",
     "analog": "Analógico",
     "led": "LED",
-    "binary": "Binário",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -53,11 +52,6 @@
         "description": "Display de matriz LED com visual tecnológico, 6 temas de cores disponíveis, cada dígito composto por pontos de pixels brilhantes.",
         "icon": "zap"
       },
-      "binary": {
-        "title": "Relógio binário",
-        "description": "Visor binário BCD para geeks — cada coluna de pontos luminosos codifica um dígito da hora, com 6 temas de cor.",
-        "icon": "binary"
-      },
       "nixie": {
         "title": "Relógio de válvulas Nixie",
         "description": "Brilho retro de válvulas — algarismos âmbar quentes flutuam atrás do vidro com cátodos apagados fantasmagóricos, como os de verdade.",
@@ -65,7 +59,7 @@
       },
       "shichen": {
         "title": "Relógio dos doze shichen",
-        "description": "Os doze shichen tradicionais — as horas dos ramos terrestres num mostrador de tinta e vermelhão, indicando o quarto (kè) atual.",
+        "description": "Os doze shichen tradicionais como um rolo vertical do dia — os ramos terrestres fluem de zǐ a hài, com a hora atual em vermelhão, o seu epíteto, signo e kè.",
         "icon": "compass"
       }
     },
@@ -116,7 +110,6 @@
         "comic": "Relógio em quadrinhos",
         "analog": "Relógio analógico",
         "led": "Matriz LED",
-        "binary": "Relógio binário",
         "nixie": "Relógio de válvulas Nixie",
         "shichen": "Relógio dos doze shichen"
       },
@@ -187,7 +180,6 @@
     "comic": "Quadrinhos",
     "analog": "Analógico",
     "led": "LED",
-    "binary": "Binário",
     "nixie": "Nixie",
     "shichen": "Shichen"
   },
@@ -216,17 +208,13 @@
       "cyan": "Ciano fresco"
     }
   },
-  "binaryClock": {
-    "title": "Relógio binário",
-    "description": "Relógio binário BCD onde cada coluna de pontos luminosos codifica um dígito da hora"
-  },
   "nixieClock": {
     "title": "Relógio de válvulas Nixie",
     "description": "Visor retro de válvulas Nixie com algarismos quentes a brilhar atrás do vidro"
   },
   "shichenClock": {
     "title": "Relógio dos doze shichen",
-    "description": "Marcação tradicional do tempo dos doze shichen num mostrador de tinta e vermelhão",
+    "description": "Os doze shichen tradicionais apresentados como um rolo vertical a tinta",
     "hourOf": "Hora do {animal}",
     "zodiac": {
       "zi": "Rato",

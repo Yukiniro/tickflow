@@ -7,7 +7,6 @@
     "flip": "플립",
     "analog": "아날로그",
     "led": "LED",
-    "binary": "이진",
     "nixie": "닉시",
     "shichen": "십이시진"
   },
@@ -53,11 +52,6 @@
         "description": "기술적인 LED 매트릭스 디스플레이, 6가지 색상 테마 제공, 각 숫자는 빛나는 픽셀 점으로 구성됩니다.",
         "icon": "zap"
       },
-      "binary": {
-        "title": "이진 시계",
-        "description": "긱 감성 BCD 이진 디스플레이 — 빛나는 점의 각 열이 시간의 한 자리를 인코딩하며, 6가지 색상 테마를 제공합니다.",
-        "icon": "binary"
-      },
       "nixie": {
         "title": "닉시관 시계",
         "description": "레트로 진공관의 빛 — 따뜻한 호박색 숫자가 유리 뒤에 떠 있고 꺼진 음극이 은은히 비치는, 진짜 같은 느낌.",
@@ -65,7 +59,7 @@
       },
       "shichen": {
         "title": "십이시진 시계",
-        "description": "전통 십이시진 — 먹과 주사 빛 문자판 위의 지지(地支) 시각, 현재의 각(刻)까지 표시합니다.",
+        "description": "전통 십이시진을 하루의 두루마리로 펼쳐 — 지지가 자(子)에서 해(亥)로 흐르고, 현재 시진을 주사로 밝혀 별칭·띠·각을 표시합니다.",
         "icon": "compass"
       }
     },
@@ -116,7 +110,6 @@
         "comic": "코믹 시계",
         "analog": "아날로그 시계",
         "led": "LED 매트릭스",
-        "binary": "이진 시계",
         "nixie": "닉시관 시계",
         "shichen": "십이시진 시계"
       },
@@ -187,7 +180,6 @@
     "comic": "코믹",
     "analog": "아날로그",
     "led": "LED",
-    "binary": "이진",
     "nixie": "닉시",
     "shichen": "십이시진"
   },
@@ -216,17 +208,13 @@
       "cyan": "상쾌한 시안"
     }
   },
-  "binaryClock": {
-    "title": "이진 시계",
-    "description": "빛나는 점의 각 열이 시간의 한 자리를 인코딩하는 BCD 이진 시계"
-  },
   "nixieClock": {
     "title": "닉시관 시계",
     "description": "유리 뒤에서 따뜻하게 빛나는 숫자의 레트로 닉시관 디스플레이"
   },
   "shichenClock": {
     "title": "십이시진 시계",
-    "description": "먹과 주사 빛 문자판 위의 전통 십이시진 시각",
+    "description": "수묵 하루 두루마리로 표현한 전통 십이시진",
     "hourOf": "{animal}의 시간",
     "zodiac": {
       "zi": "쥐",

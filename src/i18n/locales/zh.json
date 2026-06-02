@@ -7,7 +7,6 @@
     "flip": "翻转",
     "analog": "模拟",
     "led": "LED",
-    "binary": "二进制",
     "nixie": "辉光管",
     "shichen": "时辰"
   },
@@ -53,11 +52,6 @@
         "description": "科技感十足的LED点阵显示，6种颜色主题可选，每个数字由发光像素点组成。",
         "icon": "zap"
       },
-      "binary": {
-        "title": "二进制时钟",
-        "description": "极客向 BCD 二进制显示，每列发光圆点编码时间的一位数字，内置 6 种颜色主题。",
-        "icon": "binary"
-      },
       "nixie": {
         "title": "辉光管时钟",
         "description": "复古真空管辉光，暖橙数字在玻璃管中浮现，未点亮的阴极若隐若现，还原真实质感。",
@@ -65,7 +59,7 @@
       },
       "shichen": {
         "title": "十二时辰",
-        "description": "传统十二时辰，地支字按水墨朱砂表盘环绕排布，并显示当前所处的刻。",
+        "description": "传统十二时辰化作一日长卷,地支自子至亥竖向流淌,当前时辰朱砂高亮,标出别称、生肖与刻。",
         "icon": "compass"
       }
     },
@@ -103,7 +97,6 @@
       "button": "探索时钟",
       "secondary": "查看源码"
     },
-
     "footer": {
       "about": {
         "title": "关于 TickFlow",
@@ -117,7 +110,6 @@
         "comic": "漫画时钟",
         "analog": "模拟时钟",
         "led": "LED点阵",
-        "binary": "二进制时钟",
         "nixie": "辉光管时钟",
         "shichen": "十二时辰"
       },
@@ -188,7 +180,6 @@
     "comic": "漫画",
     "analog": "模拟",
     "led": "LED",
-    "binary": "二进制",
     "nixie": "辉光管",
     "shichen": "时辰"
   },
@@ -196,7 +187,7 @@
     "title": "模拟时钟",
     "description": "经典的模拟时钟显示，具有时针、分针、秒针和刻度",
     "hourHand": "时针",
-    "minuteHand": "分针", 
+    "minuteHand": "分针",
     "secondHand": "秒针",
     "clockFace": "表盘",
     "hourMarkers": "小时刻度",
@@ -217,17 +208,13 @@
       "cyan": "清新青"
     }
   },
-  "binaryClock": {
-    "title": "二进制时钟",
-    "description": "二进制 BCD 时钟，每列发光圆点编码时间的一位数字"
-  },
   "nixieClock": {
     "title": "辉光管时钟",
     "description": "复古辉光管显示，暖橙色数字在玻璃管中发光"
   },
   "shichenClock": {
     "title": "十二时辰",
-    "description": "水墨朱砂表盘上的传统十二时辰计时",
+    "description": "以水墨一日长卷呈现的传统十二时辰",
     "hourOf": "{animal}时",
     "zodiac": {
       "zi": "鼠",
@@ -244,4 +231,4 @@
       "hai": "猪"
     }
   }
-} 
+}

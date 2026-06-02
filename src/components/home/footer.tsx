@@ -16,7 +16,6 @@ export function Footer() {
     { key: "comic", href: "/comic" },
     { key: "analog", href: "/analog" },
     { key: "led", href: "/led" },
-    { key: "binary", href: "/binary" },
     { key: "nixie", href: "/nixie" },
     { key: "shichen", href: "/shichen" },
   ];

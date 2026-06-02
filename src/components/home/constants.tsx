@@ -6,7 +6,6 @@ import {
   LuPalette as Palette,
   LuClock3 as Clock3,
   LuZap as Zap,
-  LuBinary as Binary,
   LuLightbulb as Lightbulb,
   LuCompass as Compass,
   LuSmartphone as Smartphone,
@@ -99,14 +98,6 @@ export const CLOCK_FEATURES = [
     gradientTo: "to-cyan-600",
     hoverColor: "text-cyan-600 dark:group-hover:text-cyan-400",
     href: "/led",
-  },
-  {
-    type: "binary" as const,
-    icon: Binary,
-    gradientFrom: "from-emerald-500",
-    gradientTo: "to-emerald-600",
-    hoverColor: "text-emerald-600 dark:group-hover:text-emerald-400",
-    href: "/binary",
   },
   {
     type: "nixie" as const,

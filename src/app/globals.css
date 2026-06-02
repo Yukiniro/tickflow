@@ -622,54 +622,31 @@
   }
 }
 
-/* ── 十二时辰(水墨 / 朱砂)──────────────────────────────────── */
-.shichen-face {
-  background: radial-gradient(circle at 50% 40%, #f7f0e1 0%, #efe5d0 60%, #e7dcc4 100%);
+/* ── 十二时辰 · 一日长卷(水墨 / 朱砂)──────────────────────────── */
+.shichen-paper {
+  --ink: #3a3026;
+  --ink-faint: rgba(58, 48, 38, 0.45);
+  --red: #c1272d;
+  --rail: rgba(58, 48, 38, 0.2);
+  --paper-bg: #efe6d2;
+  color: var(--ink);
+  background: radial-gradient(130% 90% at 50% 0%, #f7f0df 0%, #efe6d2 55%, #e6dbc2 100%);
   box-shadow:
-    inset 0 0 60px rgba(120, 80, 40, 0.18),
-    0 10px 40px rgba(0, 0, 0, 0.15);
-  color: #5a4a32; /* 供 SVG 轨道 currentColor 使用 */
+    0 12px 50px rgba(80, 60, 30, 0.18),
+    inset 0 0 0 1px rgba(120, 90, 50, 0.14);
 }
-.dark .shichen-face {
-  background: radial-gradient(circle at 50% 40%, #1c1814 0%, #14110d 60%, #0c0a07 100%);
+.dark .shichen-paper {
+  --ink: #d9c7a6;
+  --ink-faint: rgba(217, 199, 166, 0.4);
+  --red: #e0524f;
+  --rail: rgba(217, 199, 166, 0.18);
+  --paper-bg: #131009;
+  background: radial-gradient(130% 90% at 50% 0%, #1b1712 0%, #131009 55%, #0c0a06 100%);
   box-shadow:
-    inset 0 0 60px rgba(0, 0, 0, 0.6),
-    0 10px 40px rgba(0, 0, 0, 0.5);
-  color: #c9b48a;
+    0 12px 50px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(180, 150, 90, 0.12);
 }
-.shichen-idle {
-  color: #7a6a4d;
-  opacity: 0.7;
-}
-.dark .shichen-idle {
-  color: #8f7e5e;
-  opacity: 0.6;
-}
-.shichen-active {
-  color: #c1272d;
-  text-shadow: 0 0 12px rgba(193, 39, 45, 0.45);
-}
-.dark .shichen-active {
-  color: #e0524f;
-  text-shadow: 0 0 16px rgba(224, 82, 79, 0.5);
-}
-.shichen-center {
-  color: #c1272d;
-  text-shadow: 0 0 18px rgba(193, 39, 45, 0.35);
-}
-.dark .shichen-center {
-  color: #e0524f;
-  text-shadow: 0 0 22px rgba(224, 82, 79, 0.45);
-}
-.shichen-ke {
-  color: #5a4a32;
-}
-.dark .shichen-ke {
-  color: #c9b48a;
-}
-.shichen-arc {
-  stroke: #c1272d;
-}
-.dark .shichen-arc {
-  stroke: #e0524f;
+/* 当前时辰焦点段:朱砂向右淡出的高亮 */
+.shichen-focus {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--red) 9%, transparent), transparent 75%);
 }

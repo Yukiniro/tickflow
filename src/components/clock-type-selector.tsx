@@ -38,10 +38,6 @@ const clockTypes = [
     path: "/led",
   },
   {
-    key: "binary",
-    path: "/binary",
-  },
-  {
     key: "nixie",
     path: "/nixie",
   },
