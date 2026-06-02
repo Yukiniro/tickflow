@@ -1,6 +1,8 @@
 "use client";
 
-import { useTime } from "../../hooks/use-time";
+import { useState, useEffect } from "react";
+import { useAtomValue } from "jotai";
+import { formattedTimeAtom } from "@/store/time";
 
 const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
@@ -31,7 +33,14 @@ function Colon() {
 }
 
 export function NixieClock() {
-  const { hours, minutes, seconds, ampm, mounted } = useTime();
+  const { hours, minutes, seconds, ampm } = useAtomValue(formattedTimeAtom);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // 挂载标记,避免 SSR 水合不一致;心跳由布局中常驻的 Nav(useTime)统一驱动
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   if (!mounted) return null;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useTime } from "../../hooks/use-time";
+import { useState, useEffect } from "react";
 import { useAtomValue } from "jotai";
 import { timeAtom } from "@/store/time";
 import { useTranslations } from "next-intl";
@@ -12,9 +12,15 @@ const BRANCH_KEYS = ["zi", "chou", "yin", "mao", "chen", "si", "wu", "wei", "she
 const KE_CJK = ["初", "一", "二", "三"];
 
 export function ShichenClock() {
-  const { mounted } = useTime(); // 仅用于挂载标记 + 心跳
   const now = useAtomValue(timeAtom); // 原始时间,不受 12/24 开关影响
   const t = useTranslations("shichenClock");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // 挂载标记,避免 SSR 水合不一致;心跳由布局中常驻的 Nav(useTime)统一驱动
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   if (!mounted) return null;
 

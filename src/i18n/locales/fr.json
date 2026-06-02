@@ -6,7 +6,10 @@
     "digital": "Numérique",
     "flip": "Flip",
     "analog": "Analogique",
-    "led": "LED"
+    "led": "LED",
+    "binary": "Binaire",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "theme": {
     "label": "Changer de thème",
@@ -49,6 +52,21 @@
         "title": "Matrice LED",
         "description": "Affichage matriciel LED high-tech, 6 thèmes de couleurs disponibles, chaque chiffre composé de points lumineux.",
         "icon": "zap"
+      },
+      "binary": {
+        "title": "Horloge binaire",
+        "description": "Affichage binaire BCD pour les geeks — chaque colonne de points lumineux encode un chiffre de l'heure, avec 6 thèmes de couleur.",
+        "icon": "binary"
+      },
+      "nixie": {
+        "title": "Horloge à tubes Nixie",
+        "description": "Lueur rétro des tubes à vide — des chiffres ambrés flottent derrière le verre avec des cathodes éteintes fantomatiques, comme les vrais.",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "Horloge des douze shichen",
+        "description": "Les douze shichen traditionnels — les heures des branches terrestres sur un cadran d'encre et de vermillon, indiquant le quart (kè) en cours.",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -85,7 +103,6 @@
       "button": "Explorer les horloges",
       "secondary": "Voir le code source"
     },
-
     "footer": {
       "about": {
         "title": "À propos de TickFlow",
@@ -98,7 +115,10 @@
         "digital": "Montre numérique",
         "comic": "Horloge BD",
         "analog": "Horloge analogique",
-        "led": "Matrice LED"
+        "led": "Matrice LED",
+        "binary": "Horloge binaire",
+        "nixie": "Horloge à tubes Nixie",
+        "shichen": "Horloge des douze shichen"
       },
       "contact": "Nous contacter",
       "email": "Email: yukiniro@hotmail.com",
@@ -166,7 +186,10 @@
     "digital": "Numérique",
     "comic": "Comique",
     "analog": "Analogique",
-    "led": "LED"
+    "led": "LED",
+    "binary": "Binaire",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "analogClock": {
     "title": "Horloge analogique",
@@ -191,6 +214,33 @@
       "purple": "Violet charme",
       "orange": "Orange vif",
       "cyan": "Cyan frais"
+    }
+  },
+  "binaryClock": {
+    "title": "Horloge binaire",
+    "description": "Horloge binaire BCD où chaque colonne de points lumineux encode un chiffre de l'heure"
+  },
+  "nixieClock": {
+    "title": "Horloge à tubes Nixie",
+    "description": "Affichage rétro à tubes Nixie avec des chiffres chauds qui brillent derrière le verre"
+  },
+  "shichenClock": {
+    "title": "Horloge des douze shichen",
+    "description": "Mesure du temps traditionnelle des douze shichen sur un cadran d'encre et de vermillon",
+    "hourOf": "Heure du {animal}",
+    "zodiac": {
+      "zi": "Rat",
+      "chou": "Bœuf",
+      "yin": "Tigre",
+      "mao": "Lapin",
+      "chen": "Dragon",
+      "si": "Serpent",
+      "wu": "Cheval",
+      "wei": "Chèvre",
+      "shen": "Singe",
+      "you": "Coq",
+      "xu": "Chien",
+      "hai": "Cochon"
     }
   }
 }

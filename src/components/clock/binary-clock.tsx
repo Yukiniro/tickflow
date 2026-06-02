@@ -1,7 +1,8 @@
 "use client";
 
-import { useTime } from "../../hooks/use-time";
 import { useState, useEffect } from "react";
+import { useAtomValue } from "jotai";
+import { formattedTimeAtom } from "@/store/time";
 import { LedThemeSelector } from "@/components/led-theme-selector";
 import { LED_THEMES, type LedTheme } from "@/components/clock/led-clock";
 
@@ -9,8 +10,15 @@ import { LED_THEMES, type LedTheme } from "@/components/clock/led-clock";
 const STORAGE_KEY = "binary-theme";
 
 export function BinaryClock() {
-  const { hours, minutes, seconds, ampm, mounted } = useTime();
+  const { hours, minutes, seconds, ampm } = useAtomValue(formattedTimeAtom);
+  const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState<LedTheme>(LED_THEMES[0]);
+
+  useEffect(() => {
+    // 挂载标记,避免 SSR 水合不一致;心跳由布局中常驻的 Nav(useTime)统一驱动
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   // 从 localStorage 水合主题
   useEffect(() => {
