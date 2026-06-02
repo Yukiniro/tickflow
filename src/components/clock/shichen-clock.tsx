@@ -62,16 +62,16 @@ export function ShichenClock() {
       {/* 主角:满屏地支巨字。key=idx → 换时辰时重挂载触发墨晕淡入 */}
       <span
         key={idx}
-        className="shichen-hero shichen-bloom select-none font-bold leading-[0.72]"
-        style={{ fontSize: "min(80vh, 70vmin)" }}
+        className="shichen-hero shichen-bloom select-none font-bold leading-[0.7]"
+        style={{ fontSize: "min(86vh, 76vmin)" }}
       >
         {cur.branch}
       </span>
 
-      {/* 题字:竖排别称,沿右侧边栏 */}
+      {/* 题字:竖排别称,右上角(避开居中巨字,窄屏不相撞) */}
       <span
-        className="shichen-epithet absolute top-1/2 right-5 -translate-y-1/2 select-none font-bold leading-none md:right-12"
-        style={{ writingMode: "vertical-rl", fontSize: "min(13vh, 8.5vmin)" }}
+        className="shichen-epithet absolute top-5 right-5 select-none font-bold leading-none md:top-10 md:right-12"
+        style={{ writingMode: "vertical-rl", fontSize: "min(11vh, 8vmin)" }}
       >
         {cur.epithet}
       </span>
