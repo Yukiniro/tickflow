@@ -5,15 +5,20 @@
 ## ✨ 主要功能
 
 ### 🕐 多种时钟样式
-- **基础时钟** - 经典的模拟时钟显示，支持多种表盘样式和指针动画
-- **数字时钟** - 清晰的数字时间显示，支持12/24小时制切换
-- **翻转时钟** - 模拟翻页时钟的显示效果，带有优雅的翻转动画
-- **漫画时钟** - 使用漫画字体显示当前时间，充满趣味性
+- **基础时钟（basic）** - 超大号极简数字文本，等宽数字对齐
+- **数字时钟（digital）** - 带表壳边框的数字手表样式
+- **翻转时钟（flip）** - 模拟翻页时钟的显示效果，带有优雅的翻转动画
+- **漫画时钟（comic）** - 使用漫画字体显示当前时间，充满趣味性
+- **模拟时钟（analog）** - 经典指针表盘，时/分/秒针，悬停显示数字时间
+- **LED 时钟（led）** - 点阵 LED 数码管显示，支持多种颜色主题
+
+> 全站时间由单一心跳（`useClockHeartbeat`）每秒驱动，12/24 小时制可全局切换。首页另有 Mondaine 站台钟与巨型实时时间展示。
 
 ### 🌍 国际化支持
-- 🇺🇸 **English** - 英语
-- 🇨🇳 **中文** - 简体中文  
-- 🇯🇵 **日本語** - 日语
+支持 9 种语言：
+
+- 🇺🇸 **English** · 🇨🇳 **中文** · 🇯🇵 **日本語** · 🇰🇷 **한국어** · 🇫🇷 **Français**
+- 🇩🇪 **Deutsch** · 🇪🇸 **Español** · 🇷🇺 **Русский** · 🇵🇹 **Português**
 
 ### 🎨 用户体验
 - **响应式设计** - 完美适配桌面、平板和移动设备
@@ -26,7 +31,7 @@
 ## 🚀 快速开始
 
 ### 环境要求
-- Node.js 18+ 
+- Node.js 20.9+
 - pnpm (推荐) 或 npm
 
 ### 安装依赖
@@ -47,15 +52,23 @@ pnpm build
 pnpm start
 ```
 
+### 常用脚本
+```bash
+pnpm lint        # ESLint 检查（Next 16 不再于 build 时运行 lint）
+pnpm typecheck   # tsc --noEmit 类型检查
+pnpm format      # Prettier 格式化 src/**/*.{ts,tsx,css}
+```
+
 ## 🛠️ 技术栈
 
-- **Next.js 15** - React 框架，支持 SSR 和静态生成
+- **Next.js 16** - React 框架（App Router + Turbopack）
+- **React 19** - UI 库
 - **next-intl** - 国际化解决方案
-- **Tailwind CSS** - 实用优先的 CSS 框架
+- **Tailwind CSS v4** - 实用优先的 CSS 框架
 - **TypeScript** - 类型安全的 JavaScript
 - **Jotai** - 轻量级状态管理
 - **Radix UI** - 无障碍的 UI 组件
-- **Lucide React** - 精美的图标库
+- **react-icons** - 图标库（Lucide 图标 + Simple Icons 品牌图标）
 - **clsx + tailwind-merge** - 类名管理工具
 
 ## 📁 项目结构
@@ -63,74 +76,66 @@ pnpm start
 ```
 src/
 ├── app/
-│   ├── [locale]/              # 国际化路由
+│   ├── [locale]/              # 国际化路由（所有页面均带语言前缀）
 │   │   ├── basic/             # 基础时钟页面
 │   │   ├── digital/           # 数字时钟页面
 │   │   ├── comic/             # 漫画时钟页面
 │   │   ├── flip/              # 翻转时钟页面
+│   │   ├── analog/            # 模拟时钟页面
+│   │   ├── led/               # LED 时钟页面
 │   │   ├── layout.tsx         # 语言布局
 │   │   └── page.tsx           # 首页
 │   ├── globals.css            # 全局样式
 │   ├── manifest.ts            # PWA 配置
-│   ├── providers.tsx          # 全局提供者
+│   ├── providers.tsx          # Jotai Provider + 全站时钟心跳挂载
 │   ├── robots.ts              # SEO 配置
 │   └── sitemap.ts             # 站点地图
 ├── components/
-│   ├── home/                  # 首页组件
+│   ├── home/                  # 首页区块（多为 Server Component）
 │   │   ├── hero-section.tsx   # 英雄区域
-│   │   ├── feature-card.tsx   # 功能卡片
-│   │   ├── features-section.tsx # 功能区域
-│   │   ├── cta-section.tsx    # 行动号召
-│   │   ├── cta-button.tsx     # 按钮组件
-│   │   ├── footer.tsx         # 页脚
-│   │   ├── contact-link.tsx   # 联系链接
+│   │   ├── features-section.tsx / feature-card.tsx
+│   │   ├── highlights-section.tsx
+│   │   ├── cta-section.tsx / cta-button.tsx
+│   │   ├── footer.tsx / contact-link.tsx
+│   │   ├── live-time.tsx      # 首页巨型实时时间（client 岛）
+│   │   ├── mondaine-clock.tsx # Mondaine 站台钟（client 岛）
 │   │   ├── constants.tsx      # 常量数据
-│   │   └── index.ts           # 导出文件
-│   ├── clock/                 # 时钟组件
-│   │   ├── basic-clock.tsx    # 基础时钟
-│   │   ├── digital-watch.tsx  # 数字手表
-│   │   ├── comic-clock.tsx    # 漫画时钟
-│   │   ├── flip-clock.tsx     # 翻转时钟
-│   │   ├── flip-clock-client.tsx # 翻转时钟客户端
-│   │   └── clock-type-selector.tsx # 时钟类型选择器
-│   ├── ui/                    # UI 组件库
-│   │   ├── button.tsx         # 按钮组件
-│   │   ├── card.tsx           # 卡片组件
-│   │   ├── dropdown-menu.tsx  # 下拉菜单
-│   │   ├── tooltip.tsx        # 工具提示
-│   │   └── ...                # 其他 UI 组件
-│   ├── background-image.tsx   # 背景图片组件
-│   ├── background-toggle.tsx  # 背景切换组件
-│   ├── fullscreen-toggle.tsx  # 全屏切换组件
-│   ├── github-icon.tsx        # GitHub 图标组件
-│   ├── language-switcher.tsx  # 语言切换器
+│   │   └── index.ts
+│   ├── clock/                 # 六种时钟组件
+│   │   ├── basic-clock.tsx / digital-watch.tsx / comic-clock.tsx
+│   │   ├── flip-clock.tsx / analog-clock.tsx / led-clock.tsx
+│   │   └── led-themes.ts      # LED 主题表（共享）
+│   ├── ui/                    # Radix UI + CVA 基础组件
+│   ├── clock-heartbeat.tsx    # 全站唯一心跳载体（挂载一次）
+│   ├── clock-type-selector.tsx# 时钟类型选择器
 │   ├── nav.tsx                # 导航栏
-│   ├── share-button.tsx       # 分享按钮
-│   ├── sound-toggle.tsx       # 声音切换组件
-│   ├── theme-toggle.tsx       # 主题切换组件
-│   └── time-format-toggle.tsx # 时间格式切换组件
+│   ├── background-image.tsx / background-toggle.tsx
+│   ├── fullscreen-container.tsx / fullscreen-toggle.tsx
+│   ├── language-switcher.tsx / theme-toggle.tsx / theme-provider.tsx
+│   ├── sound-toggle.tsx / time-format-toggle.tsx / share-button.tsx
+│   ├── led-theme-selector.tsx / github-icon.tsx / google-analytics.tsx
+│   └── structured-data.tsx / flip-clock-structured-data.tsx / seo-optimizations.tsx
 ├── hooks/
-│   └── use-time.ts            # 时间管理钩子
+│   ├── use-clock-heartbeat.ts # 唯一写入方：setInterval + 滴答声
+│   ├── use-clock.ts           # 只读时间订阅（所有展示组件使用）
+│   └── use-time-format.ts     # 12/24 小时制切换
 ├── i18n/
-│   ├── locales/               # 语言文件
-│   │   ├── en.json            # 英语翻译
-│   │   ├── zh.json            # 中文翻译
-│   │   └── ja.json            # 日语翻译
+│   ├── locales/               # 9 种语言 JSON（en/zh/ja/ko/fr/de/es/ru/pt）
 │   ├── navigation.ts          # 导航配置
 │   ├── request.ts             # 请求配置
-│   └── routing.ts             # 路由配置
+│   └── routing.ts             # 路由配置（locales 唯一来源）
 ├── lib/
 │   ├── pexels.ts              # Pexels API 集成
 │   ├── metadata.ts            # 元数据工具
-│   └── utils/
-│       └── utils.ts           # 工具函数
-├── store/                     # 状态管理
+│   ├── utils.ts               # cn() 类名工具
+│   └── utils/manifest.ts      # manifest 本地化工具
+├── store/                     # Jotai 状态
 │   ├── background.ts          # 背景状态
 │   ├── sound.ts               # 声音状态
-│   └── time.ts                # 时间状态
-├── types/
-│   └── index.ts               # TypeScript 类型定义
-└── middleware.ts              # 国际化中间件
+│   ├── time.ts                # 时间状态
+│   └── led-theme.ts           # LED 主题持久化
+├── types/                     # TypeScript 类型定义
+└── proxy.ts                   # 国际化中间件（Next 16 由 middleware 更名为 proxy）
 ```
 
 ## 🌐 国际化
@@ -141,20 +146,21 @@ src/
 - URL 会自动包含语言代码（如 `/en/basic`, `/zh/digital`）
 
 ### 支持的路由
-- `/en/` - 英语首页
-- `/zh/` - 中文首页  
-- `/ja/` - 日语首页
-- 各语言下的时钟页面：`/[locale]/basic`, `/[locale]/digital`, `/[locale]/comic`, `/[locale]/flip`
+- 所有路由均带语言前缀：`en` / `zh` / `ja` / `ko` / `fr` / `de` / `es` / `ru` / `pt`
+- 首页：`/[locale]`（如 `/en`、`/zh`）
+- 时钟页面：`/[locale]/basic`、`/digital`、`/comic`、`/flip`、`/analog`、`/led`
 
 ### 添加新语言
 1. 在 `src/i18n/routing.ts` 中添加新的语言代码
 2. 在 `src/i18n/locales/` 中创建对应的 JSON 文件
 3. 在 `src/components/language-switcher.tsx` 中添加语言选项
 
+> 三处缺一会导致该语言静默失效。
+
 ## 🎨 主题和样式
 
 ### 暗色模式
-- 自动检测系统主题偏好
+- 自动检测系统主题偏好（基于 `next-themes`）
 - 支持手动切换明暗主题
 - 所有组件都支持主题切换
 
@@ -181,8 +187,10 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 
 # Pexels API (可选，用于背景图片)
 # 获取你的 API 密钥: https://www.pexels.com/api/
-PEXELS_API_KEY=your_pexels_api_key_here
+NEXT_PUBLIC_PEXELS_API_KEY=your_pexels_api_key_here
 ```
+
+> 注意：背景图片功能在客户端发起请求，因此 Pexels 密钥使用 `NEXT_PUBLIC_` 前缀；`next.config.ts` 仅放行 `images.pexels.com` 作为图片来源。
 
 ### Google Analytics 集成
 
@@ -203,17 +211,17 @@ PEXELS_API_KEY=your_pexels_api_key_here
 - 遵循 React 最佳实践
 - 组件化开发，提高代码复用性
 - 使用 ESLint 和 Prettier 保持代码质量
+- 注释与提交信息以中文为主，保持与现有风格一致
 
 ### 状态管理
 - 使用 Jotai 进行轻量级状态管理
-- 按功能模块组织状态
-- 支持持久化存储
+- 按功能模块组织状态（time / sound / background / led-theme）
+- 背景与 LED 主题通过 `atomWithStorage` 持久化
 
-### 性能优化
-- 组件懒加载
-- 图片优化
-- 代码分割
-- SEO 优化
+### 时钟心跳架构
+- 全站仅一个 `setInterval`：由 `<ClockHeartbeat>`（在根 `<Providers>` 中）挂载一次，每秒写入 `timeAtom`
+- 所有展示组件通过只读的 `useClock()` 订阅，不再各自新建计时器或 `AudioContext`
+- 切换控件使用 `useTimeFormat()` 读写 12/24 小时制
 
 ## 📱 PWA 支持
 
@@ -246,9 +254,8 @@ PEXELS_API_KEY=your_pexels_api_key_here
 
 - 📧 Email: yukiniro@hotmail.com
 - 🐦 Twitter: [@Yukiniro](https://x.com/Yukiro94317534)
-- 📦 GitHub: [tickflow](https://github.com/tickflow)
+- 📦 GitHub: [tickflow](https://github.com/Yukiniro/tickflow)
 
 ---
 
 ⭐ 如果这个项目对你有帮助，请给我们一个星标！
-
