@@ -1,6 +1,6 @@
 "use client";
 
-import { useTime } from "@/hooks/use-time";
+import { useTime } from "../../hooks/use-time";
 import { useAtomValue } from "jotai";
 import { timeAtom } from "@/store/time";
 import { useTranslations } from "next-intl";

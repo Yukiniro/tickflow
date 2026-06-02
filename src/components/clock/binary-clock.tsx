@@ -1,6 +1,6 @@
 "use client";
 
-import { useTime } from "@/hooks/use-time";
+import { useTime } from "../../hooks/use-time";
 import { useState, useEffect } from "react";
 import { LedThemeSelector } from "@/components/led-theme-selector";
 import { LED_THEMES, type LedTheme } from "@/components/clock/led-clock";
