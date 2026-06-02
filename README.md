@@ -11,6 +11,8 @@
 - **漫画时钟（comic）** - 使用漫画字体显示当前时间，充满趣味性
 - **模拟时钟（analog）** - 经典指针表盘，时/分/秒针，悬停显示数字时间
 - **LED 时钟（led）** - 点阵 LED 数码管显示，支持多种颜色主题
+- **辉光管时钟（nixie）** - 模拟 Nixie 辉光管，0-9 阴极堆叠、仅当前数字点亮，带金属网格与玻璃质感
+- **十二时辰（shichen）** - 中国传统计时：地支（子丑寅…）+ 别称（夜半/平旦/日中）+ 时刻（初/正·刻），并对照现代时段，生肖随语言本地化
 
 > 全站时间由单一心跳（`useClockHeartbeat`）每秒驱动，12/24 小时制可全局切换。首页另有 Mondaine 站台钟与巨型实时时间展示。
 
@@ -101,9 +103,10 @@ src/
 │   │   ├── mondaine-clock.tsx # Mondaine 站台钟（client 岛）
 │   │   ├── constants.tsx      # 常量数据
 │   │   └── index.ts
-│   ├── clock/                 # 六种时钟组件
+│   ├── clock/                 # 八种时钟组件
 │   │   ├── basic-clock.tsx / digital-watch.tsx / comic-clock.tsx
 │   │   ├── flip-clock.tsx / analog-clock.tsx / led-clock.tsx
+│   │   ├── nixie-clock.tsx / shichen-clock.tsx
 │   │   └── led-themes.ts      # LED 主题表（共享）
 │   ├── ui/                    # Radix UI + CVA 基础组件
 │   ├── clock-heartbeat.tsx    # 全站唯一心跳载体（挂载一次）
@@ -148,7 +151,7 @@ src/
 ### 支持的路由
 - 所有路由均带语言前缀：`en` / `zh` / `ja` / `ko` / `fr` / `de` / `es` / `ru` / `pt`
 - 首页：`/[locale]`（如 `/en`、`/zh`）
-- 时钟页面：`/[locale]/basic`、`/digital`、`/comic`、`/flip`、`/analog`、`/led`
+- 时钟页面：`/[locale]/basic`、`/digital`、`/comic`、`/flip`、`/analog`、`/led`、`/nixie`、`/shichen`
 
 ### 添加新语言
 1. 在 `src/i18n/routing.ts` 中添加新的语言代码
