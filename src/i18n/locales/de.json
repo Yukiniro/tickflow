@@ -59,7 +59,7 @@
       },
       "shichen": {
         "title": "Zwölf-Shichen-Uhr",
-        "description": "Traditionelle zwölf Shichen als senkrechte Tagesrolle — die Erdzweige fließen von zǐ bis hài, die aktuelle Stunde leuchtet zinnoberrot mit Beiname, Tierkreis und kè.",
+        "description": "Das aktuelle Shichen als bildschirmfüllendes Tuschezeichen, mit Zinnoberstempel — nur dieser Augenblick, keine Liste.",
         "icon": "compass"
       }
     },
@@ -214,7 +214,7 @@
   },
   "shichenClock": {
     "title": "Zwölf-Shichen-Uhr",
-    "description": "Traditionelle zwölf Shichen als senkrechte Tusche-Tagesrolle",
+    "description": "Das aktuelle Shichen als bildschirmfüllendes Tuschezeichen",
     "hourOf": "Stunde des {animal}",
     "zodiac": {
       "zi": "Ratte",

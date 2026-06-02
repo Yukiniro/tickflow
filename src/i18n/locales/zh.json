@@ -59,7 +59,7 @@
       },
       "shichen": {
         "title": "十二时辰",
-        "description": "传统十二时辰化作一日长卷,地支自子至亥竖向流淌,当前时辰朱砂高亮,标出别称、生肖与刻。",
+        "description": "以满屏大字直书当下时辰,水墨为底、朱砂为印,只强化此刻,不列全数。",
         "icon": "compass"
       }
     },
@@ -214,7 +214,7 @@
   },
   "shichenClock": {
     "title": "十二时辰",
-    "description": "以水墨一日长卷呈现的传统十二时辰",
+    "description": "满屏水墨大字直书当下时辰",
     "hourOf": "{animal}时",
     "zodiac": {
       "zi": "鼠",

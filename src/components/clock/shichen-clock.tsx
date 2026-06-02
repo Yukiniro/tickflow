@@ -24,37 +24,6 @@ const SHICHEN = [
 ] as const;
 const KE_CJK = ["初", "一", "二", "三"];
 
-function Node({ state, isFirst, isLast }: { state: "past" | "active" | "future"; isFirst: boolean; isLast: boolean }) {
-  return (
-    <span className="relative flex w-5 shrink-0 items-stretch justify-center self-stretch">
-      {/* 日之脉络:贯穿的墨线,首尾收到节点中心 */}
-      <span
-        aria-hidden
-        className="absolute w-px -translate-x-1/2"
-        style={{ background: "var(--rail)", left: "50%", top: isFirst ? "50%" : 0, bottom: isLast ? "50%" : 0 }}
-      />
-      <span className="relative z-10 self-center">
-        {state === "active" ? (
-          <span
-            className="block h-3.5 w-3.5 rounded-full"
-            style={{
-              background: "var(--red)",
-              boxShadow: "0 0 0 3px var(--paper-bg), 0 0 12px 1px color-mix(in srgb, var(--red) 55%, transparent)",
-            }}
-          />
-        ) : state === "past" ? (
-          <span className="block h-2 w-2 rounded-full" style={{ background: "var(--ink)", boxShadow: "0 0 0 3px var(--paper-bg)" }} />
-        ) : (
-          <span
-            className="block h-2 w-2 rounded-full border"
-            style={{ borderColor: "var(--ink-faint)", background: "var(--paper-bg)", boxShadow: "0 0 0 3px var(--paper-bg)" }}
-          />
-        )}
-      </span>
-    </span>
-  );
-}
-
 export function ShichenClock() {
   const now = useAtomValue(timeAtom); // 原始时间,不受 12/24 开关影响
   const t = useTranslations("shichenClock");
@@ -81,81 +50,64 @@ export function ShichenClock() {
   const pad = (n: number) => String(n).padStart(2, "0");
   const modern = `${pad(H)}:${pad(M)}:${pad(S)}`;
   const cur = SHICHEN[idx];
-  const keLabel = `${isChu ? "初" : "正"}·${KE_CJK[ke]}刻`;
+  const keLabel = `${isChu ? "初" : "正"}${KE_CJK[ke]}刻`;
   const subtitle = t("hourOf", { animal: t(`zodiac.${cur.key}`) });
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div
-        className="shichen-paper relative w-full max-w-md rounded-sm px-6 py-7 md:px-9 md:py-9"
-        role="img"
-        aria-label={`${cur.epithet} ${subtitle} ${keLabel} ${modern}`}
+    <div
+      className="shichen-stage relative flex min-h-screen w-full items-center justify-center overflow-hidden"
+      role="img"
+      aria-label={`${cur.epithet} ${subtitle} ${keLabel} ${modern}`}
+    >
+      {/* 主角:满屏地支巨字。key=idx → 换时辰时重挂载触发墨晕淡入 */}
+      <span
+        key={idx}
+        className="shichen-hero shichen-bloom select-none font-bold leading-[0.72]"
+        style={{ fontSize: "min(80vh, 70vmin)" }}
       >
-        {/* 卷首小印:一日长卷 */}
-        <div className="mb-4 flex items-center justify-between font-serif text-xs tracking-[0.4em]" style={{ color: "var(--ink-faint)" }}>
-          <span>一日十二時辰</span>
-          <span style={{ color: "var(--red)" }}>·今·</span>
+        {cur.branch}
+      </span>
+
+      {/* 题字:竖排别称,沿右侧边栏 */}
+      <span
+        className="shichen-epithet absolute top-1/2 right-5 -translate-y-1/2 select-none font-bold leading-none md:right-12"
+        style={{ writingMode: "vertical-rl", fontSize: "min(13vh, 8.5vmin)" }}
+      >
+        {cur.epithet}
+      </span>
+
+      {/* 左上:现代时段 + 本地化生肖 */}
+      <div className="absolute top-5 left-5 md:top-10 md:left-12">
+        <div className="font-mono text-xs tracking-[0.3em] md:text-sm" style={{ color: "var(--ink-soft)" }}>
+          {cur.range}
         </div>
+        <div className="shichen-epithet mt-1.5 text-base font-bold md:text-xl" style={{ color: "var(--ink)" }}>
+          {subtitle}
+        </div>
+      </div>
 
-        <ol className="flex flex-col">
-          {SHICHEN.map((s, i) => {
-            const active = i === idx;
-            const past = i < idx;
-            const node = <Node state={active ? "active" : past ? "past" : "future"} isFirst={i === 0} isLast={i === SHICHEN.length - 1} />;
+      {/* 左下:朱砂落款印 — 当前刻 */}
+      <span
+        className="shichen-seal absolute bottom-8 left-5 flex items-center justify-center rounded-[20%] font-bold select-none md:bottom-12 md:left-12"
+        style={{ writingMode: "vertical-rl", padding: "0.6rem 0.5rem", fontSize: "min(5.5vh, 4.4vmin)", letterSpacing: "0.14em" }}
+      >
+        {keLabel}
+      </span>
 
-            if (active) {
-              return (
-                <li key={s.key} className="shichen-focus my-1 flex items-stretch gap-4 rounded-sm">
-                  {node}
-                  <div className="flex-1 py-3 pr-2">
-                    <div className="flex items-baseline gap-3">
-                      <span className="font-serif text-5xl font-bold leading-none md:text-6xl" style={{ color: "var(--red)" }}>
-                        {s.branch}
-                      </span>
-                      <span className="font-serif text-2xl md:text-3xl" style={{ color: "var(--ink)" }}>
-                        {s.epithet}
-                      </span>
-                    </div>
-                    <div className="mt-2 text-sm md:text-base" style={{ color: "var(--ink)" }}>
-                      {subtitle} · {s.range}
-                    </div>
-                    <div className="mt-2.5 flex items-center gap-2.5">
-                      <span className="font-serif text-base" style={{ color: "var(--red)" }}>
-                        {keLabel}
-                      </span>
-                      <span className="h-1 flex-1 overflow-hidden rounded-full" style={{ background: "var(--rail)" }}>
-                        <span
-                          className="block h-full rounded-full transition-[width] duration-500"
-                          style={{ width: `${keProgress * 100}%`, background: "var(--red)" }}
-                        />
-                      </span>
-                    </div>
-                    <div className="mt-1.5 font-mono text-xs tabular-nums" style={{ color: "var(--ink-faint)" }}>
-                      {modern}
-                    </div>
-                  </div>
-                </li>
-              );
-            }
+      {/* 右下:现代时间 */}
+      <div
+        className="absolute right-5 bottom-7 font-mono text-xs tabular-nums tracking-[0.3em] md:right-12 md:bottom-10 md:text-sm"
+        style={{ color: "var(--ink-soft)" }}
+      >
+        {modern}
+      </div>
 
-            return (
-              <li key={s.key} className="flex items-stretch gap-4" style={{ opacity: past ? 0.7 : 0.42 }}>
-                {node}
-                <div className="flex flex-1 items-center gap-3 py-[0.3rem]">
-                  <span className="font-serif text-lg" style={{ color: "var(--ink)" }}>
-                    {s.branch}
-                  </span>
-                  <span className="font-serif text-base" style={{ color: "var(--ink-faint)" }}>
-                    {s.epithet}
-                  </span>
-                  <span className="ml-auto font-mono text-xs tabular-nums" style={{ color: "var(--ink-faint)" }}>
-                    {s.range}
-                  </span>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+      {/* 底边:当前刻进度细线 */}
+      <div className="absolute inset-x-0 bottom-0 h-[3px]" style={{ background: "color-mix(in srgb, var(--ink) 10%, transparent)" }}>
+        <div
+          className="h-full transition-[width] duration-700 ease-linear"
+          style={{ width: `${keProgress * 100}%`, background: "var(--red)" }}
+        />
       </div>
     </div>
   );

@@ -59,7 +59,7 @@
       },
       "shichen": {
         "title": "Relógio dos doze shichen",
-        "description": "Os doze shichen tradicionais como um rolo vertical do dia — os ramos terrestres fluem de zǐ a hài, com a hora atual em vermelhão, o seu epíteto, signo e kè.",
+        "description": "O shichen atual como um ideograma a tinta em ecrã inteiro, selado a vermelhão — só este instante, sem lista.",
         "icon": "compass"
       }
     },
@@ -214,7 +214,7 @@
   },
   "shichenClock": {
     "title": "Relógio dos doze shichen",
-    "description": "Os doze shichen tradicionais apresentados como um rolo vertical a tinta",
+    "description": "O shichen atual como um grande ideograma a tinta em ecrã inteiro",
     "hourOf": "Hora do {animal}",
     "zodiac": {
       "zi": "Rato",

@@ -59,7 +59,7 @@
       },
       "shichen": {
         "title": "Chinese Double-Hours",
-        "description": "Traditional twelve shichen as a vertical day-scroll — earthly branches flow from zǐ to hài, the current hour glowing vermilion with its epithet, zodiac, and kè.",
+        "description": "The current double-hour as a screen-filling ink character, stamped with a vermilion seal — this moment alone, no list.",
         "icon": "compass"
       }
     },
@@ -214,7 +214,7 @@
   },
   "shichenClock": {
     "title": "Chinese Double-Hour Clock",
-    "description": "Traditional twelve shichen presented as a vertical ink day-scroll",
+    "description": "The current shichen rendered as a screen-filling ink character",
     "hourOf": "Hour of the {animal}",
     "zodiac": {
       "zi": "Rat",
