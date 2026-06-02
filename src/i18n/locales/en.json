@@ -168,6 +168,22 @@
     "analog": "Analog",
     "led": "LED"
   },
+  "basicClock": {
+    "title": "Basic Clock",
+    "description": "A clean, full-screen online digital clock with large, easy-to-read digits. Switch instantly between 12- and 24-hour formats — perfect for your desk, focus time, and everyday use."
+  },
+  "comicClock": {
+    "title": "Comic Clock",
+    "description": "A playful comic-style online clock bursting with bold colors and cartoon flair. A fun, eye-catching way to display the time on any screen."
+  },
+  "digitalWatch": {
+    "title": "Digital Watch",
+    "description": "A sleek online digital watch with a refined, modern interface. Crisp real-time display and multiple viewing modes for a stylish way to keep track of time."
+  },
+  "flipClock": {
+    "title": "Flip Clock",
+    "description": "A nostalgic online flip clock with realistic split-flap animation that turns every second. Retro mechanical charm that makes watching time pass a delight."
+  },
   "analogClock": {
     "title": "Analog Clock",
     "description": "Classic analog clock display with hour, minute, and second hands",

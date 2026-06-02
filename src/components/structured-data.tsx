@@ -46,13 +46,6 @@ export function StructuredData({ locale }: StructuredDataProps) {
       locale === "zh"
         ? "在线时钟,实时时钟,数字时钟,翻转时钟,模拟时钟,时间显示"
         : "online clock,real-time clock,digital clock,flip clock,analog clock,time display",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "127",
-      bestRating: "5",
-      worstRating: "1",
-    },
   };
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />;

@@ -168,6 +168,22 @@
     "analog": "Analogique",
     "led": "LED"
   },
+  "basicClock": {
+    "title": "Horloge basique",
+    "description": "Une horloge numérique en ligne épurée et plein écran, aux chiffres grands et lisibles. Basculez entre les formats 12 et 24 heures — idéale au bureau, pour se concentrer et au quotidien."
+  },
+  "comicClock": {
+    "title": "Horloge BD",
+    "description": "Une horloge en ligne ludique de style bande dessinée, aux couleurs vives et à l'esprit cartoon. Une façon amusante et accrocheuse d'afficher l'heure sur tout écran."
+  },
+  "digitalWatch": {
+    "title": "Montre numérique",
+    "description": "Une montre numérique en ligne élégante à l'interface raffinée et moderne. Affichage net en temps réel et plusieurs modes pour suivre l'heure avec style."
+  },
+  "flipClock": {
+    "title": "Horloge à volets",
+    "description": "Une horloge à volets en ligne nostalgique, avec une animation réaliste qui se retourne à chaque seconde. Un charme mécanique rétro qui rend le passage du temps délicieux."
+  },
   "analogClock": {
     "title": "Horloge analogique",
     "description": "Affichage d'horloge analogique classique avec aiguilles des heures, des minutes et des secondes",

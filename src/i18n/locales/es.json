@@ -168,6 +168,22 @@
     "analog": "Analógico",
     "led": "LED"
   },
+  "basicClock": {
+    "title": "Reloj básico",
+    "description": "Un reloj digital en línea limpio y a pantalla completa, con dígitos grandes y legibles. Cambia al instante entre formato de 12 y 24 horas: ideal para el escritorio, la concentración y el día a día."
+  },
+  "comicClock": {
+    "title": "Reloj cómic",
+    "description": "Un reloj en línea desenfadado de estilo cómic, repleto de colores intensos y aire de dibujos animados. Una forma divertida y llamativa de mostrar la hora en cualquier pantalla."
+  },
+  "digitalWatch": {
+    "title": "Reloj digital",
+    "description": "Un elegante reloj digital en línea con una interfaz refinada y moderna. Visualización nítida en tiempo real y varios modos para seguir la hora con estilo."
+  },
+  "flipClock": {
+    "title": "Reloj de solapas",
+    "description": "Un nostálgico reloj de solapas en línea con una animación realista que gira cada segundo. Encanto mecánico retro que convierte el paso del tiempo en un placer."
+  },
   "analogClock": {
     "title": "Reloj analógico",
     "description": "Visualización de reloj analógico clásico con manecillas de horas, minutos y segundos",

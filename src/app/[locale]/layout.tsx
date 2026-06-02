@@ -11,6 +11,7 @@ import { Nav } from "@/components/nav";
 import { StructuredData } from "@/components/structured-data";
 import { SEOOptimizations } from "@/components/seo-optimizations";
 import { routing } from "@/i18n/routing";
+import { SITE_URL, buildAlternates, buildOpenGraph, buildTwitter } from "@/lib/metadata";
 import "../globals.css";
 
 const archivo = Archivo({
@@ -38,55 +39,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const messages = await getMessages({ locale });
   const t = messages.metadata as unknown as MetadataMessages;
 
-  // 根据locale设置对应的语言代码
-  const localeMap: Record<string, string> = {
-    zh: "zh_CN",
-    en: "en_US",
-    ja: "ja_JP",
-  };
-
-  const ogLocale = localeMap[locale] || "zh_CN";
-
   return {
-    metadataBase: new URL("https://tickflow.toimagen.com"),
+    metadataBase: new URL(SITE_URL),
     title: {
       default: t.title,
       template: `%s | TickFlow`,
     },
     description: t.description,
     keywords: t.keywords,
-    openGraph: {
-      title: t.openGraph.title,
-      description: t.openGraph.description,
-      type: "website",
-      url: `https://tickflow.toimagen.com/${locale}`,
-      siteName: "TickFlow",
-      locale: ogLocale,
-      images: [
-        {
-          url: "/logo.png",
-          width: 810,
-          height: 810,
-          alt: t.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t.twitter.title,
-      description: t.twitter.description,
-      creator: "@tickflow",
-      site: "@tickflow",
-      images: ["/logo.png"],
-    },
-    alternates: {
-      canonical: `https://tickflow.toimagen.com/${locale}`,
-      languages: {
-        "zh-CN": "https://tickflow.toimagen.com/zh",
-        "en-US": "https://tickflow.toimagen.com/en",
-        "ja-JP": "https://tickflow.toimagen.com/ja",
-      },
-    },
+    openGraph: buildOpenGraph(locale, "", t.openGraph.title, t.openGraph.description),
+    twitter: buildTwitter(t.twitter.title, t.twitter.description),
+    alternates: buildAlternates(locale, ""),
     robots: {
       index: true,
       follow: true,

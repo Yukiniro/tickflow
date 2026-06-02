@@ -168,6 +168,22 @@
     "analog": "Analógico",
     "led": "LED"
   },
+  "basicClock": {
+    "title": "Relógio básico",
+    "description": "Um relógio digital online limpo e em tela cheia, com dígitos grandes e legíveis. Alterne instantaneamente entre os formatos de 12 e 24 horas — ideal para a mesa, o foco e o dia a dia."
+  },
+  "comicClock": {
+    "title": "Relógio em quadrinhos",
+    "description": "Um relógio online divertido em estilo de quadrinhos, cheio de cores vivas e ar de desenho animado. Um jeito divertido e chamativo de exibir a hora em qualquer tela."
+  },
+  "digitalWatch": {
+    "title": "Relógio digital",
+    "description": "Um elegante relógio digital online com uma interface refinada e moderna. Exibição nítida em tempo real e vários modos para acompanhar a hora com estilo."
+  },
+  "flipClock": {
+    "title": "Relógio de pás",
+    "description": "Um nostálgico relógio de pás online com animação realista que vira a cada segundo. Charme mecânico retrô que torna a passagem do tempo um prazer."
+  },
   "analogClock": {
     "title": "Relógio analógico",
     "description": "Exibição de relógio analógico clássico com ponteiros de horas, minutos e segundos",

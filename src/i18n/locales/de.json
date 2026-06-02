@@ -168,6 +168,22 @@
     "analog": "Analog",
     "led": "LED"
   },
+  "basicClock": {
+    "title": "Basis-Uhr",
+    "description": "Eine klare, bildschirmfüllende Online-Digitaluhr mit großen, gut lesbaren Ziffern. Wechseln Sie sofort zwischen 12- und 24-Stunden-Format – ideal für Schreibtisch, Fokuszeit und Alltag."
+  },
+  "comicClock": {
+    "title": "Comic-Uhr",
+    "description": "Eine verspielte Online-Uhr im Comic-Stil mit kräftigen Farben und Cartoon-Charme. Eine lustige, auffällige Art, die Uhrzeit auf jedem Bildschirm anzuzeigen."
+  },
+  "digitalWatch": {
+    "title": "Digitaluhr",
+    "description": "Eine schicke Online-Digitaluhr mit edler, moderner Oberfläche. Gestochen scharfe Echtzeitanzeige und mehrere Anzeigemodi – Zeitanzeige mit Stil."
+  },
+  "flipClock": {
+    "title": "Klappuhr",
+    "description": "Eine nostalgische Online-Klappuhr mit realistischer Split-Flap-Animation, die jede Sekunde umklappt. Retro-mechanischer Charme, der das Vergehen der Zeit zum Vergnügen macht."
+  },
   "analogClock": {
     "title": "Analoguhr",
     "description": "Klassische Analoguhr-Anzeige mit Stunden-, Minuten- und Sekundenzeiger",
