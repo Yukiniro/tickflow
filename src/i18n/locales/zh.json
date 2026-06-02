@@ -6,7 +6,10 @@
     "digital": "数字",
     "flip": "翻转",
     "analog": "模拟",
-    "led": "LED"
+    "led": "LED",
+    "binary": "二进制",
+    "nixie": "辉光管",
+    "shichen": "时辰"
   },
   "theme": {
     "label": "切换主题",
@@ -49,6 +52,21 @@
         "title": "LED点阵",
         "description": "科技感十足的LED点阵显示，6种颜色主题可选，每个数字由发光像素点组成。",
         "icon": "zap"
+      },
+      "binary": {
+        "title": "二进制时钟",
+        "description": "极客向 BCD 二进制显示，每列发光圆点编码时间的一位数字，内置 6 种颜色主题。",
+        "icon": "binary"
+      },
+      "nixie": {
+        "title": "辉光管时钟",
+        "description": "复古真空管辉光，暖橙数字在玻璃管中浮现，未点亮的阴极若隐若现，还原真实质感。",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "十二时辰",
+        "description": "传统十二时辰，地支字按水墨朱砂表盘环绕排布，并显示当前所处的刻。",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -98,7 +116,10 @@
         "digital": "数字手表",
         "comic": "漫画时钟",
         "analog": "模拟时钟",
-        "led": "LED点阵"
+        "led": "LED点阵",
+        "binary": "二进制时钟",
+        "nixie": "辉光管时钟",
+        "shichen": "十二时辰"
       },
       "contact": "联系我们",
       "email": "邮箱：yukiniro@hotmail.com",
@@ -166,7 +187,10 @@
     "digital": "数字",
     "comic": "漫画",
     "analog": "模拟",
-    "led": "LED"
+    "led": "LED",
+    "binary": "二进制",
+    "nixie": "辉光管",
+    "shichen": "时辰"
   },
   "analogClock": {
     "title": "模拟时钟",
@@ -191,6 +215,33 @@
       "purple": "魅力紫",
       "orange": "活力橙",
       "cyan": "清新青"
+    }
+  },
+  "binaryClock": {
+    "title": "二进制时钟",
+    "description": "二进制 BCD 时钟，每列发光圆点编码时间的一位数字"
+  },
+  "nixieClock": {
+    "title": "辉光管时钟",
+    "description": "复古辉光管显示，暖橙色数字在玻璃管中发光"
+  },
+  "shichenClock": {
+    "title": "十二时辰",
+    "description": "水墨朱砂表盘上的传统十二时辰计时",
+    "hourOf": "{animal}时",
+    "zodiac": {
+      "zi": "鼠",
+      "chou": "牛",
+      "yin": "虎",
+      "mao": "兔",
+      "chen": "龙",
+      "si": "蛇",
+      "wu": "马",
+      "wei": "羊",
+      "shen": "猴",
+      "you": "鸡",
+      "xu": "狗",
+      "hai": "猪"
     }
   }
 } 

@@ -6,7 +6,10 @@
     "digital": "Digital",
     "flip": "Flip",
     "analog": "Analog",
-    "led": "LED"
+    "led": "LED",
+    "binary": "Binary",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "theme": {
     "label": "Toggle theme",
@@ -49,6 +52,21 @@
         "title": "LED Matrix",
         "description": "Tech-savvy LED matrix display, 6 color themes available, each digit composed of glowing pixel dots.",
         "icon": "zap"
+      },
+      "binary": {
+        "title": "Binary Clock",
+        "description": "Geeky BCD binary display — each column of glowing dots encodes one digit of the time, with 6 color themes.",
+        "icon": "binary"
+      },
+      "nixie": {
+        "title": "Nixie Tube Clock",
+        "description": "Retro vacuum-tube glow — warm amber numerals float behind glass with ghostly unlit cathodes, just like the real thing.",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "Chinese Double-Hours",
+        "description": "Traditional twelve shichen — earthly-branch hours on an ink-and-vermilion dial, showing the quarter (kè) you're in.",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -98,7 +116,10 @@
         "digital": "Digital Watch",
         "comic": "Comic Clock",
         "analog": "Analog Clock",
-        "led": "LED Matrix"
+        "led": "LED Matrix",
+        "binary": "Binary Clock",
+        "nixie": "Nixie Tube Clock",
+        "shichen": "Chinese Double-Hours"
       },
       "contact": "Contact Us",
       "email": "Email: yukiniro@hotmail.com",
@@ -166,7 +187,10 @@
     "digital": "Digital",
     "comic": "Comic",
     "analog": "Analog",
-    "led": "LED"
+    "led": "LED",
+    "binary": "Binary",
+    "nixie": "Nixie",
+    "shichen": "Shichen"
   },
   "analogClock": {
     "title": "Analog Clock",
@@ -191,6 +215,33 @@
       "purple": "Charm Purple",
       "orange": "Vibrant Orange",
       "cyan": "Fresh Cyan"
+    }
+  },
+  "binaryClock": {
+    "title": "Binary Clock",
+    "description": "Binary BCD clock where each column of glowing dots encodes a digit of the time"
+  },
+  "nixieClock": {
+    "title": "Nixie Tube Clock",
+    "description": "Retro Nixie tube display with warm glowing numerals behind glass"
+  },
+  "shichenClock": {
+    "title": "Chinese Double-Hour Clock",
+    "description": "Traditional twelve-shichen timekeeping on an ink-and-vermilion dial",
+    "hourOf": "Hour of the {animal}",
+    "zodiac": {
+      "zi": "Rat",
+      "chou": "Ox",
+      "yin": "Tiger",
+      "mao": "Rabbit",
+      "chen": "Dragon",
+      "si": "Snake",
+      "wu": "Horse",
+      "wei": "Goat",
+      "shen": "Monkey",
+      "you": "Rooster",
+      "xu": "Dog",
+      "hai": "Pig"
     }
   }
 } 

@@ -6,7 +6,10 @@
     "digital": "デジタル",
     "flip": "フリップ",
     "analog": "アナログ",
-    "led": "LED"
+    "led": "LED",
+    "binary": "バイナリ",
+    "nixie": "ニキシー",
+    "shichen": "十二時辰"
   },
   "theme": {
     "label": "テーマを切り替え",
@@ -49,6 +52,21 @@
         "title": "LEDマトリックス",
         "description": "テクノロジー感あふれるLEDマトリックス表示、6つのカラーテーマが選択可能、各数字は発光ピクセルドットで構成。",
         "icon": "zap"
+      },
+      "binary": {
+        "title": "バイナリ時計",
+        "description": "ギーク向けのBCDバイナリ表示。各列の発光ドットが時刻の各桁をエンコードし、6つのカラーテーマを搭載。",
+        "icon": "binary"
+      },
+      "nixie": {
+        "title": "ニキシー管時計",
+        "description": "レトロな真空管の輝き。温かみのある琥珀色の数字がガラスの奥に浮かび、未点灯の陰極がうっすら見える本格仕様。",
+        "icon": "lightbulb"
+      },
+      "shichen": {
+        "title": "十二時辰",
+        "description": "伝統的な十二時辰。十二支の時刻を水墨と朱の文字盤に配置し、現在の刻を表示。",
+        "icon": "compass"
       }
     },
     "highlights": {
@@ -98,7 +116,10 @@
         "digital": "デジタルウォッチ",
         "comic": "コミック時計",
         "analog": "アナログ時計",
-        "led": "LEDマトリックス"
+        "led": "LEDマトリックス",
+        "binary": "バイナリ時計",
+        "nixie": "ニキシー管時計",
+        "shichen": "十二時辰"
       },
       "contact": "お問い合わせ",
       "email": "メール：yukiniro@hotmail.com",
@@ -166,7 +187,10 @@
     "digital": "デジタル",
     "comic": "コミック",
     "analog": "アナログ",
-    "led": "LED"
+    "led": "LED",
+    "binary": "バイナリ",
+    "nixie": "ニキシー",
+    "shichen": "十二時辰"
   },
   "analogClock": {
     "title": "アナログ時計",
@@ -191,6 +215,33 @@
       "purple": "チャームパープル",
       "orange": "バイブラントオレンジ",
       "cyan": "フレッシュシアン"
+    }
+  },
+  "binaryClock": {
+    "title": "バイナリ時計",
+    "description": "各列の発光ドットが時刻の各桁をエンコードするBCDバイナリ時計"
+  },
+  "nixieClock": {
+    "title": "ニキシー管時計",
+    "description": "ガラスの奥で温かく光る数字を映すレトロなニキシー管表示"
+  },
+  "shichenClock": {
+    "title": "十二時辰時計",
+    "description": "水墨と朱の文字盤による伝統的な十二時辰の時刻表示",
+    "hourOf": "{animal}の刻",
+    "zodiac": {
+      "zi": "鼠",
+      "chou": "牛",
+      "yin": "虎",
+      "mao": "兎",
+      "chen": "龍",
+      "si": "蛇",
+      "wu": "馬",
+      "wei": "羊",
+      "shen": "猿",
+      "you": "鶏",
+      "xu": "犬",
+      "hai": "猪"
     }
   }
 } 
