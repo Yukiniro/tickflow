@@ -653,6 +653,30 @@
   color: var(--paper);
   box-shadow: 0 6px 26px color-mix(in srgb, var(--red) 35%, transparent);
 }
+/* 中央时间:hover 强化区时放大 + 转朱砂 + 展开字距 */
+.shichen-time {
+  color: var(--ink-soft);
+  letter-spacing: 0.3em;
+  transform-origin: center;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.4s ease,
+    letter-spacing 0.4s ease;
+}
+.shichen-core:hover .shichen-time {
+  transform: scale(1.45);
+  color: var(--red);
+  letter-spacing: 0.55em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shichen-time {
+    transition: color 0.4s ease;
+  }
+  .shichen-core:hover .shichen-time {
+    transform: none;
+    letter-spacing: 0.3em;
+  }
+}
 /* 换时辰时巨字的一次"墨晕"淡入 */
 @keyframes shichen-bloom {
   0% {

@@ -59,14 +59,18 @@ export function ShichenClock() {
       role="img"
       aria-label={`${cur.epithet} ${subtitle} ${keLabel} ${modern}`}
     >
-      {/* 主角:地支大字。收敛尺寸以免压迫四周;key=idx → 换时辰时墨晕淡入 */}
-      <span
-        key={idx}
-        className="shichen-hero shichen-bloom select-none font-bold leading-[0.74]"
-        style={{ fontSize: "min(46vh, 50vmin)" }}
-      >
-        {cur.branch}
-      </span>
+      {/* 中央强化区:地支大字 + 现代时间。hover 整个区域 → 时间放大动画 */}
+      <div className="shichen-core flex flex-col items-center">
+        {/* key=idx → 换时辰时巨字墨晕淡入 */}
+        <span
+          key={idx}
+          className="shichen-hero shichen-bloom select-none font-bold leading-[0.74]"
+          style={{ fontSize: "min(46vh, 50vmin)" }}
+        >
+          {cur.branch}
+        </span>
+        <span className="shichen-time mt-3 font-mono text-lg tabular-nums select-none md:mt-5 md:text-2xl">{modern}</span>
+      </div>
 
       {/* 题字:竖排别称,右上角(下移让开 fixed 导航栏) */}
       <span
@@ -93,14 +97,6 @@ export function ShichenClock() {
       >
         {keLabel}
       </span>
-
-      {/* 右下:现代时间 */}
-      <div
-        className="absolute right-5 bottom-7 font-mono text-xs tabular-nums tracking-[0.25em] md:right-10 md:bottom-10 md:text-sm"
-        style={{ color: "var(--ink-soft)" }}
-      >
-        {modern}
-      </div>
 
       {/* 底边:当前刻进度细线 */}
       <div className="absolute inset-x-0 bottom-0 h-[3px]" style={{ background: "color-mix(in srgb, var(--ink) 10%, transparent)" }}>
