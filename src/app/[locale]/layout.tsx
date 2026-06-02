@@ -22,12 +22,20 @@ export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
+interface MetadataMessages {
+  title: string;
+  description: string;
+  keywords: string;
+  openGraph: { title: string; description: string };
+  twitter: { title: string; description: string };
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
 
   // 获取本地化消息
   const messages = await getMessages({ locale });
-  const t = messages.metadata as any;
+  const t = messages.metadata as unknown as MetadataMessages;
 
   // 根据locale设置对应的语言代码
   const localeMap: Record<string, string> = {

@@ -15,6 +15,8 @@ export function useClock() {
   const is24Hour = useAtomValue(is24HourAtom);
 
   useEffect(() => {
+    // 挂载标记:SSR 水合后置位,属预期用法
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

@@ -48,6 +48,8 @@ export function useTime() {
   };
 
   useEffect(() => {
+    // 挂载标记:SSR 水合后置位,属预期的 effect 内同步置位
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const timer = setInterval(() => {
       const now = new Date();
@@ -58,6 +60,8 @@ export function useTime() {
     return () => {
       clearInterval(timer);
     };
+    // playTickSound 依赖 soundEnabled(已在依赖中),无需将其加入依赖以免每次渲染重建定时器
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setTime, soundEnabled]);
 
   return {

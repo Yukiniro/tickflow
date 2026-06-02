@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "format": "npx prettier --write src/**/*.{ts,tsx,css}",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.0",

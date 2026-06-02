@@ -7,41 +7,63 @@ import { trackFullscreenToggle } from "@/components/google-analytics";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { LuMaximize2 as Maximize2, LuMinimize2 as Minimize2 } from "react-icons/lu";
 
+// 带浏览器厂商前缀的全屏 API 类型(Safari/Firefox/旧版 IE)
+interface FullscreenDocument extends Document {
+  webkitFullscreenEnabled?: boolean;
+  mozFullScreenEnabled?: boolean;
+  msFullscreenEnabled?: boolean;
+  webkitFullscreenElement?: Element | null;
+  mozFullScreenElement?: Element | null;
+  msFullscreenElement?: Element | null;
+  webkitExitFullscreen?: () => Promise<void>;
+  mozCancelFullScreen?: () => Promise<void>;
+  msExitFullscreen?: () => Promise<void>;
+}
+
+interface FullscreenElement extends HTMLElement {
+  webkitRequestFullscreen?: () => Promise<void>;
+  mozRequestFullScreen?: () => Promise<void>;
+  msRequestFullscreen?: () => Promise<void>;
+}
+
 export function FullscreenToggle() {
   const t = useTranslations("fullscreen");
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   // 检查是否支持全屏 API
   const isFullscreenSupported = () => {
+    const doc = document as FullscreenDocument;
     return !!(
       document.fullscreenEnabled ||
-      (document as any).webkitFullscreenEnabled ||
-      (document as any).mozFullScreenEnabled ||
-      (document as any).msFullscreenEnabled
+      doc.webkitFullscreenEnabled ||
+      doc.mozFullScreenEnabled ||
+      doc.msFullscreenEnabled
     );
   };
 
   // 获取当前全屏元素
   const getFullscreenElement = () => {
+    const doc = document as FullscreenDocument;
     return (
       document.fullscreenElement ||
-      (document as any).webkitFullscreenElement ||
-      (document as any).mozFullScreenElement ||
-      (document as any).msFullscreenElement
+      doc.webkitFullscreenElement ||
+      doc.mozFullScreenElement ||
+      doc.msFullscreenElement
     );
   };
 
   // 进入全屏
   const enterFullscreen = async (element: HTMLElement) => {
+    const el = element as FullscreenElement;
     try {
       if (element.requestFullscreen) {
         await element.requestFullscreen();
-      } else if ((element as any).webkitRequestFullscreen) {
-        await (element as any).webkitRequestFullscreen();
-      } else if ((element as any).mozRequestFullScreen) {
-        await (element as any).mozRequestFullScreen();
-      } else if ((element as any).msRequestFullscreen) {
-        await (element as any).msRequestFullscreen();
+      } else if (el.webkitRequestFullscreen) {
+        await el.webkitRequestFullscreen();
+      } else if (el.mozRequestFullScreen) {
+        await el.mozRequestFullScreen();
+      } else if (el.msRequestFullscreen) {
+        await el.msRequestFullscreen();
       }
     } catch (error) {
       console.error("Error entering fullscreen:", error);
@@ -50,15 +72,16 @@ export function FullscreenToggle() {
 
   // 退出全屏
   const exitFullscreen = async () => {
+    const doc = document as FullscreenDocument;
     try {
       if (document.exitFullscreen) {
         await document.exitFullscreen();
-      } else if ((document as any).webkitExitFullscreen) {
-        await (document as any).webkitExitFullscreen();
-      } else if ((document as any).mozCancelFullScreen) {
-        await (document as any).mozCancelFullScreen();
-      } else if ((document as any).msExitFullscreen) {
-        await (document as any).msExitFullscreen();
+      } else if (doc.webkitExitFullscreen) {
+        await doc.webkitExitFullscreen();
+      } else if (doc.mozCancelFullScreen) {
+        await doc.mozCancelFullScreen();
+      } else if (doc.msExitFullscreen) {
+        await doc.msExitFullscreen();
       }
     } catch (error) {
       console.error("Error exiting fullscreen:", error);
@@ -95,7 +118,8 @@ export function FullscreenToggle() {
     document.addEventListener("mozfullscreenchange", handleFullscreenChange);
     document.addEventListener("MSFullscreenChange", handleFullscreenChange);
 
-    // 初始化状态
+    // 初始化状态:挂载时读取当前全屏态,属预期的 effect 内同步置位
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsFullscreen(!!getFullscreenElement());
 
     return () => {

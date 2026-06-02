@@ -1,0 +1,54 @@
+# CI：lint / typecheck / build 三道门禁
+# Next 16 构建不再跑 ESLint，故单独设 lint job；typecheck 比 build 更快，提供早期反馈
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+# 同一分支/PR 的新提交会取消仍在进行的旧运行，节省 CI 时间
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4 # 读取 package.json 的 packageManager 字段（pnpm@11.5.0）
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # NEXT_PUBLIC_PEXELS_API_KEY / NEXT_PUBLIC_GA_ID 均为可选，缺失时应用优雅降级，无需 secret
+      - run: pnpm build
