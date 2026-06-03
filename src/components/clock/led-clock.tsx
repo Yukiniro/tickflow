@@ -151,7 +151,8 @@ function renderDigit(digit: string, key: string, theme: LedTheme) {
               className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full transition-colors duration-200"
               style={{
                 backgroundColor: isActive ? theme.color : "rgba(107, 114, 128, 0.2)",
-                boxShadow: isActive ? `0 0 12px ${theme.shadowColor}` : "none",
+                // 紧凑亮芯 + 外扩光晕,点亮点更通透
+                boxShadow: isActive ? `0 0 4px ${theme.color}, 0 0 16px ${theme.shadowColor}` : "none",
               }}
             />
           ))}
@@ -220,7 +221,7 @@ export function LedClock() {
 
         {/* LED时钟显示 */}
         <div
-          className={`relative p-8 md:p-12 rounded-3xl bg-gray-900 dark:bg-black border ${currentTheme.borderColor} shadow-2xl`}
+          className={`led-panel relative p-8 md:p-12 rounded-3xl bg-gray-900 dark:bg-black border ${currentTheme.borderColor} shadow-2xl`}
         >
           {/* 主时钟内容 */}
           <div className="flex items-center justify-center gap-4 md:gap-6 lg:gap-8">

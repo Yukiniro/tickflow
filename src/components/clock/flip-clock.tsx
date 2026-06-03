@@ -130,11 +130,17 @@ export function FlipClock() {
       {/* 主时钟 */}
       <div className="flex items-center space-x-8 lg:space-x-16 xl:space-x-20">
         <FlipDigit value={hours} />
-        <div className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-black text-primary/70 flip-separator">
+        <div
+          className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-black flip-separator"
+          style={{ color: "hsl(var(--rail) / 0.8)" }}
+        >
           :
         </div>
         <FlipDigit value={minutes} />
-        <div className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-black text-primary/70 flip-separator">
+        <div
+          className="text-7xl lg:text-8xl xl:text-9xl 2xl:text-[8rem] font-black flip-separator"
+          style={{ color: "hsl(var(--rail) / 0.8)" }}
+        >
           :
         </div>
         <FlipDigit value={seconds} />

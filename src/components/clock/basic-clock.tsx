@@ -21,9 +21,14 @@ export function BasicClock() {
     <div className="flex flex-col items-center justify-center space-y-4">
       <div className={cn("text-[16vw] font-bold tabular-nums tracking-wider", textStyle)}>
         {String(hours).padStart(2, "0")}
-        <span>:</span>
+        {/* 分隔符每秒滴答脉冲:key 随秒重挂载,与全站 tick 签名同步 */}
+        <span key={`c1-${seconds}`} className="animate-tick inline-block">
+          :
+        </span>
         {String(minutes).padStart(2, "0")}
-        <span>:</span>
+        <span key={`c2-${seconds}`} className="animate-tick inline-block">
+          :
+        </span>
         {String(seconds).padStart(2, "0")}
       </div>
       {ampm && <div className={cn("text-[4vw] font-medium", ampmStyle)}>{ampm}</div>}

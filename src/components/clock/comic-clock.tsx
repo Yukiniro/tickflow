@@ -19,11 +19,16 @@ export function ComicClock() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className={cn("font-comic text-[16vw] font-bold tracking-wider", textStyle)}>
+      <div className={cn("font-comic comic-fun text-[16vw] font-bold tracking-wider", textStyle)}>
         {String(hours).padStart(2, "0")}
-        <span>:</span>
+        {/* 冒号每秒弹跳,延续漫画的活泼感;key 随秒重挂载触发动画 */}
+        <span key={`c1-${seconds}`} className="comic-pop">
+          :
+        </span>
         {String(minutes).padStart(2, "0")}
-        <span>:</span>
+        <span key={`c2-${seconds}`} className="comic-pop">
+          :
+        </span>
         {String(seconds).padStart(2, "0")}
       </div>
       {ampm && <div className={cn("font-comic mt-6 text-[4vw] font-bold", ampmStyle)}>{ampm}</div>}
