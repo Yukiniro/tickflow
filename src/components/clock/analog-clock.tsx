@@ -39,11 +39,14 @@ export function AnalogClock() {
         role="img"
         aria-label={t("description")}
       >
-        {/* 时钟背景 */}
-        <div className="absolute inset-0 rounded-full bg-gray-100 dark:bg-gray-800 shadow-2xl" />
+        {/* 时钟背景:外圈发丝边,增加表壳实体感 */}
+        <div className="absolute inset-0 rounded-full bg-gray-100 dark:bg-gray-800 shadow-2xl ring-1 ring-black/10 dark:ring-white/10" />
 
         {/* 内圈阴影效果 */}
         <div className="absolute inset-2 rounded-full shadow-inner bg-linear-to-br from-gray-50 to-gray-200 dark:from-gray-700 dark:to-gray-900" />
+
+        {/* 玻璃罩高光:顶部受光,让表盘像真实凸面镜面 */}
+        <div className="analog-gloss pointer-events-none absolute inset-2 rounded-full" />
 
         {/* 数字时间显示 - hover时显示 */}
         <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 scale-75 transform opacity-0 transition-all duration-300 pointer-events-none group-hover:scale-100 group-hover:opacity-100 group-hover:pointer-events-auto">
@@ -93,11 +96,12 @@ export function AnalogClock() {
           const radius = 45; // 小时刻度距离中心的百分比
           const x = 50 + radius * Math.cos(radian); // 计算x坐标
           const y = 50 + radius * Math.sin(radian); // 计算y坐标
+          const isCardinal = i % 3 === 0; // 12 / 3 / 6 / 9 主方位刻度,更粗更长
 
           return (
             <div
               key={`hour-${i}`}
-              className="absolute w-1 h-6 bg-gray-800 dark:bg-gray-200 rounded-full shadow-md transition-opacity duration-300 opacity-100 group-hover:opacity-40"
+              className={`absolute ${isCardinal ? "w-1.5 h-7" : "w-1 h-6"} bg-gray-800 dark:bg-gray-200 rounded-full shadow-md transition-opacity duration-300 opacity-100 group-hover:opacity-40`}
               style={{
                 left: `${x}%`,
                 top: `${y}%`,
@@ -139,9 +143,18 @@ export function AnalogClock() {
           aria-label={t("secondHand")}
         />
 
-        {/* 中心圆点 */}
+        {/* 秒针配重尾:中心另一侧的短红杆,平衡视觉、贴近真实秒针 */}
         <div
-          className="absolute left-1/2 top-1/2 w-3 h-3 bg-gray-800 dark:bg-gray-200 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-lg transition-opacity duration-300 opacity-100 group-hover:opacity-30"
+          className="absolute left-1/2 top-1/2 w-1 h-[9%] bg-red-500 rounded-full origin-top transition-opacity duration-300 opacity-100 group-hover:opacity-40"
+          style={{
+            transform: `translate(-50%, 0) rotate(${secondDegrees}deg)`,
+          }}
+          aria-hidden
+        />
+
+        {/* 中心圆点:红色轴帽 + 浅色描边,呼应 Mondaine 站台钟 */}
+        <div
+          className="absolute left-1/2 top-1/2 w-3.5 h-3.5 bg-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-20 shadow-lg ring-2 ring-white/80 dark:ring-black/40 transition-opacity duration-300 opacity-100 group-hover:opacity-30"
           style={{
             filter: "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))",
           }}
